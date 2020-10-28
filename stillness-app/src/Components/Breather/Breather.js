@@ -31,7 +31,7 @@ function Breather() {
 
   return (
     <div>
-      <Test/>
+      <Test />
       <h1>Breather</h1>
       <div className={`container ${breatheText === "Inhale" ? "expand" : breatheText === 'Exhale' ? "shrink" : ''}`}>
         {/* <!-- this div represents the solid colour circle --> */}
@@ -54,4 +54,4 @@ function Breather() {
   )
 }
 
-export default Breather
+export default Breather;

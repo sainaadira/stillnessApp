@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Login from '../Login/Login'
-import Signup from '../Register/Signup'
+import Signup from '../Signup/Signup'
 import './AuthFlow.css'
 
 const AuthFlow = () => {
