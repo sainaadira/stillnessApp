@@ -7,25 +7,136 @@ const MoodJournal = () => {
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const today = new Date().toLocaleDateString('us-en', options)
 
+  // creates the moodColor state and setMoodColor is the function that will render a new state when called.
+  const [moodColor, setMoodColor] = useState({
+    yellow: '',
+    grey: '',
+    blue: '',
+    red: '',
+    green: ''
 
+  })
+
+
+  // on click event: targeting the value of the button and calling setMoodColor to return a new object rendering a new background color.
+  const handleMoodClick = (e) => {
+
+    if (e.target.value === 'yellow') {
+      if (moodColor.yellow == '') {
+        setMoodColor({
+          yellow: 'yellow',
+          grey: '',
+          blue: '',
+          red: '',
+          green: ''
+        })
+      } else {
+        setMoodColor({
+          yellow: '',
+          grey: '',
+          blue: '',
+          red: '',
+          green: ''
+        })
+      }
+    }
+    if (e.target.value === 'grey') {
+      if (moodColor.grey == '') {
+        setMoodColor({
+          yellow: '',
+          grey: 'grey',
+          blue: '',
+          red: '',
+          green: ''
+        })
+      } else {
+        setMoodColor({
+          yellow: '',
+          grey: '',
+          blue: '',
+          red: '',
+          green: ''
+        })
+      }
+    }
+    if (e.target.value === 'blue') {
+      if (moodColor.blue == '') {
+        setMoodColor({
+          yellow: '',
+          grey: '',
+          blue: 'blue',
+          red: '',
+          green: ''
+        })
+      } else {
+        setMoodColor({
+          yellow: '',
+          grey: '',
+          blue: '',
+          red: '',
+          green: ''
+
+        })
+      }
+    }
+    if (e.target.value === 'red') {
+      if (moodColor.red == '') {
+        setMoodColor({
+          yellow: '',
+          grey: '',
+          blue: '',
+          red: 'red',
+          green: ''
+        })
+      } else {
+        setMoodColor({
+          yellow: '',
+          grey: '',
+          blue: '',
+          red: '',
+          green: ''
+
+        })
+      }
+    }
+    if (e.target.value === 'green') {
+      if (moodColor.green == '') {
+        setMoodColor({
+          yellow: '',
+          grey: '',
+          blue: '',
+          red: '',
+          green: 'green'
+        })
+      } else {
+        setMoodColor({
+          yellow: '',
+          grey: '',
+          blue: '',
+          red: '',
+          green: ''
+
+        })
+      }
+    }
+  }
   return (
     <div>
-      <span>Thank you for being here on: {today}</span>
-      <h1>How are you feeling today?</h1>
+      <p>Thank you for being here on: {today}</p>
+      <h1>A personal space to self-reflect.</h1>
+      <p>How are you feeling?</p>
       <>
-        <button className="mood yellow">Happy</button>
-        <button className="mood grey">Neutral</button>
-        <button className="mood blue">Sad</button>
-        <button className="mood red">Angry</button>
-        <button className="mood green">Anxious</button>
+        <button onClick={handleMoodClick} value='yellow' style={{ backgroundColor: moodColor.yellow }} name={moodColor.yellow} className="mood-btn yellow">Happy</button>
+        <button onClick={handleMoodClick} value="grey" style={{ backgroundColor: moodColor.grey }} className="mood-btn grey">Neutral </button>
+        <button onClick={handleMoodClick} value="blue" style={{ backgroundColor: moodColor.blue }} className="mood-btn blue">Sad</button>
+        <button onClick={handleMoodClick} value="red" style={{ backgroundColor: moodColor.red }} className="mood-btn red">Angry</button>
+        <button onClick={handleMoodClick} value="green" style={{ backgroundColor: moodColor.green }} className="mood-btn green">Anxious</button>
       </>
 
       <>
-        <textarea className="journal-space" rows="10" placeholder="Feel free to use this space to journal your thoughts." />
+        <textarea className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
         <button className="submit btn">Submit</button>
-        <button className="delete btn">Delete</button>
-
-
+        <button className="clear btn">Clear</button>
       </>
     </div>
 

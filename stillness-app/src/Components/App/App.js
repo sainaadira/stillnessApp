@@ -19,6 +19,12 @@ function App() {
             <MoodJournal />
           </Route>
         </Switch>
+
+        <Switch>
+          <Route exact path="/Login">
+            <AuthFlow />
+          </Route>
+        </Switch>
       </Router>
     </div>
 
