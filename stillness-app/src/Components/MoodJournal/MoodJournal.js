@@ -14,11 +14,12 @@ const MoodJournal = () => {
     blue: '',
     red: '',
     green: ''
-
   })
-
+  // storing journal entries inside of an empty array 
+  const [journalSpace, setJournalSpace] = useState([])
 
   // on click event: targeting the value of the button and calling setMoodColor to return a new object rendering a new background color.
+  // call setMoodColor and return the object with empty string to clear bgColor
   const handleMoodClick = (e) => {
 
     if (e.target.value === 'yellow') {
@@ -75,7 +76,6 @@ const MoodJournal = () => {
           blue: '',
           red: '',
           green: ''
-
         })
       }
     }
@@ -115,11 +115,24 @@ const MoodJournal = () => {
           blue: '',
           red: '',
           green: ''
-
         })
       }
     }
   }
+
+  const handleJournalSpace = (e) => {
+    const textAreaValue = e.target.value
+    console.log(textAreaValue);
+  }
+
+  const submitJournalEntry = () => {
+    console.log('i will submit');
+  }
+
+  const clearJournalEntry = () => {
+    console.log('i will clear');
+  }
+
   return (
     <div>
       <p>Thank you for being here on: {today}</p>
@@ -134,9 +147,9 @@ const MoodJournal = () => {
       </>
 
       <>
-        <textarea className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
-        <button className="submit btn">Submit</button>
-        <button className="clear btn">Clear</button>
+        <textarea onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
+        <button onClick={submitJournalEntry} className="submit btn">Submit</button>
+        <button onClick={clearJournalEntry} className="clear btn">Clear</button>
       </>
     </div>
 
