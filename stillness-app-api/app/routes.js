@@ -28,5 +28,25 @@ module.exports = function (app, passport, db, ObjectId) {
   }));
 
 
+  app.post('/signup', (req, res, next) => {
+    // let uId = ObjectId(req.session.passport.user)
+    // console.log(uId);
+    db.collection('user').save({ journal: req.body.user }, (err, result) => {
+      if (err) return console.log(err)
+      res.redirect('/')
+    })
+  });
+
+
+  // post method to store mood journal entry space to backend
+  app.post('/saveJournalEntry', (req, res, next) => {
+    // let uId = ObjectId(req.session.passport.user)
+    // console.log(uId);
+    db.collection('journal').save({ journal: req.body.journalEntry }, (err, result) => {
+      if (err) return console.log(err)
+      res.redirect('/')
+    })
+  });
+
 }
 

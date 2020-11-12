@@ -7,6 +7,7 @@ import {
 } from "react-router-dom"
 import AuthFlow from '../Authentication/AuthFlow/AuthFlow';
 import MoodJournal from '../MoodJournal/MoodJournal';
+import MoodJournalHistory from '../MoodJournalHistory/MoodJournalHistory'
 import './App.css';
 
 
@@ -15,7 +16,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/moodJournal">
             <MoodJournal />
           </Route>
         </Switch>

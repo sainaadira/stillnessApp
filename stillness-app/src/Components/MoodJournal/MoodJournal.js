@@ -13,10 +13,10 @@ const MoodJournal = () => {
     grey: '',
     blue: '',
     red: '',
-    green: ''
+    purple: ''
   })
-  // storing journal entries inside of an empty array 
-  const [journalSpace, setJournalSpace] = useState([])
+  // storing journal entries inside of an empty string
+  const [journalSpace, setJournalSpace] = useState('')
 
   // on click event: targeting the value of the button and calling setMoodColor to return a new object rendering a new background color.
   // call setMoodColor and return the object with empty string to clear bgColor
@@ -29,7 +29,7 @@ const MoodJournal = () => {
           grey: '',
           blue: '',
           red: '',
-          green: ''
+          purple: ''
         })
       } else {
         setMoodColor({
@@ -37,7 +37,7 @@ const MoodJournal = () => {
           grey: '',
           blue: '',
           red: '',
-          green: ''
+          purple: ''
         })
       }
     }
@@ -48,7 +48,7 @@ const MoodJournal = () => {
           grey: 'grey',
           blue: '',
           red: '',
-          green: ''
+          purple: ''
         })
       } else {
         setMoodColor({
@@ -56,7 +56,7 @@ const MoodJournal = () => {
           grey: '',
           blue: '',
           red: '',
-          green: ''
+          purple: ''
         })
       }
     }
@@ -67,7 +67,7 @@ const MoodJournal = () => {
           grey: '',
           blue: 'blue',
           red: '',
-          green: ''
+          purple: ''
         })
       } else {
         setMoodColor({
@@ -75,7 +75,7 @@ const MoodJournal = () => {
           grey: '',
           blue: '',
           red: '',
-          green: ''
+          purple: ''
         })
       }
     }
@@ -86,7 +86,7 @@ const MoodJournal = () => {
           grey: '',
           blue: '',
           red: 'red',
-          green: ''
+          purple: ''
         })
       } else {
         setMoodColor({
@@ -94,19 +94,19 @@ const MoodJournal = () => {
           grey: '',
           blue: '',
           red: '',
-          green: ''
+          purple: ''
 
         })
       }
     }
-    if (e.target.value === 'green') {
-      if (moodColor.green == '') {
+    if (e.target.value === 'purple') {
+      if (moodColor.purple == '') {
         setMoodColor({
           yellow: '',
           grey: '',
           blue: '',
           red: '',
-          green: 'green'
+          purple: 'purple'
         })
       } else {
         setMoodColor({
@@ -114,7 +114,7 @@ const MoodJournal = () => {
           grey: '',
           blue: '',
           red: '',
-          green: ''
+          purple: ''
         })
       }
     }
@@ -122,12 +122,12 @@ const MoodJournal = () => {
 
   const handleJournalSpace = (e) => {
     const textAreaValue = e.target.value
-    console.log(textAreaValue);
+    setJournalSpace(textAreaValue)
   }
 
-  const submitJournalEntry = () => {
-    console.log('i will submit');
-  }
+  // const submitJournalEntry = () => {
+  //   console.log('i will submit');
+  // }
 
   const clearJournalEntry = () => {
     console.log('i will clear');
@@ -143,12 +143,15 @@ const MoodJournal = () => {
         <button onClick={handleMoodClick} value="grey" style={{ backgroundColor: moodColor.grey }} className="mood-btn grey">Neutral </button>
         <button onClick={handleMoodClick} value="blue" style={{ backgroundColor: moodColor.blue }} className="mood-btn blue">Sad</button>
         <button onClick={handleMoodClick} value="red" style={{ backgroundColor: moodColor.red }} className="mood-btn red">Angry</button>
-        <button onClick={handleMoodClick} value="green" style={{ backgroundColor: moodColor.green }} className="mood-btn green">Anxious</button>
+        <button onClick={handleMoodClick} value="purple" style={{ backgroundColor: moodColor.purple }} className="mood-btn purple">Anxious</button>
       </>
 
       <>
-        <textarea onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
-        <button onClick={submitJournalEntry} className="submit btn">Submit</button>
+        <form method='POST' action='/saveJournalEntry'>
+          <textarea name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
+          <button type="submit" className="submit btn">Submit</button>
+        </form>
+
         <button onClick={clearJournalEntry} className="clear btn">Clear</button>
       </>
     </div>
