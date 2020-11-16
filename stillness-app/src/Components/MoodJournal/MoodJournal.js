@@ -23,7 +23,7 @@ const MoodJournal = () => {
   const handleMoodClick = (e) => {
 
     if (e.target.value === 'yellow') {
-      if (moodColor.yellow == '') {
+      if (moodColor.yellow === '') {
         setMoodColor({
           yellow: 'yellow',
           grey: '',
@@ -42,7 +42,7 @@ const MoodJournal = () => {
       }
     }
     if (e.target.value === 'grey') {
-      if (moodColor.grey == '') {
+      if (moodColor.grey === '') {
         setMoodColor({
           yellow: '',
           grey: 'grey',
@@ -61,7 +61,7 @@ const MoodJournal = () => {
       }
     }
     if (e.target.value === 'blue') {
-      if (moodColor.blue == '') {
+      if (moodColor.blue === '') {
         setMoodColor({
           yellow: '',
           grey: '',
@@ -80,7 +80,7 @@ const MoodJournal = () => {
       }
     }
     if (e.target.value === 'red') {
-      if (moodColor.red == '') {
+      if (moodColor.red === '') {
         setMoodColor({
           yellow: '',
           grey: '',
@@ -100,7 +100,7 @@ const MoodJournal = () => {
       }
     }
     if (e.target.value === 'purple') {
-      if (moodColor.purple == '') {
+      if (moodColor.purple === '') {
         setMoodColor({
           yellow: '',
           grey: '',
@@ -139,19 +139,19 @@ const MoodJournal = () => {
       <h1>A personal space to self-reflect.</h1>
       <p>How are you feeling?</p>
       <>
+        {/* mood button options */}
         <button onClick={handleMoodClick} value='yellow' style={{ backgroundColor: moodColor.yellow }} name={moodColor.yellow} className="mood-btn yellow">Happy</button>
         <button onClick={handleMoodClick} value="grey" style={{ backgroundColor: moodColor.grey }} className="mood-btn grey">Neutral </button>
         <button onClick={handleMoodClick} value="blue" style={{ backgroundColor: moodColor.blue }} className="mood-btn blue">Sad</button>
         <button onClick={handleMoodClick} value="red" style={{ backgroundColor: moodColor.red }} className="mood-btn red">Angry</button>
         <button onClick={handleMoodClick} value="purple" style={{ backgroundColor: moodColor.purple }} className="mood-btn purple">Anxious</button>
       </>
-
+      {/* journal space */}
       <>
         <form method='POST' action='/saveJournalEntry'>
           <textarea name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
           <button type="submit" className="submit btn">Submit</button>
         </form>
-
         <button onClick={clearJournalEntry} className="clear btn">Clear</button>
       </>
     </div>

@@ -7,6 +7,8 @@ import {
 } from "react-router-dom"
 import AuthFlow from '../Authentication/AuthFlow/AuthFlow';
 import MoodJournal from '../MoodJournal/MoodJournal';
+import Breather from '../Breather/Breather'
+
 import MoodJournalHistory from '../MoodJournalHistory/MoodJournalHistory'
 import './App.css';
 
@@ -16,17 +18,31 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
+          <Route exact path="/Login">
+            <AuthFlow />
+          </Route>
+        </Switch>
+
+        <Switch>
           <Route exact path="/moodJournal">
             <MoodJournal />
           </Route>
         </Switch>
 
+
         <Switch>
-          <Route exact path="/Login">
-            <AuthFlow />
+          <Route exact path="/moodJournalHistory">
+            <MoodJournalHistory />
+          </Route>
+        </Switch>
+
+        <Switch>
+          <Route exact path="/Breather">
+            <Breather />
           </Route>
         </Switch>
       </Router>
+
     </div>
 
   );

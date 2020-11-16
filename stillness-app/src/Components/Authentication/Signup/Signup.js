@@ -36,7 +36,7 @@ const Signup = () => {
   // }
   return (
     <>
-      <form>
+      <form action="POST" action='/userSignup'>
         {/* in order for react to read my inputs they must be in self closing tags */}
         <input onChange={handleContactChange} name="firstName" placeholder="First Name" />
         <input onChange={handleContactChange} name="lastName" placeholder="Last Name" />

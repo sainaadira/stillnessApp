@@ -40,7 +40,7 @@ const Login = () => {
   return (
     // react fragment: creates an empty element 
     <>
-      <form className="form-container" action={'/Login'}>
+      <form action='POST' action="/userLogin" className="form-container" action={'/Login'}>
         <input className="" onChange={handleChange} value={form.email} placeholder="Email" name="email" />
         <input className="" onChange={handleChange} value={form.password} placeholder="Password" name="password" />
         <button onClick={handleSubmit} type="submit">Login</button>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Breather.css'
-import Test from '../test.js';
+
 
 
 function Breather() {
@@ -31,7 +31,7 @@ function Breather() {
 
   return (
     <div>
-      <Test />
+
       <h1>Breather</h1>
       <div className={`container ${breatheText === "Inhale" ? "expand" : breatheText === 'Exhale' ? "shrink" : ''}`}>
         {/* <!-- this div represents the solid colour circle --> */}
