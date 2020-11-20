@@ -18,7 +18,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/Login">
+          <Route exact path="/login">
             <AuthFlow />
           </Route>
         </Switch>

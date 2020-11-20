@@ -4,31 +4,31 @@ const bcrypt = require('bcrypt')
 // define the schema for our user model
 var userSchema = mongoose.Schema({
 
-    local            : {
-        userName     : {type: String, required : true, unique: true},
-        firstName    : {type: String, required : true},
-        lastName     : {type: String, required : true},
-        email        : String,
-        password     : String
+    local: {
+
+        firstName: { type: String, required: true },
+        lastName: { type: String, required: true },
+        email: String,
+        password: String
     },
 
-    facebook         : {
-        id           : String,
-        token        : String,
-        name         : String,
-        email        : String
+    facebook: {
+        id: String,
+        token: String,
+        name: String,
+        email: String
     },
-    twitter          : {
-        id           : String,
-        token        : String,
-        displayName  : String,
-        username     : String
+    twitter: {
+        id: String,
+        token: String,
+        displayName: String,
+        username: String
     },
-    google           : {
-        id           : String,
-        token        : String,
-        email        : String,
-        name         : String
+    google: {
+        id: String,
+        token: String,
+        email: String,
+        name: String
     },
     // profileImg       : String,
     // bannerImg        : String,
@@ -36,12 +36,12 @@ var userSchema = mongoose.Schema({
 });
 
 // generating a hash
-userSchema.methods.generateHash = function(password) {
+userSchema.methods.generateHash = function (password) {
     return bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
 };
 
 // checking if password is valid
-userSchema.methods.validPassword = function(password) {
+userSchema.methods.validPassword = function (password) {
     return bcrypt.compareSync(password, this.local.password);
 };
 

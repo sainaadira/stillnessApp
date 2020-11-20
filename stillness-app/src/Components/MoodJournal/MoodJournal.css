@@ -2,6 +2,10 @@
   box-sizing: border-box;
 }
 
+body{
+  background-color: white;
+}
+
 .mood-btn{
   font-size: 1.5em;
   border-radius: 14%;

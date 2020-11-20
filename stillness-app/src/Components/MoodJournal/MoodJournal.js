@@ -133,6 +133,30 @@ const MoodJournal = () => {
     console.log('i will clear');
   }
 
+  const handleSubmit = (e) => {
+
+    e.preventDefault()
+    const currentMood = getMood(moodColor)
+    const form = { journalEntry: journalSpace, mood: currentMood }
+    console.log(form);
+    fetch('/saveJournalEntry', {
+      method: "Post",
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(form)
+    }).then(res => res.json()).then(data => { if (data.success) { window.location.href = '/moodJournalHistory' } })
+
+  }
+
+  // object of colors and this function gets the string value of when it is set
+  // and string value gets sent to the database
+  // filtering out empty strings and returning the remainder
+  const getMood = (mood) => {
+    let currentMood = Object.values(mood).filter(element => element !== '')
+    return currentMood[0]
+  }
+
   return (
     <div>
       <p>Thank you for being here on: {today}</p>
@@ -148,13 +172,15 @@ const MoodJournal = () => {
       </>
       {/* journal space */}
       <>
-        <form method='POST' action='/saveJournalEntry'>
-          <textarea name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
-          <button type="submit" className="submit btn">Submit</button>
+        <form>
+          <textarea value={journalSpace} name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
+          <button onClick={handleSubmit} type="submit" className="submit btn">Submit</button>
         </form>
         <button onClick={clearJournalEntry} className="clear btn">Clear</button>
+
       </>
     </div>
+
 
   )
 }

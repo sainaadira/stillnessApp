@@ -3,14 +3,14 @@ import './Breather.css'
 
 
 
-function Breather() {
+const Breather = () => {
 
   const [breatheText, setBreatheText] = useState('Inhale')
   const totalTime = 7500
   const breatheTime = (totalTime / 5) * 2
   const holdTime = totalTime / 5
 
-  function breatheAnimation() {
+  const breatheAnimation = () => {
     if (breatheText !== 'Inhale') {
       setBreatheText('Inhale')
     }
@@ -30,8 +30,7 @@ function Breather() {
   })
 
   return (
-    <div>
-
+    <div className="backgroundImage">
       <h1>Breather</h1>
       <div className={`container ${breatheText === "Inhale" ? "expand" : breatheText === 'Exhale' ? "shrink" : ''}`}>
         {/* <!-- this div represents the solid colour circle --> */}
@@ -45,7 +44,7 @@ function Breather() {
           <div className="pointer"></div>
         </div>
 
-        {/* <!-- gradient circle that helps indicate whent to breathe/hold breath (border effect) --> */}
+        {/* <!-- gradient circle that helps indicate when to breathe/hold breath (border effect) --> */}
         <div className="gradient-circle"></div>
 
       </div>

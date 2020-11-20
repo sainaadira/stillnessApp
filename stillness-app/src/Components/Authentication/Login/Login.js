@@ -28,22 +28,21 @@ const Login = () => {
   const handleSubmit = (e) => {
     console.log(form)
     e.preventDefault()
-    fetch('/Login', {
+    fetch('/login', {
       method: "Post",
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(form)
-    })
-
+    }).then(res => window.location.href = '/moodJournal')
   }
   return (
     // react fragment: creates an empty element 
     <>
-      <form action='POST' action="/userLogin" className="form-container" action={'/Login'}>
+      <form action='/login' method="POST" className="form-container">
         <input className="" onChange={handleChange} value={form.email} placeholder="Email" name="email" />
         <input className="" onChange={handleChange} value={form.password} placeholder="Password" name="password" />
-        <button onClick={handleSubmit} type="submit">Login</button>
+        <button type="submit">Login</button>
       </form>
     </>
   )
