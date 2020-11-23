@@ -42,7 +42,7 @@ const Login = () => {
       <form action='/login' method="POST" className="form-container">
         <input className="" onChange={handleChange} value={form.email} placeholder="Email" name="email" />
         <input className="" onChange={handleChange} value={form.password} placeholder="Password" name="password" />
-        <button type="submit">Login</button>
+        <button onClick={handleSubmit} type="submit">Login</button>
       </form>
     </>
   )

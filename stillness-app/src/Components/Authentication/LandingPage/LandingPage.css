@@ -1,0 +1,19 @@
+*{
+  box-sizing: border-box;
+}
+
+
+.container{
+  width: 100%;
+ 
+  
+}
+
+.description-title{
+  text-align: center;
+}
+
+.description-container{
+  width: 50%;
+
+}

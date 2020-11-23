@@ -38,11 +38,11 @@ const Signup = () => {
     <>
       <form method="POST" action='/signup'>
         {/* in order for react to read my inputs they must be in self closing tags */}
-        <input onChange={handleContactChange} name="firstName" placeholder="First Name" />
-        <input onChange={handleContactChange} name="lastName" placeholder="Last Name" />
-        <input onChange={handleContactChange} name="email" placeholder="Email" />
-        <input onChange={handleContactChange} name="password" placeholder="Password" />
-        <input onChange={handleContactChange} name="phone" placeholder="Phone Number" />
+        <input onChange={handleContactChange} value={contactInfo.firstName} name="firstName" placeholder="First Name" />
+        <input onChange={handleContactChange} value={contactInfo.lastName} name="lastName" placeholder="Last Name" />
+        <input onChange={handleContactChange} value={contactInfo.email} name="email" placeholder="Email" />
+        <input onChange={handleContactChange} value={contactInfo.password} name="password" placeholder="Password" />
+        <input onChange={handleContactChange} value={contactInfo.phone} name="phone" placeholder="Phone Number" />
         <button>Sign me up</button>
       </form>
     </>

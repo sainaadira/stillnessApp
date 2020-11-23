@@ -15,9 +15,11 @@ const MoodJournalHistory = () => {
       {journals.map(journal => {
         // styling my journal entries here 
         return (
-          <div>{journal.journal + ' ' + journal.mood} </div>
+          <div>{journal.mood + '  ' + journal.journal} </div>
         )
       })}
+      {/* button will take user to Breather Component */}
+      <button>Meditative Breathing</button>
     </div>
   )
 }
