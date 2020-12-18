@@ -24,7 +24,7 @@ h1{
   
 }
 /* the container that wraps around everything */
-.container{
+.breather-container{
     display: flex;
     align-items: center;
     justify-content: center;

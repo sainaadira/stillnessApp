@@ -130,7 +130,15 @@ const MoodJournal = () => {
   // }
 
   const clearJournalEntry = () => {
-    console.log('i will clear');
+    setMoodColor({
+      yellow: '',
+      grey: '',
+      blue: '',
+      red: '',
+      purple: ''
+    })
+    // storing journal entries inside of an empty string
+    setJournalSpace('')
   }
 
   const handleSubmit = (e) => {
@@ -156,6 +164,7 @@ const MoodJournal = () => {
     let currentMood = Object.values(mood).filter(element => element !== '')
     return currentMood[0]
   }
+
 
   return (
     <div>

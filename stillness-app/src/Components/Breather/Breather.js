@@ -32,7 +32,7 @@ const Breather = () => {
   return (
     <div className="backgroundImage">
       <h1>Breather</h1>
-      <div className={`container ${breatheText === "Inhale" ? "expand" : breatheText === 'Exhale' ? "shrink" : ''}`}>
+      <div className={`breather-container ${breatheText === "Inhale" ? "expand" : breatheText === 'Exhale' ? "shrink" : ''}`}>
         {/* <!-- this div represents the solid colour circle --> */}
         <div className="circle"></div>
 
@@ -48,6 +48,8 @@ const Breather = () => {
         <div className="gradient-circle"></div>
 
       </div>
+
+      <button onClick={() => window.location.href = "/Login"}>Logout</button>
     </div>
 
   )

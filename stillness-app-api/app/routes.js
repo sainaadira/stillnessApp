@@ -1,6 +1,6 @@
 module.exports = function (app, passport, db, ObjectId) {
 
-  app.get('/userJournals', (req, res) => {
+  app.get('/userJournals', isLoggedIn, (req, res) => {
     let uId = ObjectId(req.session.passport.user)
     console.log(uId);
 
@@ -38,6 +38,13 @@ module.exports = function (app, passport, db, ObjectId) {
       res.send({ success: 'success' })
     })
   });
-
 }
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated())
+    return next();
+
+  res.redirect('/');
+}
+
 
