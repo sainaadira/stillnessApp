@@ -125,9 +125,6 @@ const MoodJournal = () => {
     setJournalSpace(textAreaValue)
   }
 
-  // const submitJournalEntry = () => {
-  //   console.log('i will submit');
-  // }
 
   const clearJournalEntry = () => {
     setMoodColor({
@@ -159,7 +156,7 @@ const MoodJournal = () => {
 
   // object of colors and this function gets the string value of when it is set
   // and string value gets sent to the database
-  // filtering out empty strings and returning the remainder
+  // filtering out empty strings and returning the remaining mood
   const getMood = (mood) => {
     let currentMood = Object.values(mood).filter(element => element !== '')
     return currentMood[0]

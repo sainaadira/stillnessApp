@@ -65,6 +65,7 @@ module.exports = function (passport) {
                     newUser.local.firstName = req.body.firstName;
                     newUser.local.lastName = req.body.lastName;
 
+
                     // newUser.profileImg = "images/uploads/rc-logo.png";
                     // newUser.bannerImg = "images/uploads/studentUser.png"
                     // newUser.postRequestImg = "images/uploads/rc-logo.png"

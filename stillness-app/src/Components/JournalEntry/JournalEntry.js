@@ -1,12 +1,11 @@
 import React from 'react'
 
-
-
-const JournalEntry = () => {
+const JournalEntry = (props) => {
 
   return (
     <div>
-      <p>I want all entries as their own separate component</p>
+      <h3>{props.mood}</h3>
+      <p>{props.entry}</p>
     </div>
   )
 }
