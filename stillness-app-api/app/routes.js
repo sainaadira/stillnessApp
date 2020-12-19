@@ -38,7 +38,27 @@ module.exports = function (app, passport, db, ObjectId) {
       res.send({ success: 'success' })
     })
   });
+
+  // put method to edit journal entries delete if does not work
+  app.put('/journal', (req, res) => {
+    db.collection('journal')
+
+      .findOneAndUpdate({ _id: req.body.journal._id }, {
+        $set: {
+          journal: req.body.journal.journal
+        }
+      }, (err, result) => {
+        if (err) return res.send(err)
+        res.send(result)
+      })
+  })
 }
+
+
+
+
+
+
 
 function isLoggedIn(req, res, next) {
   if (req.isAuthenticated())

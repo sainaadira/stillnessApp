@@ -19,21 +19,8 @@ const Signup = () => {
         [name]: value
       }
     })
-
   }
 
-  // const handleSubmit = (e) => {
-  //   console.log(contactInfo)
-  //   e.preventDefault()
-  //   fetch('/Signup', {
-  //     method: "Post",
-  //     headers: {
-  //       'Content-Type': 'application/json'
-  //     },
-  //     body: JSON.stringify(contactInfo)
-  //   })
-
-  // }
   return (
     <>
       <form method="POST" action='/signup'>
@@ -41,7 +28,7 @@ const Signup = () => {
         <input onChange={handleContactChange} value={contactInfo.firstName} name="firstName" placeholder="First Name" />
         <input onChange={handleContactChange} value={contactInfo.lastName} name="lastName" placeholder="Last Name" />
         <input onChange={handleContactChange} value={contactInfo.email} name="email" placeholder="Email" />
-        <input onChange={handleContactChange} value={contactInfo.password} name="password" placeholder="Password" />
+        <input type="password" onChange={handleContactChange} value={contactInfo.password} name="password" placeholder="Password" />
         <input onChange={handleContactChange} value={contactInfo.phone} name="phone" placeholder="Phone Number" />
         <button>Sign me up</button>
       </form>
