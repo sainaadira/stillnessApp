@@ -14,6 +14,10 @@ body{
   padding: 22px;
 }
 
+.logout-btn, .view-journal-btn{
+  margin: 4px 8px;
+}
+
 .journal-space{
   width: 58%;
     padding: 14px 0px 15px 1px;

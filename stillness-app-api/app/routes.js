@@ -6,13 +6,10 @@ module.exports = function (app, passport, db, ObjectId) {
 
     db.collection('journal').find({ user: uId }).toArray((err, result) => {
       if (err) return console.log(err)
-
       console.log(result)
       res.send({ result: result })
-
     })
   })
-
   // process the login form
   app.post('/login', passport.authenticate('local-login', {
     successRedirect: '/moodJournal', // redirect to the secure profile section
@@ -20,14 +17,12 @@ module.exports = function (app, passport, db, ObjectId) {
     failureFlash: true // allow flash messages
   }));
 
-
   // process the signup form
   app.post('/signup', passport.authenticate('local-signup', {
     successRedirect: '/moodJournal', // redirect to the secure profile section
     failureRedirect: '/signup', // redirect back to the signup page if there is an error
     failureFlash: true // allow flash messages
   }));
-
 
   // post method to store mood journal entry document to mongodb
   app.post('/saveJournalEntry', (req, res, next) => {
@@ -39,10 +34,9 @@ module.exports = function (app, passport, db, ObjectId) {
     })
   });
 
-  // put method to edit journal entries delete if does not work
+  // put method to update journal entries
   app.put('/journal', (req, res) => {
     db.collection('journal')
-
       .findOneAndUpdate({ _id: req.body.journal._id }, {
         $set: {
           journal: req.body.journal.journal
@@ -52,10 +46,13 @@ module.exports = function (app, passport, db, ObjectId) {
         res.send(result)
       })
   })
+
+  // delete method to delete journal entries: currently not fully working
+  app.delete('/journal', (req, res) => {
+    db.collection('journal')
+      .deleteOne({ _id: req.body.journal._id })
+  })
 }
-
-
-
 
 
 

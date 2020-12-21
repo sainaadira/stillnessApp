@@ -21,7 +21,6 @@ const MoodJournal = () => {
   // on click event: targeting the value of the button and calling setMoodColor to return a new object rendering a new background color.
   // call setMoodColor and return the object with empty string to clear bgColor
   const handleMoodClick = (e) => {
-
     if (e.target.value === 'yellow') {
       if (moodColor.yellow === '') {
         setMoodColor({
@@ -119,13 +118,13 @@ const MoodJournal = () => {
       }
     }
   }
-
+  // function to grab value of what user enters in text area
   const handleJournalSpace = (e) => {
     const textAreaValue = e.target.value
     setJournalSpace(textAreaValue)
   }
 
-
+  // fuction to clear what user typed in entry space
   const clearJournalEntry = () => {
     setMoodColor({
       yellow: '',
@@ -137,10 +136,8 @@ const MoodJournal = () => {
     // storing journal entries inside of an empty string
     setJournalSpace('')
   }
-
+  // function that saves user's journal entry and direct them to their history page
   const handleSubmit = (e) => {
-
-    e.preventDefault()
     const currentMood = getMood(moodColor)
     const form = { journalEntry: journalSpace, mood: currentMood }
     console.log(form);
@@ -152,6 +149,7 @@ const MoodJournal = () => {
       body: JSON.stringify(form)
     }).then(res => res.json()).then(data => { if (data.success) { window.location.href = '/moodJournalHistory' } })
 
+    e.preventDefault()
   }
 
   // object of colors and this function gets the string value of when it is set
@@ -162,9 +160,10 @@ const MoodJournal = () => {
     return currentMood[0]
   }
 
-
   return (
     <div>
+      <button className='view-journal-btn' onClick={() => window.location.href = "/MoodJournalHistory"}>View Your Journal</button>
+      <button className='logout-btn' onClick={() => window.location.href = '/Login'}>Logout</button>
       <p>Thank you for being here on: {today}</p>
       <h1>A personal space to self-reflect.</h1>
       <p>How are you feeling?</p>
@@ -181,13 +180,10 @@ const MoodJournal = () => {
         <form>
           <textarea value={journalSpace} name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
           <button onClick={handleSubmit} type="submit" className="submit btn">Submit</button>
+          <button onClick={clearJournalEntry} className="clear btn">Clear</button>
         </form>
-        <button onClick={clearJournalEntry} className="clear btn">Clear</button>
-
       </>
     </div>
-
-
   )
 }
 

@@ -9,8 +9,6 @@ import AuthFlow from '../Authentication/AuthFlow/AuthFlow';
 import LandingPage from '../Authentication/LandingPage/LandingPage'
 import MoodJournal from '../MoodJournal/MoodJournal';
 import Breather from '../Breather/Breather'
-
-
 import MoodJournalHistory from '../MoodJournalHistory/MoodJournalHistory'
 import './App.css';
 
@@ -50,9 +48,7 @@ function App() {
           </Route>
         </Switch>
       </Router>
-
     </div>
-
   );
 }
 

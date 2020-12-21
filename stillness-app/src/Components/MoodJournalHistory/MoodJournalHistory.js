@@ -21,7 +21,7 @@ const MoodJournalHistory = () => {
           <div className="journal-entries">
             {/* passed over props to JournalEntry component  */}
             <JournalEntry
-              key={entry._id}
+              key={entry.id}
               id={entry._id}
               mood={entry.mood}
               entry={entry.journal}
