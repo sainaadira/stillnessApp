@@ -19,7 +19,7 @@ const JournalEntry = (props) => {
     fetch('/journal', {
       method: 'put',
       headers: { 'Content-Type': 'application/json' },
-      body: { journal: { _id: props.id, journal: 'hello' } }
+      body: { journal: { _id: props._id, journal: 'hello' } }
     })
       .then(response => response.json())
       .then(data => console.log(data));
@@ -31,13 +31,21 @@ const JournalEntry = (props) => {
   }
 
   // function to delete journal entry 
+  // currently not working and need to fix this
   const handleDeleteJournalEntry = () => {
+    console.log(props.id)
     fetch('/journal', {
-      method: 'delete',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }
-    }
-    )
+      method: 'DELETE',
+      mode: 'cors',
+      headers: {
+        'Accept': 'application/json', 'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*'
+      },
+      body: JSON.stringify({ _id: props.id })
+    }).then(window.location.reload())
 
+    // .then()
+    //   .catch(err => console.log(err))
   }
 
   // conditionally rendering the edit mode: toggle view
@@ -64,5 +72,7 @@ const JournalEntry = (props) => {
     )
   }
 }
+
+
 
 export default JournalEntry;

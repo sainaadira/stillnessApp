@@ -49,19 +49,25 @@ module.exports = function (app, passport, db, ObjectId) {
 
   // delete method to delete journal entries: currently not fully working
   app.delete('/journal', (req, res) => {
+    console.log(ObjectId(req.body._id))
     db.collection('journal')
-      .deleteOne({ _id: req.body.journal._id })
+      .findOneAndDelete({ '_id': ObjectId(req.body._id) })
+    res.send({ success: 'success!' })
+    // get error handling here
+
   })
+
+  function isLoggedIn(req, res, next) {
+    if (req.isAuthenticated())
+      return next();
+
+    res.redirect('/');
+  }
+
+
+
 }
 
 
-
-
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated())
-    return next();
-
-  res.redirect('/');
-}
 
 

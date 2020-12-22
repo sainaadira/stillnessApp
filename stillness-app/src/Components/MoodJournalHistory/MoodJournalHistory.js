@@ -10,7 +10,7 @@ const MoodJournalHistory = () => {
     fetch('/userJournals')
       .then(res => res.json()).then(data => { setJournals(data.result) })
     // dependency array that checks for changes between the hook that is placed in the dependency array
-  }, [journals])
+  }, [])
 
   return (
     <div className="entry-container">
