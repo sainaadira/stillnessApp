@@ -133,14 +133,13 @@ const MoodJournal = () => {
       red: '',
       purple: ''
     })
-    // storing journal entries inside of an empty string
+    // calling setJournalSpace to clear textarea
     setJournalSpace('')
   }
   // function that saves user's journal entry and direct them to their history page
   const handleSubmit = (e) => {
     const currentMood = getMood(moodColor)
     const form = { journalEntry: journalSpace, mood: currentMood }
-    console.log(form);
     fetch('/saveJournalEntry', {
       method: "Post",
       headers: {

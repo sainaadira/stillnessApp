@@ -35,9 +35,10 @@ module.exports = function (app, passport, db, ObjectId) {
   });
 
   // put method to update journal entries
+  // status: edits the entry but does not store update to database
   app.put('/journal', (req, res) => {
     db.collection('journal')
-      .findOneAndUpdate({ _id: req.body.journal._id }, {
+      .findOneAndUpdate({ _id: ObjectID(req.body.journal._id) }, {
         $set: {
           journal: req.body.journal.journal
         }
@@ -47,14 +48,16 @@ module.exports = function (app, passport, db, ObjectId) {
       })
   })
 
-  // delete method to delete journal entries: currently not fully working
   app.delete('/journal', (req, res) => {
     console.log(ObjectId(req.body._id))
     db.collection('journal')
       .findOneAndDelete({ '_id': ObjectId(req.body._id) })
     res.send({ success: 'success!' })
-    // get error handling here
-
+      .then(window.location.reload()),
+      (err, result) => {
+        if (err) return res.send(err)
+        res.send(result)
+      }
   })
 
   function isLoggedIn(req, res, next) {
@@ -63,9 +66,6 @@ module.exports = function (app, passport, db, ObjectId) {
 
     res.redirect('/');
   }
-
-
-
 }
 
 
