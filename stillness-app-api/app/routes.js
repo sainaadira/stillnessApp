@@ -38,9 +38,9 @@ module.exports = function (app, passport, db, ObjectId) {
   // status: edits the entry but does not store update to database
   app.put('/journal', (req, res) => {
     db.collection('journal')
-      .findOneAndUpdate({ _id: ObjectID(req.body.journal._id) }, {
+      .findOneAndUpdate({ _id: ObjectId(req.body._id) }, {
         $set: {
-          journal: req.body.journal.journal
+          journal: req.body.journal
         }
       }, (err, result) => {
         if (err) return res.send(err)

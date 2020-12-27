@@ -17,10 +17,11 @@ const JournalEntry = (props) => {
     // using fetch call with a put method to save updated entry to database
     // currently not working but need to fix this
     fetch('/journal', {
-      method: 'put',
+      method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
-      body: { journal: { _id: props._id, journal: 'hello' } }
+      body: JSON.stringify({ _id: props.id, journal: editJournalEntry })
     })
+      // to do: handling loading the edit update
       .then(response => response.json())
       .then(data => console.log(data));
   }

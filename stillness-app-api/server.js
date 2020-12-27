@@ -24,7 +24,7 @@ const configDB = require('./config/database.js');
 
 let db;
 
-mongoose.connect(configDB.url, (err, database) => {
+mongoose.connect(configDB.url, { useNewUrlParser: true }, (err, database) => {
   if (err) return console.log(err)
   db = database
   require('./app/routes.js')(app, passport, db, ObjectId);

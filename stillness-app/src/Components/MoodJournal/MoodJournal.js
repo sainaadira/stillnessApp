@@ -94,7 +94,6 @@ const MoodJournal = () => {
           blue: '',
           red: '',
           purple: ''
-
         })
       }
     }
@@ -168,7 +167,12 @@ const MoodJournal = () => {
       <p>How are you feeling?</p>
       <>
         {/* mood button options */}
-        <button onClick={handleMoodClick} value='yellow' style={{ backgroundColor: moodColor.yellow }} name={moodColor.yellow} className="mood-btn yellow">Happy</button>
+        <button onClick={handleMoodClick} value='yellow' style={{ backgroundColor: moodColor.yellow }} name={moodColor.yellow}
+
+
+
+
+          className="mood-btn yellow">Happy</button>
         <button onClick={handleMoodClick} value="grey" style={{ backgroundColor: moodColor.grey }} className="mood-btn grey">Neutral </button>
         <button onClick={handleMoodClick} value="blue" style={{ backgroundColor: moodColor.blue }} className="mood-btn blue">Sad</button>
         <button onClick={handleMoodClick} value="red" style={{ backgroundColor: moodColor.red }} className="mood-btn red">Angry</button>
