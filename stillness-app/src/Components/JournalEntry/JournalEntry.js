@@ -54,22 +54,22 @@ const JournalEntry = (props) => {
   // * and display the save updated entry button
   if (editMode === true) {
     return (
-      <>
+      <div className="journal-entry-edit">
         <h3> {props.mood}</h3>
         <textarea value={editJournalEntry} onChange={handleEditJournalEntry}>{editJournalEntry}</textarea>
         <button onClick={() => setEditMode(false)} className="edit-btn"> Cancel Edit</button>
         <button onClick={handleSaveEntry}>Save</button>
-      </>
+      </div>
     )
     // else return the orginal entry
   } else {
     return (
-      <>
+      <div className="journal-entry">
         <h4> Today I feel: {props.mood}</h4>
         <p>{entry}</p>
         <button onClick={() => setEditMode(true)} className="edit-btn">Edit Entry</button>
         <button onClick={handleDeleteJournalEntry} className="delete-btn">Delete Entry</button>
-      </>
+      </div>
     )
   }
 }

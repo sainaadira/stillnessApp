@@ -25,9 +25,10 @@ module.exports = function (app, passport, db, ObjectId) {
   }));
 
   // post method to store mood journal entry document to mongodb
-  app.post('/saveJournalEntry', (req, res, next) => {
+  app.post('/saveJournalEntry', isLoggedIn, (req, res, next) => {
     let uId = ObjectId(req.session.passport.user)
     console.log(uId);
+    // to do: validating the request content 
     db.collection('journal').save({ journal: req.body.journalEntry, mood: req.body.mood, user: uId }, (err, result) => {
       if (err) return console.log(err)
       res.send({ success: 'success' })
@@ -52,8 +53,7 @@ module.exports = function (app, passport, db, ObjectId) {
     console.log(ObjectId(req.body._id))
     db.collection('journal')
       .findOneAndDelete({ '_id': ObjectId(req.body._id) })
-    res.send({ success: 'success!' })
-      .then(window.location.reload()),
+      .then(),
       (err, result) => {
         if (err) return res.send(err)
         res.send(result)
@@ -63,7 +63,6 @@ module.exports = function (app, passport, db, ObjectId) {
   function isLoggedIn(req, res, next) {
     if (req.isAuthenticated())
       return next();
-
     res.redirect('/');
   }
 }

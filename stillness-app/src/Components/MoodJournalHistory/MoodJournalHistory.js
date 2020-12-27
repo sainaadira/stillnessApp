@@ -18,15 +18,12 @@ const MoodJournalHistory = () => {
       {journals.map(entry => {
         // styling my journal entries here 
         return (
-          <div className="journal-entries">
-            {/* passed over props to JournalEntry component  */}
-            <JournalEntry
-              key={entry.id}
-              id={entry._id}
-              mood={entry.mood}
-              entry={entry.journal}
-            />
-          </div>
+          <JournalEntry
+            key={entry._id}
+            id={entry._id}
+            mood={entry.mood}
+            entry={entry.journal}
+          />
         )
       })}
       {/* button will take user to MoodJournal Component */}

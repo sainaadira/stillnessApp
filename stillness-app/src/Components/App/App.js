@@ -24,20 +24,20 @@ function App() {
         </Switch>
 
         <Switch>
-          <Route exact path="/login">
+          <Route exact path="/Login">
             <AuthFlow />
           </Route>
         </Switch>
 
         <Switch>
-          <Route exact path="/moodJournal">
+          <Route exact path="/MoodJournal">
             <MoodJournal />
           </Route>
         </Switch>
 
 
         <Switch>
-          <Route exact path="/moodJournalHistory">
+          <Route exact path="/MoodJournalHistory">
             <MoodJournalHistory />
           </Route>
         </Switch>

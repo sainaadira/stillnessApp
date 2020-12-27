@@ -15,14 +15,20 @@ const MoodJournal = () => {
     red: '',
     purple: ''
   })
+  // moodOption has the mood stored in this variable and setMoodOption sets the mood whenever mood button gets clicked 
+  const [moodOption, setMoodOption] = useState('')
+
   // storing journal entries inside of an empty string
   const [journalSpace, setJournalSpace] = useState('')
 
   // on click event: targeting the value of the button and calling setMoodColor to return a new object rendering a new background color.
   // call setMoodColor and return the object with empty string to clear bgColor
+
+  // to do: refactor this code
   const handleMoodClick = (e) => {
     if (e.target.value === 'yellow') {
       if (moodColor.yellow === '') {
+        setMoodOption(getMood(e.target.value))
         setMoodColor({
           yellow: 'yellow',
           grey: '',
@@ -31,6 +37,8 @@ const MoodJournal = () => {
           purple: ''
         })
       } else {
+        // clearing the color and the option
+        setMoodOption('')
         setMoodColor({
           yellow: '',
           grey: '',
@@ -42,6 +50,7 @@ const MoodJournal = () => {
     }
     if (e.target.value === 'grey') {
       if (moodColor.grey === '') {
+        setMoodOption(getMood(e.target.value))
         setMoodColor({
           yellow: '',
           grey: 'grey',
@@ -50,6 +59,7 @@ const MoodJournal = () => {
           purple: ''
         })
       } else {
+        setMoodOption('')
         setMoodColor({
           yellow: '',
           grey: '',
@@ -61,6 +71,7 @@ const MoodJournal = () => {
     }
     if (e.target.value === 'blue') {
       if (moodColor.blue === '') {
+        setMoodOption(getMood(e.target.value))
         setMoodColor({
           yellow: '',
           grey: '',
@@ -69,6 +80,7 @@ const MoodJournal = () => {
           purple: ''
         })
       } else {
+        setMoodOption('')
         setMoodColor({
           yellow: '',
           grey: '',
@@ -79,6 +91,7 @@ const MoodJournal = () => {
       }
     }
     if (e.target.value === 'red') {
+      setMoodOption(getMood(e.target.value))
       if (moodColor.red === '') {
         setMoodColor({
           yellow: '',
@@ -88,6 +101,7 @@ const MoodJournal = () => {
           purple: ''
         })
       } else {
+        setMoodOption('')
         setMoodColor({
           yellow: '',
           grey: '',
@@ -98,6 +112,7 @@ const MoodJournal = () => {
       }
     }
     if (e.target.value === 'purple') {
+      setMoodOption(getMood(e.target.value))
       if (moodColor.purple === '') {
         setMoodColor({
           yellow: '',
@@ -107,6 +122,7 @@ const MoodJournal = () => {
           purple: 'purple'
         })
       } else {
+        setMoodOption('')
         setMoodColor({
           yellow: '',
           grey: '',
@@ -137,7 +153,7 @@ const MoodJournal = () => {
   }
   // function that saves user's journal entry and direct them to their history page
   const handleSubmit = (e) => {
-    const currentMood = getMood(moodColor)
+    const currentMood = moodOption
     const form = { journalEntry: journalSpace, mood: currentMood }
     fetch('/saveJournalEntry', {
       method: "Post",
@@ -153,10 +169,26 @@ const MoodJournal = () => {
   // object of colors and this function gets the string value of when it is set
   // and string value gets sent to the database
   // filtering out empty strings and returning the remaining mood
-  const getMood = (mood) => {
-    let currentMood = Object.values(mood).filter(element => element !== '')
-    return currentMood[0]
+  const getMood = (color) => {
+    if (color === 'yellow') {
+      return 'happy'
+    } else if (color === 'grey') {
+      return 'neutral'
+    } else if (color === 'blue') {
+      return 'sad'
+    }
+    else if (color === 'red') {
+      return 'angry'
+    } else if (color === 'purple') {
+      return 'anxious'
+    } else {
+      return 'not a color'
+    }
   }
+
+  // let currentMood = Object.values(mood).filter(element => element !== '')
+  // return currentMood[0]
+
 
   return (
     <div>
@@ -168,10 +200,6 @@ const MoodJournal = () => {
       <>
         {/* mood button options */}
         <button onClick={handleMoodClick} value='yellow' style={{ backgroundColor: moodColor.yellow }} name={moodColor.yellow}
-
-
-
-
           className="mood-btn yellow">Happy</button>
         <button onClick={handleMoodClick} value="grey" style={{ backgroundColor: moodColor.grey }} className="mood-btn grey">Neutral </button>
         <button onClick={handleMoodClick} value="blue" style={{ backgroundColor: moodColor.blue }} className="mood-btn blue">Sad</button>

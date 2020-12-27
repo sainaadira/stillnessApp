@@ -2,3 +2,18 @@
   box-sizing: border-box;
 }
 
+.journal-entry{
+ border: 1px solid black;
+    font-size: 1em;
+   padding: 1px 0px 3px 7px;
+    margin: 10px 4px 3px 33px;
+    border-radius: 1%;    
+}
+
+.journal-entry-edit{
+ border: 1px solid red;
+    font-size: 1em;
+   padding: 1px 0px 3px 7px;
+    margin: 10px 4px 3px 33px;
+    border-radius: 1%;    
+}
