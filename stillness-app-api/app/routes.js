@@ -29,7 +29,7 @@ module.exports = function (app, passport, db, ObjectId) {
     let uId = ObjectId(req.session.passport.user)
     console.log(uId);
     // to do: validating the request content 
-    db.collection('journal').save({ journal: req.body.journalEntry, mood: req.body.mood, user: uId }, (err, result) => {
+    db.collection('journal').save({ journal: req.body.journalEntry, mood: req.body.mood, user: uId, createdAt: new Date() }, (err, result) => {
       if (err) return console.log(err)
       res.send({ success: 'success' })
     })

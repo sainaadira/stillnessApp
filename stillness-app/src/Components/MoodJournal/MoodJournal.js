@@ -23,6 +23,7 @@ const MoodJournal = () => {
 
   // on click event: targeting the value of the button and calling setMoodColor to return a new object rendering a new background color.
   // call setMoodColor and return the object with empty string to clear bgColor
+  // setMoodOption is a state change function call getMood function to grab the value of the mood the user clicks
 
   // to do: refactor this code
   const handleMoodClick = (e) => {
@@ -166,9 +167,7 @@ const MoodJournal = () => {
     e.preventDefault()
   }
 
-  // object of colors and this function gets the string value of when it is set
-  // and string value gets sent to the database
-  // filtering out empty strings and returning the remaining mood
+  // 
   const getMood = (color) => {
     if (color === 'yellow') {
       return 'happy'
@@ -185,10 +184,6 @@ const MoodJournal = () => {
       return 'not a color'
     }
   }
-
-  // let currentMood = Object.values(mood).filter(element => element !== '')
-  // return currentMood[0]
-
 
   return (
     <div>

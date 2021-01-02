@@ -3,7 +3,7 @@ import './JournalEntry.css'
 
 const JournalEntry = (props) => {
 
-  const [entry, setEntry] = useState(props.entry)
+  const [entry, setEntry] = useState(props.journal)
   // variable and function the view mode of the textarea vs of unedited entry
   const [editMode, setEditMode] = useState(false)
   // variable and function to set the edits of the journal entry with the intial state of the original entry.
@@ -63,10 +63,15 @@ const JournalEntry = (props) => {
     )
     // else return the orginal entry
   } else {
+    let dateOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+    let timeOptions = { hour: '2-digit', minute: '2-digit' }
+    let journalDate = new Date(props.createdAt).toLocaleDateString('us-en', dateOptions)
+    let journalTime = new Date(props.createdAt).toLocaleTimeString('us-en', timeOptions)
     return (
       <div className="journal-entry">
-        <h4> Today I feel: {props.mood}</h4>
+        <h4> Today I feel:  {props.mood}</h4>
         <p>{entry}</p>
+        <p>{journalDate} at {journalTime}</p>
         <button onClick={() => setEditMode(true)} className="edit-btn">Edit Entry</button>
         <button onClick={handleDeleteJournalEntry} className="delete-btn">Delete Entry</button>
       </div>

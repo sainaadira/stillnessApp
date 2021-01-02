@@ -21,8 +21,8 @@ const MoodJournalHistory = () => {
           <JournalEntry
             key={entry._id}
             id={entry._id}
-            mood={entry.mood}
-            entry={entry.journal}
+            // passing everything over from the entry variable
+            {...entry}
           />
         )
       })}
