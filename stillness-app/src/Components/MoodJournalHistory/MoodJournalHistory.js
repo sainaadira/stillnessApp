@@ -14,6 +14,7 @@ const MoodJournalHistory = () => {
 
   return (
     <div className="entry-container">
+
       <h1>Your Reflections</h1>
       {journals.map(entry => {
         // styling my journal entries here 

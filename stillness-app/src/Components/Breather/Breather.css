@@ -19,10 +19,21 @@ margin: 0;
 }
 
 h1{
-    font-size: 2.5em;
-    padding: 6px;
-  
+    font-size: 4em;
+    padding: 6px; 
+    margin: 22px 0px 59px 0px;
 }
+
+.navigation-links{
+    display:flex;
+    justify-items: center; 
+}
+
+li{
+    list-style: none;
+}
+
+
 /* the container that wraps around everything */
 .breather-container{
     display: flex;
@@ -30,8 +41,8 @@ h1{
     justify-content: center;
     height: 300px;
     width: 300px;
-    margin: auto;
-    /* want to position absolute within the container */
+    /* margin: auto; */
+    /* to position absolute within the container */
     position: relative;
     /* to help the container expand and contract */
     transform: scale(1);
@@ -65,8 +76,7 @@ h1{
       top: 0;
      left: 0; 
       z-index: -1;
-      border-radius: 50%;
-     
+      border-radius: 50%;  
 }
 
 .pointer-container{
@@ -92,8 +102,6 @@ h1{
     font-size: 1.5em;
 }
 
-
-
 .expand{
     animation: expand 3s linear forwards;  
 }
@@ -111,7 +119,6 @@ h1{
          transform: scale(1.2)
 
      }
-
 }
 
 @keyframes shrink{
@@ -123,9 +130,7 @@ h1{
         transform: scale(1)
 
      }
-
 }
-
 
 @keyframes rotate{
     /* starting with a rotation postion */
