@@ -43,7 +43,7 @@ const JournalEntry = (props) => {
         'Access-Control-Allow-Origin': '*'
       },
       body: JSON.stringify({ _id: props.id })
-    }).then(window.location.reload())
+    }).then(props.journals(entry => entry.filter(journal => journal._id !== props.id)))
 
     // .then()
     //   .catch(err => console.log(err))

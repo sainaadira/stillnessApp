@@ -22,6 +22,8 @@ const MoodJournalHistory = () => {
           <JournalEntry
             key={entry._id}
             id={entry._id}
+            // manually moving data from database
+            journals={setJournals}
             // passing everything over from the entry variable
             {...entry}
           />
