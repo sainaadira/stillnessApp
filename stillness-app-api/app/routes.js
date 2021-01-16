@@ -30,7 +30,7 @@ module.exports = function (app, passport, db, ObjectId) {
     console.log(uId);
     // to do: validating the request content 
     db.collection('journal').save({ journal: req.body.journalEntry, mood: req.body.mood, user: uId, createdAt: new Date() }, (err, result) => {
-      if (err) return console.log(err)
+      if (err) return console.log(err, result)
       res.send({ success: 'success' })
     })
   });

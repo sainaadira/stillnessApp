@@ -32,7 +32,6 @@ const JournalEntry = (props) => {
   }
 
   // function to delete journal entry 
-  // currently not working and need to fix this
   const handleDeleteJournalEntry = () => {
     console.log(props.id)
     fetch('/journal', {
@@ -43,6 +42,7 @@ const JournalEntry = (props) => {
         'Access-Control-Allow-Origin': '*'
       },
       body: JSON.stringify({ _id: props.id })
+      // passing state of journals and filtering entries that haven't been deleted
     }).then(props.journals(entry => entry.filter(journal => journal._id !== props.id)))
 
     // .then()

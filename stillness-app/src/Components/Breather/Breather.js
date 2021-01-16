@@ -19,11 +19,12 @@ const Breather = () => {
     }
     setTimeout(() => {
       setBreatheText('Hold')
-      setTimeout(() => {
-        setBreatheText('Exhale')
-      }, holdTime)
-    }, breatheTime)
+    }, holdTime)
+    setTimeout(() => {
+      setBreatheText('Exhale')
+    }, holdTime)
   }
+
 
   useEffect(() => {
     const animationTime = setInterval(breatheAnimation, totalTime)
@@ -44,7 +45,7 @@ const Breather = () => {
 
       <h1>Breather</h1>
       {/* if breatheText is inhale then the container will expand if its on exhale the container will shrink. */}
-      <div className={`breather-container ${breatheText === "Inhale" ? "expand" : breatheText === 'Exhale' ? "shrink" : ''}`}>
+      <div className={`breather-container ${breatheText === "Inhale" ? "expand" : breatheText === 'Exhale' ? "shrink" : 'hold'}`}>
         {/* <!-- this div represents the solid colour circle --> */}
         <div className="circle"></div>
 

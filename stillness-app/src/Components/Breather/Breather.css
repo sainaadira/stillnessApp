@@ -110,6 +110,11 @@ li{
     animation: shrink 3s linear forwards;  
 }
 
+.hold{
+    transform: scale(1.2)
+    
+}
+
 @keyframes expand{
      from{
        transform: scale(1)
@@ -120,6 +125,7 @@ li{
 
      }
 }
+
 
 @keyframes shrink{
      from{

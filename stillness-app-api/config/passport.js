@@ -53,22 +53,15 @@ module.exports = function (passport) {
                 if (user) {
                     return done(null, false, req.flash('signupMessage', 'That email is already taken.'));
                 } else {
-
                     // if there is no user with that email
                     // create the user
                     var newUser = new User();
-
                     // set the user's local credentials
-
                     newUser.local.email = email;
                     newUser.local.password = newUser.generateHash(password); // use the generateHash function in our user model
                     newUser.local.firstName = req.body.firstName;
                     newUser.local.lastName = req.body.lastName;
-
-
-                    // newUser.profileImg = "images/uploads/rc-logo.png";
-                    // newUser.bannerImg = "images/uploads/studentUser.png"
-                    // newUser.postRequestImg = "images/uploads/rc-logo.png"
+                    newUser.local.phone = req.body.phone;
 
                     // save the user
                     newUser.save(function (err) {
@@ -77,9 +70,7 @@ module.exports = function (passport) {
                         return done(null, newUser);
                     });
                 }
-
             });
-
         }));
 
     // =========================================================================
