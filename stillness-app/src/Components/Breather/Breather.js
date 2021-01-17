@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './Breather.css'
 
-
-
 const Breather = () => {
   //variable and function to set the breathe text to inhale/hold/exhale
   const [breatheText, setBreatheText] = useState('Inhale')
@@ -22,10 +20,8 @@ const Breather = () => {
     }, holdTime)
     setTimeout(() => {
       setBreatheText('Exhale')
-    }, holdTime)
+    }, totalTime)
   }
-
-
   useEffect(() => {
     const animationTime = setInterval(breatheAnimation, totalTime)
     return () => {
@@ -33,8 +29,31 @@ const Breather = () => {
     }
   })
 
+  //AUDIO BUTTON OPTIONS
+  let ambient = new Audio('https://freesound.org/data/previews/554/554220_9497060-lq.mp3')
+  let nature = new Audio('https://freesound.org/data/previews/524/524813_10859468-lq.mp3')
+  let ocean = new Audio(' https://freesound.org/data/previews/413/413326_7723777-lq.mp3')
+  let dreamy = new Audio('https://freesound.org/data/previews/263/263467_3946286-lq.mp3')
+
+  // creating a function for every button.this way works for now but i'd like to later refactor the code so one function handles each button click. need to work on pausing audio for each button
+  const ambientSound = () => {
+    return ambient.play()
+  }
+  const natureSound = () => {
+    return nature.play()
+  }
+
+  const oceanSound = () => {
+    return ocean.play()
+  }
+
+  const dreamySound = () => {
+    return dreamy.play()
+  }
+
   return (
     <div className="backgroundImage">
+      {/* navigation links: add behavior */}
       <nav >
         <ul className="navigation-links">
           <li>My Journal</li>
@@ -42,6 +61,13 @@ const Breather = () => {
           <li>Logout</li>
         </ul>
       </nav>
+
+      {/* music plays on click event */}
+      <p>Choose some music to relax to</p>
+      <button onClick={ambientSound}>Ambient</button>
+      <button onClick={natureSound}>Nature + Birds</button>
+      <button onClick={oceanSound}>Ocean Waves</button>
+      <button onClick={dreamySound}>Dreamy</button>
 
       <h1>Breather</h1>
       {/* if breatheText is inhale then the container will expand if its on exhale the container will shrink. */}
@@ -61,7 +87,11 @@ const Breather = () => {
         <div className="gradient-circle"></div>
 
       </div>
-      {/* <button onClick={() => window.location.href = "/Login"}>Logout</button> */}
+
+      <div>
+        <button onClick={() => window.location.href = "/Login"}>Logout</button>
+      </div>
+
     </div>
 
   )
