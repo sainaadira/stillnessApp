@@ -24,8 +24,6 @@ const MoodJournal = () => {
   // on click event: targeting the value of the button and calling setMoodColor to return a new object rendering a new background color.
   // call setMoodColor and return the object with empty string to clear bgColor
   // setMoodOption is a state change function call getMood function to grab the value of the mood the user clicks
-
-  // to do: refactor this code
   const handleMoodClick = (e) => {
     if (e.target.value === 'yellow') {
       if (moodColor.yellow === '') {
@@ -189,6 +187,7 @@ const MoodJournal = () => {
     <div>
       <button className='view-journal-btn' onClick={() => window.location.href = "/MoodJournalHistory"}>View Your Journal</button>
       <button className='logout-btn' onClick={() => window.location.href = '/Login'}>Logout</button>
+
       <p>Thank you for being here on: {today}</p>
       <h1>A personal space to self-reflect.</h1>
       <p>How are you feeling?</p>

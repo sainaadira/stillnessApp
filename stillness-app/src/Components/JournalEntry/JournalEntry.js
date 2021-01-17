@@ -21,7 +21,6 @@ const JournalEntry = (props) => {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ _id: props.id, journal: editJournalEntry })
     })
-      // to do: handling loading the edit update
       .then(response => response.json())
       .then(data => console.log(data));
   }
@@ -44,7 +43,6 @@ const JournalEntry = (props) => {
       body: JSON.stringify({ _id: props.id })
       // passing state of journals and filtering entries that haven't been deleted
     }).then(props.journals(entry => entry.filter(journal => journal._id !== props.id)))
-
     // .then()
     //   .catch(err => console.log(err))
   }
@@ -69,7 +67,7 @@ const JournalEntry = (props) => {
     let journalTime = new Date(props.createdAt).toLocaleTimeString('us-en', timeOptions)
     return (
       <div className="journal-entry">
-        <h4> Today I feel:  {props.mood}</h4>
+        <h4> Today I feel: {props.mood}</h4>
         <p>{entry}</p>
         <p>{journalDate} at {journalTime}</p>
         <button onClick={() => setEditMode(true)} className="edit-btn">Edit Entry</button>

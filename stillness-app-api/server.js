@@ -17,17 +17,22 @@ const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const session = require('express-session');
-
 const cors = require('cors')
+const twilio = require('twilio');
 
 const configDB = require('./config/database.js');
 
 let db;
 
+const accountSid = process.env.TWILIO_SID;
+const authToken = process.env.TWILIO_AUTH;
+const twilioClient = require('twilio')(accountSid, authToken);
+
 mongoose.connect(configDB.url, { useNewUrlParser: true }, (err, database) => {
   if (err) return console.log(err)
   db = database
-  require('./app/routes.js')(app, passport, db, ObjectId);
+  //requiring what the file is exporting (function is exported in routes and i'll have access that function and as soon as it is required the function is immeditately executed)
+  require('./app/routes.js')(app, passport, db, twilioClient, ObjectId);
 }); // connect to our database
 //   require('./app/routes.js')(app, passport, ObjectId);
 require('./config/passport')(passport); // pass passport for configuration

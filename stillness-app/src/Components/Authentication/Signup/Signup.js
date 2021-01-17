@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Signup.css'
 
 const Signup = () => {
-
+  // contactInfo variable to store the user's credentials and setContactInfo is the function that will handle the state change for the inputs.
   const [contactInfo, setContactInfo] = useState({
     firstName: '',
     lastName: '',
