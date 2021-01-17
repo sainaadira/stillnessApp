@@ -4,7 +4,7 @@ module.exports = function (app, passport, db, twilioClient, ObjectId) {
 
   app.get('/userJournals', isLoggedIn, (req, res) => {
     let uId = ObjectId(req.session.passport.user)
-    console.log(req.user);
+
 
     db.collection('journal').find({ user: uId }).toArray((err, result) => {
       if (err) return console.log(err)
