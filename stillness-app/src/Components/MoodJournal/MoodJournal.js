@@ -189,7 +189,7 @@ const MoodJournal = () => {
       <button className='logout-btn' onClick={() => window.location.href = '/Login'}>Logout</button>
 
       <p>Thank you for being here on: {today}</p>
-      <h1>A personal space to self-reflect.</h1>
+      <h1 className="moodJournal-h1">A personal space to self-reflect.</h1>
       <p>How are you feeling?</p>
       <>
         {/* mood button options */}

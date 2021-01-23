@@ -7,16 +7,16 @@ const getMoodPhrase = (mood) => {
       return 'you can and will manifest anything you set intentions for.'
       break;
     case 'neutral':
-      return 'you did it! a few moments of self-care can positively impact the rest of your day.'
+      return 'you are so worthy of this time to yourself and a few moments of self-care can positively impact the rest of your day.'
       break;
     case 'sad':
-      return 'you should not feel guilty for choosing yourself. There is so much gratitude to be had in giving yourself a moment of stillness.'
+      return 'we thank you for choosing yourself today. There is so much gratitude to be had in giving yourself a moment of stillness.'
       break;
     case 'angry':
-      return ' i hope you feel better after today\'s release.'
+      return 'today was a beautiful day for a cathartic release. We\'re happy you took the time to give back to yourself.'
       break;
     case 'anxious':
-      return 'you are such a beautiful being, I am so glad that you are here and investing in yourself.'
+      return 'you are such a beautiful being. We are so glad that you are here and investing in yourself.'
       break;
 
     default:

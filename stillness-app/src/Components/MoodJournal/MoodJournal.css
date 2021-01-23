@@ -12,6 +12,7 @@ body{
   width: 11%;
   margin: 4px;
   padding: 22px;
+  outline: none;
 }
 
 .logout-btn, .view-journal-btn{
@@ -21,7 +22,6 @@ body{
 .journal-space{
   width: 58%;
     padding: 14px 0px 15px 1px;
-    
     margin: 13px 3px 0 8px;
   
 }
@@ -32,7 +32,10 @@ body{
 
 
 
-h1{
+.moodJournal-h1{
   font-size: 2.5em;
   padding: 10px;
+  border-bottom: solid black;
+  text-align: center;
+ 
 }

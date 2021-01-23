@@ -18,21 +18,38 @@ align-items: center;
 margin: 0;
 }
 
-h1{
+.breather-h1{
     font-size: 4em;
     padding: 6px; 
-    margin: 22px 0px 59px 0px;
+    margin: -81px 0px 68px 0px;
 }
 
 .navigation-links{
     display:flex;
     justify-items: center; 
+    padding: 8px 0px 33px 4px;
 }
 
 li{
     list-style: none;
+    padding: 6px 26px 0px 3px;
 }
 
+.logout-btn{
+    border-radius: 14%;
+}
+
+.soundButton-container{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-right: 61%;  
+}
+
+.sound-btn{
+    justify-items:left;
+    width: 75%;
+}
 
 /* the container that wraps around everything */
 .breather-container{

@@ -20,7 +20,7 @@ const Breather = () => {
     }, holdTime)
     setTimeout(() => {
       setBreatheText('Exhale')
-    }, totalTime)
+    }, breatheTime)
   }
   useEffect(() => {
     const animationTime = setInterval(breatheAnimation, totalTime)
@@ -29,26 +29,30 @@ const Breather = () => {
     }
   })
 
-  //AUDIO BUTTON OPTIONS
+  //AUDIO BUTTON SOUNDS
   let ambient = new Audio('https://freesound.org/data/previews/554/554220_9497060-lq.mp3')
   let nature = new Audio('https://freesound.org/data/previews/524/524813_10859468-lq.mp3')
   let ocean = new Audio(' https://freesound.org/data/previews/413/413326_7723777-lq.mp3')
   let dreamy = new Audio('https://freesound.org/data/previews/263/263467_3946286-lq.mp3')
 
-  // creating a function for every button.this way works for now but i'd like to later refactor the code so one function handles each button click. need to work on pausing audio for each button
-  const ambientSound = () => {
-    return ambient.play()
-  }
-  const natureSound = () => {
-    return nature.play()
-  }
-
-  const oceanSound = () => {
-    return ocean.play()
-  }
-
-  const dreamySound = () => {
-    return dreamy.play()
+  // need to work on pausing audio for each button
+  const handleClick = (sound) => {
+    switch (sound) {
+      case 'ambient':
+        ambient.play()
+        break;
+      case 'nature':
+        nature.play()
+        break;
+      case 'ocean':
+        ocean.play()
+        break;
+      case 'dreamy':
+        dreamy.play()
+        break;
+      default:
+        return 'no sound chosen'
+    }
   }
 
   return (
@@ -63,13 +67,17 @@ const Breather = () => {
       </nav>
 
       {/* music plays on click event */}
-      <p>Choose some music to relax to</p>
-      <button onClick={ambientSound}>Ambient</button>
-      <button onClick={natureSound}>Nature + Birds</button>
-      <button onClick={oceanSound}>Ocean Waves</button>
-      <button onClick={dreamySound}>Dreamy</button>
+      <div className="soundButton-container">
 
-      <h1>Breather</h1>
+        <p className="soundButton-p">Choose some music to relax to</p>
+
+        <button className="sound-btn" onClick={() => handleClick('ambient')}>Ambient</button>
+        <button className="sound-btn" onClick={() => handleClick('nature')}>Nature</button>
+        <button className="sound-btn" onClick={() => handleClick('ocean')}>Ocean</button>
+        <button className="sound-btn" onClick={() => handleClick('dreamy')}>Dreamy</button>
+      </div>
+
+      <h1 className="breather-h1">Breather</h1>
       {/* if breatheText is inhale then the container will expand if its on exhale the container will shrink. */}
       <div className={`breather-container ${breatheText === "Inhale" ? "expand" : breatheText === 'Exhale' ? "shrink" : 'hold'}`}>
         {/* <!-- this div represents the solid colour circle --> */}
@@ -89,12 +97,13 @@ const Breather = () => {
       </div>
 
       <div>
-        <button onClick={() => window.location.href = "/Login"}>Logout</button>
+        <button className='logout-btn' onClick={() => window.location.href = "/Login"}>Logout</button>
       </div>
 
     </div>
 
   )
 }
+
 
 export default Breather;

@@ -33,8 +33,8 @@ module.exports = function (app, passport, db, twilioClient, ObjectId) {
     // to do: validating the request content 
     db.collection('journal').save({ journal: req.body.journalEntry, mood: req.body.mood, user: uId, createdAt: new Date() }, (err, result) => {
       if (err) return console.log(err, result)
-      // variable that stores the text message and sends the mood/getMoodPhrase() function that contains the phrases depending on the mood user has chosen.
-      const smsMessage = 'Hello, ' + req.user.local.firstName + ' ' + 'We know you are feeling ' + req.body.mood + ' we just want to say that ' + getMoodPhrase(req.body.mood)
+      // variable that holds the body of the text based on the mood the user has chosen.
+      const smsMessage = 'Hey, ' + req.user.local.firstName + ' ' + 'we see that you are feeling ' + req.body.mood + '. We just want you to know that ' + getMoodPhrase(req.body.mood)
       // creates the message body to send to user's phone
       twilioClient.messages
         .create({
