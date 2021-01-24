@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Breather.css'
+import SoundButton from './Components/SoundButton/SoundButton'
+
 
 const Breather = () => {
   //variable and function to set the breathe text to inhale/hold/exhale
@@ -29,32 +31,6 @@ const Breather = () => {
     }
   })
 
-  //AUDIO BUTTON SOUNDS
-  let ambient = new Audio('https://freesound.org/data/previews/554/554220_9497060-lq.mp3')
-  let nature = new Audio('https://freesound.org/data/previews/524/524813_10859468-lq.mp3')
-  let ocean = new Audio(' https://freesound.org/data/previews/413/413326_7723777-lq.mp3')
-  let dreamy = new Audio('https://freesound.org/data/previews/263/263467_3946286-lq.mp3')
-
-  // need to work on pausing audio for each button
-  const handleClick = (sound) => {
-    switch (sound) {
-      case 'ambient':
-        ambient.play()
-        break;
-      case 'nature':
-        nature.play()
-        break;
-      case 'ocean':
-        ocean.play()
-        break;
-      case 'dreamy':
-        dreamy.play()
-        break;
-      default:
-        return 'no sound chosen'
-    }
-  }
-
   return (
     <div className="backgroundImage">
       {/* navigation links: add behavior */}
@@ -70,11 +46,19 @@ const Breather = () => {
       <div className="soundButton-container">
 
         <p className="soundButton-p">Choose some music to relax to</p>
+        <SoundButton
+          type='Ambient'
+        />
+        <SoundButton
+          type='Nature'
+        />
+        <SoundButton
+          type='Ocean'
+        />
+        <SoundButton
+          type='Dreamy'
+        />
 
-        <button className="sound-btn" onClick={() => handleClick('ambient')}>Ambient</button>
-        <button className="sound-btn" onClick={() => handleClick('nature')}>Nature</button>
-        <button className="sound-btn" onClick={() => handleClick('ocean')}>Ocean</button>
-        <button className="sound-btn" onClick={() => handleClick('dreamy')}>Dreamy</button>
       </div>
 
       <h1 className="breather-h1">Breather</h1>

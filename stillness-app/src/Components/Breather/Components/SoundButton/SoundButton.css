@@ -1,0 +1,42 @@
+.sound-btn{
+    justify-items:left;
+    width: 75%;
+}
+
+.sound-btn-Ambient{
+  background-color: #B781AB ;
+  color:white;
+  font-size: 1em;
+  font-weight: bold;
+
+}
+
+.sound-btn-Nature{
+  background-color:#B781AB;
+  color:white;
+  font-size: 1em;
+  font-weight: bold;
+  outline:none;
+
+}
+
+.sound-btn-Ocean{
+  background-color:#B781AB   ;
+  color:white;
+  font-size: 1em;
+  font-weight: bold;
+  outline:none;
+
+
+}
+
+.sound-btn-Dreamy{
+   background-color: #B781AB ;
+   color:white;
+   font-size: 1em;
+   font-weight: bold;
+   outline:none;
+}
+
+
+    
