@@ -27,11 +27,9 @@ const SoundButton = (props) => {
       setIsPlaying(true)
     }
   }
-
   return (
     <button className={"sound-btn sound-btn-" + props.type} onClick={handleClick} type='button'>{props.type}</button>
   )
 }
-
 
 export default SoundButton
