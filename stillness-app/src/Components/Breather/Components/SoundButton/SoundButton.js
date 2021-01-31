@@ -6,7 +6,7 @@ const sounds = {
   Ambient: new Audio('https://freesound.org/data/previews/554/554220_9497060-lq.mp3'),
   Nature: new Audio('https://freesound.org/data/previews/524/524813_10859468-lq.mp3'),
   Ocean: new Audio(' https://freesound.org/data/previews/413/413326_7723777-lq.mp3'),
-  Dreamy: new Audio('https://freesound.org/data/previews/263/263467_3946286-lq.mp3'),
+  Dreamy: new Audio('https://freesound.org/data/previews/263/263467_3946286-lq.mp3')
 }
 
 const SoundButton = (props) => {
