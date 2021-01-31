@@ -4,7 +4,7 @@
     box-sizing: border-box ;
 }
 
-.backgroundImage {
+.background-image {
 background-image: url('../../assets/images/bg.gif') ;
 background-repeat: no-repeat;
 background-size: cover;
@@ -82,14 +82,25 @@ li{
 
 /* the solid colour circle */
 .circle{ 
-    background-color: #130E37;
+   background-color: #130E37;
     height: 100%;
     width: 100%;
      position: absolute;
       top: 0;
      left: 0; 
       z-index: -1;
-      border-radius: 50%;  
+      border-radius: 50%;   
+}
+
+.initial-circle{
+ background-color:#531d34;
+    height: 100%;
+    width: 100%;
+     position: absolute;
+      top: 0;
+     left: 0; 
+      z-index: -1;
+      border-radius: 50%;   
 }
 
 .pointer-container{
@@ -113,6 +124,7 @@ li{
 
 #text{
     font-size: 1.5em;
+ 
 }
 
 .expand{
@@ -124,10 +136,14 @@ li{
 }
 
 .hold{
-    transform: scale(1.2)
-    
+    transform: scale(1.2)   
 }
 
+.getready{
+   color:white;
+}
+
+/* keyframes tell the animation what to do */
 @keyframes expand{
      from{
        transform: scale(1)
@@ -135,7 +151,6 @@ li{
 
      to{
          transform: scale(1.2)
-
      }
 }
 
@@ -147,7 +162,6 @@ li{
 
      to{
         transform: scale(1)
-
      }
 }
 
