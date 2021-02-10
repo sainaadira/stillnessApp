@@ -2,16 +2,27 @@ import React from 'react'
 import './LandingPage.css'
 
 
+
 const LandingPage = () => {
   return (
     <div className='landing-container'>
-      <h1 className="decription-title">Stillness is a powerful gift to yourself.</h1>
+
+
+
       <section className="description-container">
-        <p className="description-paragraph">The Stillness app allows you to track your mood and journal your thoughts each day. If you need a moment for meditative breathing after a cathartic release, take as much time as you need. This time is for you. Give yourself the gift of investing into yourself. </p>
+        <h1 className="description-title">Stillness is an  empowering gift to yourself.</h1>
+        <p className="description-paragraph"> As fast paced as life may be, it is necessary to step away reclaim time for self-care. The Stillness app is created as a gentle reminder that cathartic release and mindful breathing together can be affirming in reclaiming tranquility and clarity. Our applications lets you track your mood while giving you space for reflective journaling each day. We send encouraging text reminders to uplift and support you as you take a moment for self. Remove yourself from all external noise step into yourself with meditative breathing and relaxing music after a cathartic release. Take as much time as you need. This time and this space is just for you. Are you ready?
+          </p>
+        {/* link will take user to Login/Signup Page */}
+        {/* window is the api and location.href will link to to another page (url) */}
+        <a href className="landing-link" onClick={() => window.location.href = "/Login"}> Login or Signup here</a>
+
+
+        {/* <button className="landing-button" onClick={() => window.location.href = "/Login"}>I'm ready!</button> */}
       </section>
-      {/* button will take user to Login/Signup Page */}
-      {/* window is the api and location.href will link to to another page (url) */}
-      <button onClick={() => window.location.href = "/Login"}>I'm ready!</button>
+
+
+
     </div>
   )
 }

@@ -1,10 +1,16 @@
 import React, { useState } from 'react'
 import './JournalEntry.css'
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon'
+import SaveIcon from '@material-ui/icons/Save';
+import EditIcon from '@material-ui/icons/Edit';
+import ClearIcon from '@material-ui/icons/Clear';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const JournalEntry = (props) => {
 
   const [entry, setEntry] = useState(props.journal)
-  // variable and function the view mode of the textarea vs of unedited entry
+  // variable and function the view mode of the textarea for edited vs. unedited entry
   const [editMode, setEditMode] = useState(false)
   // variable and function to set the edits of the journal entry with the intial state of the original entry.
   const [editJournalEntry, setEditJournalEntry] = useState(entry)
@@ -15,7 +21,6 @@ const JournalEntry = (props) => {
     // setting edit mode to false to change view back to orginal entry
     setEditMode(false)
     // using fetch call with a put method to save updated entry to database
-    // currently not working but need to fix this
     fetch('/journal', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -32,7 +37,6 @@ const JournalEntry = (props) => {
 
   // function to delete journal entry 
   const handleDeleteJournalEntry = () => {
-    console.log(props.id)
     fetch('/journal', {
       method: 'DELETE',
       mode: 'cors',
@@ -41,7 +45,7 @@ const JournalEntry = (props) => {
         'Access-Control-Allow-Origin': '*'
       },
       body: JSON.stringify({ _id: props.id })
-      // passing state of journals and filtering entries that haven't been deleted
+      //using the journals array from MoodJournalHistory and filtering entries that haven't been deleted
     }).then(props.journals(entry => entry.filter(journal => journal._id !== props.id)))
     // .then()
     //   .catch(err => console.log(err))
@@ -55,8 +59,14 @@ const JournalEntry = (props) => {
       <div className="journal-entry-edit">
         <h3> {props.mood}</h3>
         <textarea value={editJournalEntry} onChange={handleEditJournalEntry}>{editJournalEntry}</textarea>
-        <button onClick={() => setEditMode(false)} className="edit-btn"> Cancel Edit</button>
-        <button onClick={handleSaveEntry}>Save</button>
+
+        {/* cancel edit entry button */}
+        <Icon onClick={() => setEditMode(false)} className="edit-btn"><ClearIcon /></Icon>
+        {/* <button > Cancel Edit</button> */}
+
+        {/* save edit entry */}
+        <Icon onClick={handleSaveEntry}> <SaveIcon /></Icon>
+
       </div>
     )
     // else return the orginal entry
@@ -67,11 +77,32 @@ const JournalEntry = (props) => {
     let journalTime = new Date(props.createdAt).toLocaleTimeString('us-en', timeOptions)
     return (
       <div className="journal-entry">
-        <h4> Today I feel: {props.mood}</h4>
-        <p>{entry}</p>
-        <p>{journalDate} at {journalTime}</p>
-        <button onClick={() => setEditMode(true)} className="edit-btn">Edit Entry</button>
-        <button onClick={handleDeleteJournalEntry} className="delete-btn">Delete Entry</button>
+        <p className="journal-entry-date">{journalDate} at {journalTime}</p>
+        <h4 className='feeling-title'> Today I feel: {props.mood}</h4>
+        <p className="journal-entry-paragraph">{entry}</p>
+
+
+        {/* edit button */}
+        <Button
+          onClick={() => setEditMode(true)}
+          id="edit-btn"
+          variant="contained"
+          color="default"
+          startIcon={<EditIcon />}
+        > Edit
+      </Button>
+
+
+        {/* delete button */}
+        <Button
+          onClick={handleDeleteJournalEntry}
+          id="delete-btn"
+          variant="contained"
+          color="default"
+          startIcon={<DeleteIcon />}
+        > Delete
+      </Button>
+
       </div>
     )
   }

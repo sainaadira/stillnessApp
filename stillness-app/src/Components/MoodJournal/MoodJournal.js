@@ -29,7 +29,7 @@ const MoodJournal = () => {
       if (moodColor.yellow === '') {
         setMoodOption(getMood(e.target.value))
         setMoodColor({
-          yellow: 'yellow',
+          yellow: '#E2B31C',
           grey: '',
           blue: '',
           red: '',
@@ -52,7 +52,7 @@ const MoodJournal = () => {
         setMoodOption(getMood(e.target.value))
         setMoodColor({
           yellow: '',
-          grey: 'grey',
+          grey: '#626563',
           blue: '',
           red: '',
           purple: ''
@@ -74,7 +74,7 @@ const MoodJournal = () => {
         setMoodColor({
           yellow: '',
           grey: '',
-          blue: 'blue',
+          blue: '#385F8A',
           red: '',
           purple: ''
         })
@@ -96,7 +96,7 @@ const MoodJournal = () => {
           yellow: '',
           grey: '',
           blue: '',
-          red: 'red',
+          red: '#AB1C27',
           purple: ''
         })
       } else {
@@ -118,7 +118,7 @@ const MoodJournal = () => {
           grey: '',
           blue: '',
           red: '',
-          purple: 'purple'
+          purple: '#603775'
         })
       } else {
         setMoodOption('')
@@ -200,6 +200,7 @@ const MoodJournal = () => {
         <button onClick={handleMoodClick} value="red" style={{ backgroundColor: moodColor.red }} className="mood-btn red">Angry</button>
         <button onClick={handleMoodClick} value="purple" style={{ backgroundColor: moodColor.purple }} className="mood-btn purple">Anxious</button>
       </>
+
       {/* journal space */}
       <>
         <form>

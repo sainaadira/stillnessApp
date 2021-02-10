@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import "./Login.css"
+import Button from '@material-ui/core/Button';
 
 const Login = () => {
 
@@ -38,13 +39,21 @@ const Login = () => {
   }
   return (
     // react fragment: creates an empty element 
-    <>
-      <form action='/login' method="POST" className="form-container">
-        <input className="" onChange={handleChange} value={form.email} placeholder="Email" name="email" />
-        <input type="password" className="" onChange={handleChange} value={form.password} placeholder="Password" name="password" />
-        <button onClick={handleSubmit} type="submit">Login</button>
+    <div>
+
+      <form action='/login' method="POST" className="login-credentials">
+
+        <label>Email</label>
+        <input className="login-input" onChange={handleChange} value={form.email} placeholder="Email" name="email" />
+        <label>Password</label>
+        <input type="password" className="login-input" onChange={handleChange} value={form.password} placeholder="Password" name="password" />
+
+        <Button className="login-btn" variant="contained" color="default" onClick={handleSubmit} type="submit">
+          Login
+        </Button>
+
       </form>
-    </>
+    </div>
   )
 }
 

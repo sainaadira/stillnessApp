@@ -1,0 +1,36 @@
+*{
+  box-sizing:border-box;
+}
+
+/* login form */
+.login-credentials{
+  display: flex;
+  flex-direction: column;
+}
+
+/* sigin form */
+.signup-credentials{
+  display:flex;
+  flex-direction: column;
+}
+
+/* login  button */
+ button.MuiButton-contained  {
+    color:white;
+    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+    background-color: #581845 ;
+    width: 10%;
+    padding: 14px; 
+}
+
+.login-input, .signup-input{
+    background-color: inherit;
+    margin: 10px 0 15px 0;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 6px;
+    overflow: hidden;
+    position: relative;
+    font-size: 20px;
+    width: 30%;
+}

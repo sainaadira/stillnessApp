@@ -29,7 +29,7 @@ const MoodJournalHistory = () => {
           />
         )
       })}
-      {/* button will take user to MoodJournal Component */}
+      {/* button will take user to MoodJournal component */}
       <button className="breather-btn" onClick={() => window.location.href = "/MoodJournal"}>Back to Journal</button>
 
       {/* button will take user to Breather Component */}

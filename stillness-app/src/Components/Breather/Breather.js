@@ -4,6 +4,7 @@ import SoundButton from './Components/SoundButton/SoundButton'
 
 
 const Breather = () => {
+  //variable that stores text before breathing session begins
   const initialBreatheText = 'Get Ready!'
   //variable and function to set the breathe text to inhale/hold/exhale
   const [breatheText, setBreatheText] = useState(initialBreatheText)
@@ -16,7 +17,6 @@ const Breather = () => {
 
   const breatheAnimation = () => {
     setBreatheText('Inhale')
-
     setTimeout(() => {
       setBreatheText('Hold')
       setTimeout(() => {
@@ -100,7 +100,7 @@ const Breather = () => {
           type='Ambient'
         />
         <SoundButton
-          type='Nature'
+          type='Birds'
         />
         <SoundButton
           type='Ocean'
@@ -112,7 +112,7 @@ const Breather = () => {
       </div>
 
       <h1 className="breather-h1">Breather</h1>
-      {/* if breatheText is inhale then the container will expand if its on exhale the container will shrink. */}
+      {/* div that contains breather-container class the logic from breatherClass function that dynamically changes the className depending on state of breatheText variable*/}
       <div className={`breather-container ${breatherClass}`}>
         {/* <!-- this div represents the solid color circle and the conditional logic: if breatheText variable is equal to 'Get Ready!' then display the initial-circle class, otherwise display the circle class--> */}
         <div className={`${breatheText === initialBreatheText ? "initial-circle" : "circle"}`}></div>
@@ -120,12 +120,12 @@ const Breather = () => {
         {/* breatheText is changed dynamically here */}
         <p id="text">{breatheText}</p>
 
-        {/* <!-- container to hold the little white pointer circle --> */}
+        {/* <!-- container to hold white pointer circle --> */}
         <div className="pointer-container">
           <div className="pointer"></div>
         </div>
 
-        {/* <!-- gradient circle that helps indicate when to breathe/hold breath (border effect) --> */}
+        {/* <!-- gradient circle that helps indicate when to breathe/hold breath (gives the border effect) --> */}
         <div className="gradient-circle"></div>
 
       </div>
@@ -133,11 +133,8 @@ const Breather = () => {
       <div>
         <button className='logout-btn' onClick={() => window.location.href = "/Login"}>Logout</button>
       </div>
-
     </div>
-
   )
 }
-
 
 export default Breather;

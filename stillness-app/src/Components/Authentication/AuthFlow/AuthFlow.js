@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Login from '../Login/Login'
 import Signup from '../Signup/Signup'
 import './AuthFlow.css'
+import Button from '@material-ui/core/Button';
 
 const AuthFlow = () => {
   // used to toggle between login and signup
@@ -11,16 +12,17 @@ const AuthFlow = () => {
     setView(view)
   }
   return (
-    <>
-      <button onClick={() => toggleView('login')}>Login</button>
-      <button onClick={() => toggleView('signup')}>Signup</button>
+    <div>
+
+      <Button onClick={() => toggleView('login')} variant="outlined">Login</Button>
+      <Button onClick={() => toggleView('signup')} variant="outlined">Signup</Button>
       {view === 'login' &&
         <Login />
       }
       {view === 'signup' &&
         <Signup />
       }
-    </>
+    </div>
   )
 }
 

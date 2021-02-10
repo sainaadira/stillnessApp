@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './Signup.css'
+import Button from '@material-ui/core/Button';
 
 const Signup = () => {
   // contactInfo variable to store the user's credentials and setContactInfo is the function that will handle the state change for the inputs.
@@ -22,17 +23,29 @@ const Signup = () => {
   }
 
   return (
-    <>
-      <form method="POST" action='/signup'>
+    <div>
+      <form className="signup-credentials" method="POST" action='/signup'>
         {/* in order for react to read my inputs they must be in self closing tags */}
-        <input onChange={handleContactChange} value={contactInfo.firstName} name="firstName" placeholder="First Name" />
-        <input onChange={handleContactChange} value={contactInfo.lastName} name="lastName" placeholder="Last Name" />
-        <input onChange={handleContactChange} value={contactInfo.email} name="email" placeholder="Email" />
-        <input type="password" onChange={handleContactChange} value={contactInfo.password} name="password" placeholder="Password" />
-        <input onChange={handleContactChange} value={contactInfo.phone} name="phone" placeholder="Phone Number" />
-        <button>Sign me up</button>
+        <label>First Name</label>
+        <input className="signup-input" onChange={handleContactChange} value={contactInfo.firstName} name="firstName" placeholder="First Name" />
+
+        <label>Last Name</label>
+        <input className="signup-input" onChange={handleContactChange} value={contactInfo.lastName} name="lastName" placeholder="Last Name" />
+
+        <label>Email</label>
+        <input className="signup-input" onChange={handleContactChange} value={contactInfo.email} name="email" placeholder="Email" />
+
+        <label>Password</label>
+        <input className="signup-input" type="password" onChange={handleContactChange} value={contactInfo.password} name="password" placeholder="Password" />
+
+        <label>Phone Number</label>
+        <input className="signup-input" onChange={handleContactChange} value={contactInfo.phone} name="phone" placeholder="Phone Number" />
+
+        <Button variant="contained" color="primary" onClick={() => window.location.href = "/MoodJournal"}>
+          Sign up
+        </Button>
       </form>
-    </>
+    </div>
   )
 }
 
