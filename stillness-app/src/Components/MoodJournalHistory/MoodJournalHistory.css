@@ -3,9 +3,12 @@
 }
 
 .entry-container{
-width: 45%;
 display: flex;
  flex-direction: column;
+}
+
+.reflection-title{
+      text-align: center;
 }
 
 .feeling-title{

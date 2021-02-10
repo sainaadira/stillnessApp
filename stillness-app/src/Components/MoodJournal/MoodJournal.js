@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import './MoodJournal.css'
-
+// import MoodButton from './Components/MoodButton/MoodButton'
 
 const MoodJournal = () => {
   // gets the date

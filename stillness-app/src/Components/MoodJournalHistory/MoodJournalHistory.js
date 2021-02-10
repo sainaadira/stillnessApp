@@ -13,27 +13,38 @@ const MoodJournalHistory = () => {
   }, [])
 
   return (
-    <div className="entry-container">
 
-      <h1 className='reflection-title'>Your Reflections</h1>
-      {journals.map(entry => {
-        // styling my journal entries here 
-        return (
-          <JournalEntry
-            key={entry._id}
-            id={entry._id}
-            // manually moving data from database
-            journals={setJournals}
-            // passing everything over from the entry variable
-            {...entry}
-          />
-        )
-      })}
-      {/* button will take user to MoodJournal component */}
-      <button className="breather-btn" onClick={() => window.location.href = "/MoodJournal"}>Back to Journal</button>
+    <div>
 
-      {/* button will take user to Breather Component */}
-      <button className="breather-btn" onClick={() => window.location.href = "/Breather"}>Begin Breathing Session</button>
+      <section className="breather-btn-container">
+        {/* button will take user to MoodJournal component */}
+        <button className="breather-btn" onClick={() => window.location.href = "/MoodJournal"}>Back to Journal</button>
+
+        {/* button will take user to Breather Component */}
+        <button className="breather-btn" onClick={() => window.location.href = "/Breather"}>Begin Breathing Session</button>
+
+      </section>
+
+      <div className="entry-container">
+
+        <h1 className='reflection-title'>Your Reflections</h1>
+        {journals.map(entry => {
+          // styling my journal entries here 
+          return (
+            <JournalEntry
+              key={entry._id}
+              id={entry._id}
+              // manually moving data from database
+              journals={setJournals}
+              // passing everything over from the entry variable
+              {...entry}
+            />
+          )
+        })}
+      </div>
+
+
+
     </div>
   )
 }
