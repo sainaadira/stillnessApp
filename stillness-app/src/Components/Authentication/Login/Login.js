@@ -38,7 +38,7 @@ const Login = () => {
     }).then(res => window.location.href = '/moodJournal')
   }
   return (
-    // react fragment: creates an empty element 
+
     <div>
 
       <form action='/login' method="POST" className="login-credentials">

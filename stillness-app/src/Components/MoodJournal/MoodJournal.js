@@ -1,135 +1,64 @@
 import React, { useState } from 'react'
 import './MoodJournal.css'
-// import MoodButton from './Components/MoodButton/MoodButton'
+import MoodButton from './Components/MoodButton/MoodButton'
 
 const MoodJournal = () => {
   // gets the date
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   const today = new Date().toLocaleDateString('us-en', options)
 
-  // creates the moodColor state and setMoodColor is the function that will render a new state when called.
-  const [moodColor, setMoodColor] = useState({
-    yellow: '',
-    grey: '',
-    blue: '',
-    red: '',
-    purple: ''
-  })
+  // all hex colors for the mood stored inside object
+  const moodColor = {
+    yellow: '#E2B31C',
+    grey: '#626563',
+    blue: '#385F8A',
+    red: '#AB1C27',
+    purple: '#603775'
+  }
+
+  // all moods with type(mood) and value(color) stored inside array of objects
+  const moods = [{
+    type: 'Happy',
+    value: 'yellow'
+  },
+  {
+    type: 'Neutral',
+    value: 'grey'
+  },
+  {
+    type: 'Sad',
+    value: 'blue'
+  },
+  {
+    type: 'Angry',
+    value: 'red'
+  },
+  {
+    type: 'Anxious',
+    value: 'purple'
+  }
+  ]
+
   // moodOption has the mood stored in this variable and setMoodOption sets the mood whenever mood button gets clicked 
   const [moodOption, setMoodOption] = useState('')
+
+  // activeMoodColor stores the color that user clicks and setActiveMoodColor sets the state change of that button  depending on which mood is clicked
+  const [activeMoodColor, setActiveMoodColor] = useState('')
 
   // storing journal entries inside of an empty string
   const [journalSpace, setJournalSpace] = useState('')
 
-  // on click event: targeting the value of the button and calling setMoodColor to return a new object rendering a new background color.
-  // call setMoodColor and return the object with empty string to clear bgColor
-  // setMoodOption is a state change function call getMood function to grab the value of the mood the user clicks
+  // function that handles the button click for each mood button and calls setMoodOption and setActiveMoodColor to grab the innerText and value of selected button
   const handleMoodClick = (e) => {
-    if (e.target.value === 'yellow') {
-      if (moodColor.yellow === '') {
-        setMoodOption(getMood(e.target.value))
-        setMoodColor({
-          yellow: '#E2B31C',
-          grey: '',
-          blue: '',
-          red: '',
-          purple: ''
-        })
-      } else {
-        // clearing the color and the option
-        setMoodOption('')
-        setMoodColor({
-          yellow: '',
-          grey: '',
-          blue: '',
-          red: '',
-          purple: ''
-        })
-      }
-    }
-    if (e.target.value === 'grey') {
-      if (moodColor.grey === '') {
-        setMoodOption(getMood(e.target.value))
-        setMoodColor({
-          yellow: '',
-          grey: '#626563',
-          blue: '',
-          red: '',
-          purple: ''
-        })
-      } else {
-        setMoodOption('')
-        setMoodColor({
-          yellow: '',
-          grey: '',
-          blue: '',
-          red: '',
-          purple: ''
-        })
-      }
-    }
-    if (e.target.value === 'blue') {
-      if (moodColor.blue === '') {
-        setMoodOption(getMood(e.target.value))
-        setMoodColor({
-          yellow: '',
-          grey: '',
-          blue: '#385F8A',
-          red: '',
-          purple: ''
-        })
-      } else {
-        setMoodOption('')
-        setMoodColor({
-          yellow: '',
-          grey: '',
-          blue: '',
-          red: '',
-          purple: ''
-        })
-      }
-    }
-    if (e.target.value === 'red') {
-      setMoodOption(getMood(e.target.value))
-      if (moodColor.red === '') {
-        setMoodColor({
-          yellow: '',
-          grey: '',
-          blue: '',
-          red: '#AB1C27',
-          purple: ''
-        })
-      } else {
-        setMoodOption('')
-        setMoodColor({
-          yellow: '',
-          grey: '',
-          blue: '',
-          red: '',
-          purple: ''
-        })
-      }
-    }
-    if (e.target.value === 'purple') {
-      setMoodOption(getMood(e.target.value))
-      if (moodColor.purple === '') {
-        setMoodColor({
-          yellow: '',
-          grey: '',
-          blue: '',
-          red: '',
-          purple: '#603775'
-        })
-      } else {
-        setMoodOption('')
-        setMoodColor({
-          yellow: '',
-          grey: '',
-          blue: '',
-          red: '',
-          purple: ''
-        })
-      }
+    e.preventDefault()
+    // functions that are responsible for targeting the value and innerText of button clicked.
+    setMoodOption(e.target.innerText)
+    setActiveMoodColor(e.target.value)
+
+    // if activeMoodColor is equal to value and moodOption to innertext (checking if the value and text are the same) then call setMoodOption and setActiveMoodColor and clear the background color once clicked again.
+    if (activeMoodColor === e.target.value && moodOption === e.target.innerText) {
+      setMoodOption('')
+      setActiveMoodColor('')
     }
   }
   // function to grab value of what user enters in text area
@@ -140,18 +69,12 @@ const MoodJournal = () => {
 
   // fuction to clear what user typed in entry space
   const clearJournalEntry = () => {
-    setMoodColor({
-      yellow: '',
-      grey: '',
-      blue: '',
-      red: '',
-      purple: ''
-    })
     // calling setJournalSpace to clear textarea
     setJournalSpace('')
   }
-  // function that saves user's journal entry and direct them to their history page
+  // function that saves user's journal entry and direct them to their reflections page
   const handleSubmit = (e) => {
+    e.preventDefault()
     const currentMood = moodOption
     const form = { journalEntry: journalSpace, mood: currentMood }
     fetch('/saveJournalEntry', {
@@ -161,26 +84,6 @@ const MoodJournal = () => {
       },
       body: JSON.stringify(form)
     }).then(res => res.json()).then(data => { if (data.success) { window.location.href = '/moodJournalHistory' } })
-
-    e.preventDefault()
-  }
-
-  // 
-  const getMood = (color) => {
-    if (color === 'yellow') {
-      return 'happy'
-    } else if (color === 'grey') {
-      return 'neutral'
-    } else if (color === 'blue') {
-      return 'sad'
-    }
-    else if (color === 'red') {
-      return 'angry'
-    } else if (color === 'purple') {
-      return 'anxious'
-    } else {
-      return 'not a color'
-    }
   }
 
   return (
@@ -191,23 +94,26 @@ const MoodJournal = () => {
       <p>Thank you for being here on: {today}</p>
       <h1 className="moodJournal-h1">A personal space to self-reflect.</h1>
       <p>How are you feeling?</p>
-      <>
-        {/* mood button options */}
-        <button onClick={handleMoodClick} value='yellow' style={{ backgroundColor: moodColor.yellow }} name={moodColor.yellow}
-          className="mood-btn yellow">Happy</button>
-        <button onClick={handleMoodClick} value="grey" style={{ backgroundColor: moodColor.grey }} className="mood-btn grey">Neutral </button>
-        <button onClick={handleMoodClick} value="blue" style={{ backgroundColor: moodColor.blue }} className="mood-btn blue">Sad</button>
-        <button onClick={handleMoodClick} value="red" style={{ backgroundColor: moodColor.red }} className="mood-btn red">Angry</button>
-        <button onClick={handleMoodClick} value="purple" style={{ backgroundColor: moodColor.purple }} className="mood-btn purple">Anxious</button>
-      </>
 
-      {/* journal space */}
+      <div className="mood-btn-container">
+
+        {/* ________________________________________________
+                          MOOD BUTTONS
+        maps though moods array of and returns MoodButton component *
+          ________________________________________________ */}
+
+        {moods.map(mood => <MoodButton changeColor={handleMoodClick} value={mood.value} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}
+
+      </div>
+
+      {/* journal space textarea */}
       <>
         <form>
           <textarea value={journalSpace} name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
-          <button onClick={handleSubmit} type="submit" className="submit btn">Submit</button>
-          <button onClick={clearJournalEntry} className="clear btn">Clear</button>
+
         </form>
+        <button onClick={handleSubmit} type="submit" className="submit btn">Submit</button>
+        <button onClick={clearJournalEntry} className="clear btn">Clear</button>
       </>
     </div>
   )

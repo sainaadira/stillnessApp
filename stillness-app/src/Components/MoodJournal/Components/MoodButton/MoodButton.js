@@ -2,17 +2,23 @@ import React from 'react'
 
 
 // to do: create single button component for each mood button using props that handles a click event and changes the background color when clicked.
-const MoodButton = (props) => {
 
+// pass handleMoodClick function from Breather to MoodButton component
+// handleMoodClick is in charge of changing background color depending on mood chosen
+// this component will change state (background color) depending on mood chosen (isClicked, setIsClicked initial state will be false)
+// target the style attribute on the button element 
+
+const MoodButton = (props) => {
+  // destructuring properties as props
+  const { changeColor, value, type, active, color } = props
 
 
   return (
-    'working on this'
-    // <button onClick={handleMoodClick} value='yellow' style={{ backgroundColor: moodColor.yellow }} name={moodColor.yellow}
-    //   className="mood-btn yellow">Happy</button>
+    <>
+      <button onClick={changeColor} className="mood-btn" value={value} type={type} style={active ? { backgroundColor: color } : {}} >{type} </button>
+
+    </>
   )
-
-
 
 
 }
