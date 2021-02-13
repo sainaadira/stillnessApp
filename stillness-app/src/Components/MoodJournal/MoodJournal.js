@@ -2,6 +2,11 @@ import React, { useState } from 'react'
 import './MoodJournal.css'
 import MoodButton from './Components/MoodButton/MoodButton'
 
+
+const lowercase = (l) => {
+  return l.toLowerCase()
+}
+
 const MoodJournal = () => {
   // gets the date
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -18,23 +23,23 @@ const MoodJournal = () => {
 
   // all moods with type(mood) and value(color) stored inside array of objects
   const moods = [{
-    type: 'Happy',
+    type: 'happy',
     value: 'yellow'
   },
   {
-    type: 'Neutral',
+    type: 'neutral',
     value: 'grey'
   },
   {
-    type: 'Sad',
+    type: 'sad',
     value: 'blue'
   },
   {
-    type: 'Angry',
+    type: 'angry',
     value: 'red'
   },
   {
-    type: 'Anxious',
+    type: 'anxious',
     value: 'purple'
   }
   ]
@@ -49,10 +54,11 @@ const MoodJournal = () => {
   const [journalSpace, setJournalSpace] = useState('')
 
   // function that handles the button click for each mood button and calls setMoodOption and setActiveMoodColor to grab the innerText and value of selected button
+
   const handleMoodClick = (e) => {
     e.preventDefault()
     // functions that are responsible for targeting the value and innerText of button clicked.
-    setMoodOption(e.target.innerText)
+    setMoodOption(lowercase(e.target.innerText))
     setActiveMoodColor(e.target.value)
 
     // if activeMoodColor is equal to value and moodOption to innertext (checking if the value and text are the same) then call setMoodOption and setActiveMoodColor and clear the background color once clicked again.

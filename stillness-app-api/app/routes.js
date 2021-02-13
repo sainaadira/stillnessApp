@@ -35,6 +35,7 @@ module.exports = function (app, passport, db, twilioClient, ObjectId) {
       if (err) return console.log(err, result)
       // variable that holds the body of the text based on the mood the user has chosen.
       const smsMessage = 'Hey, ' + req.user.local.firstName + ' ' + 'we see that you are feeling ' + req.body.mood + '. We just want you to know that ' + getMoodPhrase(req.body.mood)
+      console.log(req.body.mood)
       // creates the message body to send to user's phone
       twilioClient.messages
         .create({
