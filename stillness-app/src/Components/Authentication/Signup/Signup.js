@@ -23,7 +23,7 @@ const Signup = () => {
   }
 
   return (
-    <div>
+    <div className="signup-background">
       <form className="signup-credentials" method="POST" action='/signup'>
         {/* in order for react to read my inputs they must be in self closing tags */}
         <label>First Name</label>

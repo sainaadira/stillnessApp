@@ -12,7 +12,7 @@ const AuthFlow = () => {
     setView(view)
   }
   return (
-    <div>
+    <div className="auth-background">
 
       <Button onClick={() => toggleView('login')} variant="outlined">Login</Button>
       <Button onClick={() => toggleView('signup')} variant="outlined">Signup</Button>

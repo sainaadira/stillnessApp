@@ -2,6 +2,13 @@
   box-sizing:border-box;
 }
 
+html{
+  background-color: #F6F4EF;
+}
+.auth-background{
+background-color: #F6F4EF;
+}
+
 /* login form */
 .login-credentials{
   display: flex;

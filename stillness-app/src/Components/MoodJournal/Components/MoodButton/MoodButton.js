@@ -1,18 +1,23 @@
 import React from 'react'
 
 
-// to capitalize the mood based on the type property
+// to capitalize the mood  name on button based on the type attribute
 const capitalize = (t) => {
   return t.charAt(0).toUpperCase() + t.slice(1)
 }
 
 const MoodButton = (props) => {
   // destructuring properties as props
-  const { changeColor, value, type, active, color } = props
+  const { value, type, active, color, setMood } = props
 
+  // handleButtonClick passes the type of button the click created
+  const handleButtonClick = () => {
+    setMood(type);
+    // handle other logic for button
+  }
   return (
     <>
-      <button onClick={changeColor} className="mood-btn" value={value} type={type} style={active ? { backgroundColor: color } : {}} >{capitalize(type)} </button>
+      <button onClick={handleButtonClick} className="mood-btn" value={value} type={type} style={active ? { backgroundColor: color } : {}} >{capitalize(type)} </button>
 
     </>
   )

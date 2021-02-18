@@ -8,17 +8,16 @@
 
 html{
   font-family: 'Roboto Slab', sans-serif;
+ background-color: #F6F4EF;
 }
 
 
-
-.landing-background{
-  background-color: #F6F4EF;
-}
 
 .landing-container{
  display:flex;
   justify-content: center;
+  background-color: #F6F4EF;
+   height: 100%;
 }
   
 .landing-link{

@@ -2,11 +2,6 @@ import React, { useState } from 'react'
 import './MoodJournal.css'
 import MoodButton from './Components/MoodButton/MoodButton'
 
-
-const lowercase = (l) => {
-  return l.toLowerCase()
-}
-
 const MoodJournal = () => {
   // gets the date
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -53,20 +48,20 @@ const MoodJournal = () => {
   // storing journal entries inside of an empty string
   const [journalSpace, setJournalSpace] = useState('')
 
-  // function that handles the button click for each mood button and calls setMoodOption and setActiveMoodColor to grab the innerText and value of selected button
 
-  const handleMoodClick = (e) => {
-    e.preventDefault()
-    // functions that are responsible for targeting the value and innerText of button clicked.
-    setMoodOption(lowercase(e.target.innerText))
-    setActiveMoodColor(e.target.value)
-
-    // if activeMoodColor is equal to value and moodOption to innertext (checking if the value and text are the same) then call setMoodOption and setActiveMoodColor and clear the background color once clicked again.
-    if (activeMoodColor === e.target.value && moodOption === e.target.innerText) {
-      setMoodOption('')
+  // 
+  const handleMood = (mood) => {
+    if (moodOption === mood) {
+      setMoodOption('');
       setActiveMoodColor('')
     }
+    else {
+      setMoodOption(mood);
+      const moodColor = moods.find(m => m.type === mood)
+      setActiveMoodColor(moodColor.value);
+    }
   }
+
   // function to grab value of what user enters in text area
   const handleJournalSpace = (e) => {
     const textAreaValue = e.target.value
@@ -108,7 +103,7 @@ const MoodJournal = () => {
         maps though moods array of and returns MoodButton component *
           ________________________________________________ */}
 
-        {moods.map(mood => <MoodButton changeColor={handleMoodClick} value={mood.value} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}
+        {moods.map(mood => <MoodButton value={mood.value} setMood={handleMood} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}
 
       </div>
 
