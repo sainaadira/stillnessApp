@@ -5,20 +5,45 @@
 html{
   background-color: #F6F4EF;
 }
-.auth-background{
-background-color: #F6F4EF;
+.auth-container{
+     display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-button-container{
+  margin: 39px;
+}
+
+/* login container */
+.login-container{
+  display: flex;
+    width: 100%;
+    flex-direction: column;
 }
 
 /* login form */
 .login-credentials{
   display: flex;
   flex-direction: column;
+  align-items: center;
+  margin: 27px;
+  padding: 23px;
+  width: 98%;
+}
+
+/* signup container */
+
+.signup-container{
+  width: 100%;
 }
 
 /* sigin form */
 .signup-credentials{
-  display:flex;
+  margin:36px;
+  display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 /* login  button */
@@ -28,11 +53,18 @@ background-color: #F6F4EF;
     background-color: #581845 ;
     width: 10%;
     padding: 14px; 
+    margin:4px;
+}
+
+button.MuiButton-outlined {
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    padding: 5px 15px;
+    margin: 2px 5px;
 }
 
 .login-input, .signup-input{
     background-color: inherit;
-    margin: 10px 0 15px 0;
+    margin: 16px 21px ;
     padding: 10px;
     border: 2px solid black;
     border-radius: 6px;

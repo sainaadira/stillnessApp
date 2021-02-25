@@ -3,8 +3,10 @@
 }
 
 .entry-container{
-display: flex;
+ display: flex;
  flex-direction: column;
+ align-items:center;
+
 }
 
 .reflection-title{
@@ -13,12 +15,17 @@ display: flex;
 
 .feeling-title{
   border-bottom: 2px dotted black;
-    width: 29%;
-    border-top: 2px dotted black;
+  border-top: 2px dotted black;
+  font-size: 20px;
+  text-align:center;
 }
 
 .journal-entry-date{
   font-size: 12px;
+}
+
+.journal-entry-paragraph{
+  padding: 7px 0 39px 14px;
 }
 
 

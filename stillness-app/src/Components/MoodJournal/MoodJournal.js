@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import './MoodJournal.css'
 import MoodButton from './Components/MoodButton/MoodButton'
+import Button from '@material-ui/core/Button';
 
 const MoodJournal = () => {
   // gets the date
@@ -88,34 +89,52 @@ const MoodJournal = () => {
   }
 
   return (
-    <div>
-      <button className='view-journal-btn' onClick={() => window.location.href = "/MoodJournalHistory"}>View Your Journal</button>
-      <button className='logout-btn' onClick={() => window.location.href = '/Login'}>Logout</button>
+    <div className="mood-journal-container">
 
+      <div className="mood-journal-nav-btns">
+        <Button variant="contained" color="default" onClick={() => window.location.href = "/MoodJournalHistory"}>View Journal</Button>
+
+        <Button variant="contained" color="default" onClick={() => window.location.href = "/Login"}>Logout</Button>
+      </div>
       <p>Thank you for being here on: {today}</p>
       <h1 className="moodJournal-h1">A personal space to self-reflect.</h1>
-      <p>How are you feeling?</p>
 
-      <div className="mood-btn-container">
 
-        {/* ________________________________________________
+
+
+      {/* ________________________________________________
                           MOOD BUTTONS
         maps though moods array of and returns MoodButton component *
           ________________________________________________ */}
+      <p>How are you feeling today?</p>
 
+      <div className="mood-btn-container">
         {moods.map(mood => <MoodButton value={mood.value} setMood={handleMood} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}
 
       </div>
 
-      {/* journal space textarea */}
-      <>
+      {/* _______________________________________________________
+                        JOURNAL SPACE TEXT AREA
+        _________________________________________________________ */}
+      <div className="mood-journal-textarea">
+
         <form>
           <textarea value={journalSpace} name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
-
         </form>
-        <button onClick={handleSubmit} type="submit" className="submit btn">Submit</button>
-        <button onClick={clearJournalEntry} className="clear btn">Clear</button>
-      </>
+
+      </div>
+
+
+      <div className="journal-entry-btns">
+
+        {/* submits journal entry */}
+        <Button variant="contained" color="default" className="submit-btn" onClick={handleSubmit}>Submit</Button>
+
+        {/* clears texarea */}
+        <Button variant="contained" color="default" className="clear-btn" onClick={clearJournalEntry}>Clear</Button>
+      </div>
+
+
     </div>
   )
 }

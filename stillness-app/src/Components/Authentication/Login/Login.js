@@ -39,7 +39,7 @@ const Login = () => {
   }
   return (
 
-    <div>
+    <div className="login-container">
 
       <form action='/login' method="POST" className="login-credentials">
 

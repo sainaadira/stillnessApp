@@ -14,16 +14,22 @@ const MoodJournalHistory = () => {
 
   return (
 
-    <div>
+    <div className="mood-history-container">
 
-      <section className="breather-btn-container">
+      <div className="breather-btn-container">
         {/* button will take user to MoodJournal component */}
         <button className="breather-btn" onClick={() => window.location.href = "/MoodJournal"}>Back to Journal</button>
 
         {/* button will take user to Breather Component */}
         <button className="breather-btn" onClick={() => window.location.href = "/Breather"}>Begin Breathing Session</button>
+      </div>
 
-      </section>
+
+      {/* ___________________________________________________________________
+ 
+                                JOURNAL ENTRIES 
+        all entries are mapped through and returns JournalEntry component
+      ____________________________________________________________________ */}
 
       <div className="entry-container">
 

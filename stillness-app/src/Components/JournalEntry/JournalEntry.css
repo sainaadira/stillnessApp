@@ -5,18 +5,21 @@
 .journal-entry {
     border: 1px solid black;
     font-size: 1em;
-    padding: 1px 0px 3px 7px;
+   padding: 18px 0px 24px 6px;
     margin: 10px 4px 3px 33px;
     border-radius: 1%;
     width: 45%;
+       
 }
 
 .journal-entry-edit{
    border: 1px solid #581845;
-  font-size: 1em;
-  padding: 1px 0px 3px 7px;
-    margin: 10px 4px 3px 33px;
-    border-radius: 1%;    
+   font-size: 1em;
+   padding: 1px 0px 3px 7px;
+   margin: 10px 4px 3px 33px;
+   border-radius: 1%;  
+   width: 45%;
+   height: 158px;  
 }
 
 /* edit and delete button for journal entry */

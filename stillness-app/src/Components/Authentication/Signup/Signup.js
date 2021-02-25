@@ -23,7 +23,7 @@ const Signup = () => {
   }
 
   return (
-    <div className="signup-background">
+    <div className="signup-container">
       <form className="signup-credentials" method="POST" action='/signup'>
         {/* in order for react to read my inputs they must be in self closing tags */}
         <label>First Name</label>
@@ -41,8 +41,8 @@ const Signup = () => {
         <label>Phone Number</label>
         <input className="signup-input" onChange={handleContactChange} value={contactInfo.phone} name="phone" placeholder="Phone Number" />
 
-        <Button variant="contained" color="primary" onClick={() => window.location.href = "/MoodJournal"}>
-          Sign up
+        <Button variant="contained" color="default" onClick={() => window.location.href = "/MoodJournal"}>
+          Sign me up
         </Button>
       </form>
     </div>

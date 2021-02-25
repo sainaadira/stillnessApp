@@ -5,23 +5,27 @@ import './AuthFlow.css'
 import Button from '@material-ui/core/Button';
 
 const AuthFlow = () => {
-  // used to toggle between login and signup
+  //  variable used to toggle between login and signup components
   const [view, setView] = useState('login')
 
   const toggleView = (view) => {
     setView(view)
   }
   return (
-    <div className="auth-background">
+    <div className="auth-container">
 
-      <Button onClick={() => toggleView('login')} variant="outlined">Login</Button>
-      <Button onClick={() => toggleView('signup')} variant="outlined">Signup</Button>
+      <div className="auth-button-container">
+
+        <Button onClick={() => toggleView('login')} variant="outlined">Login</Button>
+        <Button onClick={() => toggleView('signup')} variant="outlined">Signup</Button>
+      </div>
       {view === 'login' &&
         <Login />
       }
       {view === 'signup' &&
         <Signup />
       }
+
     </div>
   )
 }

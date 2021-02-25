@@ -6,6 +6,17 @@ body{
  background-color: #F6F4EF;
 }
 
+.mood-journal-container{
+  display: flex;
+  flex-direction: column;
+  margin:14px;
+}
+
+.mood-journal-nav-btns{
+  display: flex;
+  justify-content: flex-end;
+}
+
 .mood-btn{
   font-size: 1.5em;
   border-radius: 14%;
