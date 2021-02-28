@@ -19,21 +19,29 @@ margin: 0;
 }
 
 .breather-h1{
-    font-size: 4em;
-    padding: 6px; 
-    margin: -81px 0px 68px 0px;
+  font-size: 59px;
+    padding: 6px;
+    margin: 0px 0px 5px 0px;
 }
 
 .navigation-links{
     display:flex;
     justify-items: center; 
-    padding: 8px 0px 33px 4px;
+    padding: 21px 0px 33px 4px;
 }
 
 li{
     list-style: none;
     padding: 6px 26px 0px 3px;
+    border-bottom: 3px solid white;
 }
+
+.breather-nav-link{
+    list-style: none;
+    padding: 6px 26px 0px 3px;
+    font-size: 19px;
+}
+
 
 .logout-btn{
     border-radius: 14%;
@@ -44,6 +52,7 @@ li{
     flex-direction: column;
     justify-content: center;
     margin-right: 61%;  
+    padding-bottom:61px;
 }
 
 
@@ -54,6 +63,7 @@ li{
     justify-content: center;
     height: 300px;
     width: 300px;
+    margin: 61px;
     /* margin: auto; */
     /* to position absolute within the container */
     position: relative;

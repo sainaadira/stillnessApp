@@ -84,34 +84,19 @@ const Breather = () => {
   return (
     <div className="background-image">
       {/* navigation links: add behavior */}
-      <nav >
+      <nav>
         <ul className="navigation-links">
-          <li>My Journal</li>
-          <li>My Reflections </li>
-          <li>Logout</li>
+          <li> <a href className="breather-nav-link" onClick={() => window.location.href = "/MoodJournal"}> My Journal</a></li>
+          <li>   <a href className="breather-nav-link" onClick={() => window.location.href = "/MoodJournalHistory"}>My Reflections</a> </li>
+          <li> <a href className="breather-nav-link" onClick={() => window.location.href = "/Login"}> Logout</a></li>
         </ul>
       </nav>
 
-      {/* music plays on click event */}
-      <div className="soundButton-container">
-
-        <p className="soundButton-p">Choose some music to relax to</p>
-        <SoundButton
-          type='Ambient'
-        />
-        <SoundButton
-          type='Birds'
-        />
-        <SoundButton
-          type='Ocean'
-        />
-        <SoundButton
-          type='Dreamy'
-        />
-
-      </div>
 
       <h1 className="breather-h1">Breather</h1>
+
+
+
       {/* div that contains breather-container class the logic from breatherClass function that dynamically changes the className depending on state of breatheText variable*/}
       <div className={`breather-container ${breatherClass}`}>
         {/* <!-- this div represents the solid color circle and the conditional logic: if breatheText variable is equal to 'Get Ready!' then display the initial-circle class, otherwise display the circle class--> */}
@@ -130,9 +115,26 @@ const Breather = () => {
 
       </div>
 
-      <div>
-        <button className='logout-btn' onClick={() => window.location.href = "/Login"}>Logout</button>
+
+      {/* music plays on click event */}
+      <div className="soundButton-container">
+
+        <p className="soundButton-p">Choose some music to relax to</p>
+        <SoundButton
+          type='Ambient'
+        />
+        <SoundButton
+          type='Nature'
+        />
+        <SoundButton
+          type='Ocean'
+        />
+        <SoundButton
+          type='Dreamy'
+        />
+
       </div>
+
     </div>
   )
 }
