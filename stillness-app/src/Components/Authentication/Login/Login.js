@@ -1,8 +1,42 @@
 import React, { useState } from 'react'
 import "./Login.css"
 import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Link from '@material-ui/core/Link';
+
+
+
+
+// all of the styles from material ui
+const useStyles = makeStyles((theme) => ({
+  paper: {
+    // marginTop: theme.spacing(3),
+    display: 'flex',
+    flexDirection: 'column',
+    alignItems: 'center',
+  },
+  form: {
+    width: '100%', // Fix IE 11 issue.
+    marginTop: theme.spacing(3),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+  loginButton: {
+    marginTop: '15px;'
+  },
+  homeLink: {
+    color: 'black',
+  }
+
+}));
 
 const Login = () => {
+
+  const classes = useStyles()
 
   const [form, setForm] = useState({
     email: '',
@@ -41,18 +75,59 @@ const Login = () => {
 
     <div className="login-container">
 
-      <form action='/login' method="POST" className="login-credentials">
+      <Container component="main" maxWidth="sm">
+        <div className={classes.paper}>
 
-        <label>Email</label>
-        <input className="login-input" onChange={handleChange} value={form.email} placeholder="Email" name="email" />
-        <label>Password</label>
-        <input type="password" className="login-input" onChange={handleChange} value={form.password} placeholder="Password" name="password" />
+          <form className={classes.form} action='/login' method="POST" >
 
-        <Button className="login-btn" variant="contained" color="default" onClick={handleSubmit} type="submit">
-          Login
-        </Button>
+            {/* textfields for login component */}
+            <Grid container spacing={2}>
+              <Grid item xs={12}>
+                <TextField
+                  onChange={handleChange}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  value={form.email}
+                  id="email"
+                  label="Email Address"
+                  name="email"
+                  autoComplete="email"
+                />
+              </Grid>
 
-      </form>
+              <Grid item xs={12}>
+                <TextField
+                  onChange={handleChange}
+                  variant="outlined"
+                  required
+                  fullWidth
+                  value={form.password}
+                  name="password"
+                  label="Password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                />
+              </Grid>
+              {/* login button */}
+              <Button fullWidth className={classes.loginButton} variant="contained" color="default" onClick={handleSubmit} type="submit">
+                Login
+              </Button>
+
+              {/* link that directs user to homepage */}
+              <Grid item>
+                <Link className={classes.homeLink} onClick={() => window.location.href = "/"} variant="body2">
+                  {"Go Home"}
+                </Link>
+              </Grid>
+
+            </Grid>
+          </form>
+
+        </div>
+
+      </Container>
     </div>
   )
 }

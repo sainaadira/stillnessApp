@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '@material-ui/core/Button';
 
 
 // to capitalize the mood  name on button based on the type attribute
@@ -7,17 +8,18 @@ const capitalize = (t) => {
 }
 
 const MoodButton = (props) => {
-  // destructuring properties as props
+  // destructuring properties as props to use in MoodButton
   const { value, type, active, color, setMood } = props
 
   // handleButtonClick passes the type of button the click created
   const handleButtonClick = () => {
     setMood(type);
-    // handle other logic for button
   }
+
   return (
     <>
-      <button onClick={handleButtonClick} className="mood-btn" value={value} type={type} style={active ? { backgroundColor: color } : {}} >{capitalize(type)} </button>
+
+      <Button variant="contained" onClick={handleButtonClick} className="mood-btn" value={value} type={type} style={active ? { backgroundColor: color } : {}} >{capitalize(type)} </Button>
 
     </>
   )

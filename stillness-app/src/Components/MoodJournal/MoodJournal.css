@@ -37,13 +37,13 @@ body{
 }
 
 /* h1 title */
-.moodJournal-h1{
-  font-size: 2.5em;
-  padding: 10px;
-  border-bottom: solid black;
-  text-align: center;
-  width: 79%;
-  margin: 35px;
+.moodJournal-h1 {
+    font-size: 34px;
+    padding: 10px;
+    border-bottom: solid black;
+    text-align: center;
+    width: 44%;
+    margin: 24px;
 }
 
 .moodJournal-paragraph{
@@ -81,6 +81,7 @@ body{
     margin: 13px 3px 0 8px;
     outline: none;
     background-color: #F6F4EF;
+    border: 3px solid #581845;
 }
 
 /* submit and clear button/container */

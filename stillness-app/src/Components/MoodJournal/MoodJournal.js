@@ -104,6 +104,8 @@ const MoodJournal = () => {
           ________________________________________________ */}
       <div className="mood-title-paragraph">
 
+        <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
+
         <h1 className="moodJournal-h1">Thank you for being here on: {today} .</h1>
         <p className="moodJournal-paragraph">How are you feeling today?</p>
 
