@@ -5,5 +5,5 @@ A full-stack web application that allows users track their mood and journal thei
 
 
 # Development And Design
-## Tech Used
+# Tech Used
 HTML, CSS, JavaScript, React, Node, Express,MongoDB, Passport,  Twilio for text messaging, Material UI library.
