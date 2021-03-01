@@ -70,7 +70,7 @@ body{
 
 /* textarea container */
 .mood-journal-form{
-      display: flex;
+    display: flex;
     justify-content: center;
 }
 
@@ -84,7 +84,7 @@ body{
     border: 3px solid #581845;
 }
 
-/* submit and clear button/container */
+/* submit and clear button and container */
 .moodJournal-btns-container{
     display: flex;
     justify-content: space-evenly;
