@@ -29,8 +29,9 @@ const useStyles = makeStyles((theme) => ({
 
 
 const Signup = () => {
-
+  // calling useStyles function to handle the property changes
   const classes = useStyles();
+
   // contactInfo variable to store the user's credentials and setContactInfo is the function that will handle the state change for the inputs.
   const [contactInfo, setContactInfo] = useState({
     firstName: '',
@@ -137,7 +138,7 @@ const Signup = () => {
                 <FormControlLabel
                   control={<Checkbox value="allowTexts" color="primary" />}
                   label="By signing up, I agree to receive uplifting SMS messages.  
-                  * Message and data rates may apply depending on your mobile provider."
+                  * Message and data rates may apply depending on your mobile service provider."
                 />
               </Grid>
 
@@ -146,24 +147,6 @@ const Signup = () => {
         </Button>
 
             </Grid>
-
-
-            {/* <label>First Name</label>
-          <input className="signup-input" onChange={handleContactChange} value={contactInfo.firstName} name="firstName" placeholder="First Name" /> */}
-
-
-
-            {/* <label>Last Name</label>
-        <input className="signup-input" onChange={handleContactChange} value={contactInfo.lastName} name="lastName" placeholder="Last Name" /> */}
-
-            {/* <label>Email</label>
-        <input className="signup-input" onChange={handleContactChange} value={contactInfo.email} name="email" placeholder="Email" /> */}
-            {/* 
-        <label>Password</label>
-        <input className="signup-input" type="password" onChange={handleContactChange} value={contactInfo.password} name="password" placeholder="Password" /> */}
-
-            {/* <label>Phone Number</label>
-        <input className="signup-input" onChange={handleContactChange} value={contactInfo.phone} name="phone" placeholder="Phone Number" /> */}
 
           </form>
         </div>

@@ -90,7 +90,6 @@ const MoodJournal = () => {
 
   return (
     <div className="mood-journal-container">
-      {/* <p>Thank you for being here on: {today}</p> */}
 
       <div className="mood-journal-nav">
         <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/MoodJournalHistory"}>View Reflections</Button>

@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
 }));
 
-
+// AuthFlow component begins here ______
 const AuthFlow = () => {
 
   const classes = useStyles()
@@ -50,8 +50,8 @@ const AuthFlow = () => {
 
         {/* login/signup button */}
         <ButtonGroup fullWidth aria-label="outlined button group">
-          <Button variant={view === 'login' ? "contained" : 'outlined'} onClick={() => toggleView('login')} >Login</Button>
-          <Button variant={view === 'signup' ? "contained" : 'outlined'} onClick={() => toggleView('signup')} >Signup</Button>
+          <Button variant={view === 'login' ? 'contained' : 'outlined'} onClick={() => toggleView('login')} >Login</Button>
+          <Button variant={view === 'signup' ? 'contained' : 'outlined'} onClick={() => toggleView('signup')} >Signup</Button>
         </ButtonGroup>
       </Container>
 

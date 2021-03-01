@@ -88,7 +88,7 @@ body{
 .moodJournal-btns-container{
     display: flex;
     justify-content: space-evenly;
-    padding: 15px 0 20px 0;
+   padding: 17px 0 33px 0;
 }
 
 .submit, .clear{
