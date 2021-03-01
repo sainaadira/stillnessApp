@@ -1,4 +1,4 @@
-## Stillness Application
+## The Stillness App
 
 
 ## Tech Used
