@@ -2,6 +2,9 @@ import React, { useState } from 'react'
 import './MoodJournal.css'
 import MoodButton from './Components/MoodButton/MoodButton'
 import Button from '@material-ui/core/Button';
+// import Grid from '@material-ui/core/Grid'
+// import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container'
 
 
 const MoodJournal = () => {
@@ -50,8 +53,7 @@ const MoodJournal = () => {
   // storing journal entries inside of an empty string
   const [journalSpace, setJournalSpace] = useState('')
 
-
-  // 
+  // function to handle getting the mood and associated background color and clearing the background once the user clicks the button twice
   const handleMood = (mood) => {
     if (moodOption === mood) {
       setMoodOption('');
@@ -91,52 +93,59 @@ const MoodJournal = () => {
 
   return (
     <div className="mood-journal-container">
+      <Container component="main" maxWidth="lg">
 
-      <div className="mood-journal-nav">
-        <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/Login"}>Logout</Button>
 
-        <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/MoodJournalHistory"}>View Reflections</Button>
+        <div className="mood-journal-nav">
+          <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/Login"}>Logout</Button>
 
-      </div>
+          <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/MoodJournalHistory"}>View Reflections</Button>
 
-      {/* ________________________________________________
+        </div>
+
+        {/* ________________________________________________
                           MOOD BUTTONS
         maps though moods array of and returns MoodButton component *
           ________________________________________________ */}
-      <div className="mood-title-paragraph">
+        <div className="mood-title-paragraph">
 
-        <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
+          <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
 
-        <h1 className="moodJournal-h1">Thank you for being here on: {today} .</h1>
-        <p className="moodJournal-paragraph">How are you feeling today?</p>
+          {/* <Typography className="moodJournal-h1" component="h1" variant="h5">
+            Thank you for being here on: {today} .
+        </Typography> */}
 
-      </div>
+          <h1 className="moodJournal-h1">Thank you for being here on: {today} .</h1>
+          <p className="moodJournal-paragraph">How are you feeling today?</p>
 
-      <div className="mood-btn-container">
-        {moods.map(mood => <MoodButton value={mood.value} setMood={handleMood} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}
-      </div>
+        </div>
 
-      {/* _______________________________________________________
+        <div className="mood-btn-container">
+          {moods.map(mood => <MoodButton value={mood.value} setMood={handleMood} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}
+        </div>
+
+        {/* _______________________________________________________
                         JOURNAL SPACE TEXT AREA
         _________________________________________________________ */}
-      <div className="mood-journal-textarea">
+        <div className="mood-journal-textarea">
 
-        <form className="mood-journal-form">
-          <textarea value={journalSpace} name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
-        </form>
+          <form className="mood-journal-form">
+            <textarea value={journalSpace} name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
+          </form>
 
-      </div>
-
-
-      <div className="moodJournal-btns-container">
-        {/* clears texarea */}
-        <Button variant="contained" color="default" className="clear-btn" onClick={clearJournalEntry}>Clear</Button>
-
-        {/* submits journal entry */}
-        <Button variant="contained" color="default" className="submit-btn" onClick={handleSubmit}>Submit</Button>
-      </div>
+        </div>
 
 
+        <div className="moodJournal-btns-container">
+          {/* clears texarea */}
+          <Button variant="contained" color="default" className="clear-btn" onClick={clearJournalEntry}>Clear</Button>
+
+          {/* submits journal entry */}
+          <Button variant="contained" color="default" className="submit-btn" onClick={handleSubmit}>Submit</Button>
+        </div>
+
+
+      </Container>
     </div>
   )
 }

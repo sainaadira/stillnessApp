@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend+Tera&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Lexend+Tera&display=swap'); */
 
 * {
     box-sizing: border-box ;
@@ -9,7 +9,7 @@ background-image: url('../../assets/images/bg.gif') ;
 background-repeat: no-repeat;
 background-size: cover;
 color: white;
-font-family: 'Lexend Tera', sans-serif;
+font-family: 'Arimo', sans-serif;
 min-height: 100vh;
 overflow: hidden;
 display: flex;

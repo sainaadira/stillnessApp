@@ -47,11 +47,10 @@ const MoodJournalHistory = () => {
           <Grid
             container
             direction="row"
-            justify="space-evenly"
+            justify="space-between"
             alignItems="center"
           >
 
-            {/* <h1 className='reflection-title'>Your Reflections</h1> */}
 
             {journals.map(entry => {
               // styling my journal entries here 

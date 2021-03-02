@@ -7,6 +7,7 @@ import EditIcon from '@material-ui/icons/Edit';
 import ClearIcon from '@material-ui/icons/Clear';
 import DeleteIcon from '@material-ui/icons/Delete';
 
+
 const JournalEntry = (props) => {
 
   const [entry, setEntry] = useState(props.journal)
@@ -102,6 +103,8 @@ const JournalEntry = (props) => {
           startIcon={<DeleteIcon />}
         > Delete
       </Button>
+
+
 
       </div>
     )

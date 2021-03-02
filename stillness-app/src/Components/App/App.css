@@ -1,13 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400&display=swap');
+
 *{
   box-sizing: border-box;
 }
 
-/* body{
-  background-color:#F6F4EF;
-} */
 
 html{
   height: 100%;
+  font-family: 'Roboto Slab', sans-serif;
+  font-weight:200;
 }
 
 #root{
