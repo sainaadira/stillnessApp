@@ -1,5 +1,7 @@
 # The Stillness App
 
+![Stillness](stillness.png)
+
 ## App Background: 
 A full-stack web application that allows users track their mood and journal their thoughts. Upon submitting their mood and journal entry, users receive a motivational or uplifting text message as a gentle reminder their act of self-care is valuable.
 

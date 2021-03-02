@@ -3,6 +3,7 @@ import './MoodJournal.css'
 import MoodButton from './Components/MoodButton/MoodButton'
 import Button from '@material-ui/core/Button';
 
+
 const MoodJournal = () => {
   // gets the date
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -92,9 +93,10 @@ const MoodJournal = () => {
     <div className="mood-journal-container">
 
       <div className="mood-journal-nav">
+        <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/Login"}>Logout</Button>
+
         <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/MoodJournalHistory"}>View Reflections</Button>
 
-        <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/Login"}>Logout</Button>
       </div>
 
       {/* ________________________________________________
