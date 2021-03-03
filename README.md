@@ -11,4 +11,4 @@ A full-stack web application that allows users to track their mood and journal t
 HTML, CSS, JavaScript, React, Node, Express,MongoDB, Passport,  Twilio for text messaging, Material UI library.
 
 ## Future Optimizations
-This application currently does not allow a user to opt out of receiving text messages. In the future, I would like to implement this opttion. I would also like to add more features to the journaling section so users can have the choice to change their font/font color and size (for accessibility or just to have the option to do so). 
+This application currently does not allow a user to opt out of receiving text messages. In the future, I would like to implement this option. I would also like to add more features to the journaling section so users can have the choice to change their font/font color and size (for accessibility or just to have the option to do so). 
