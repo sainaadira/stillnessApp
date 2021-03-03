@@ -116,7 +116,7 @@ const MoodJournal = () => {
         </Typography> */}
 
           <h1 className="moodJournal-h1">Thank you for being here on: {today} .</h1>
-          <p className="moodJournal-paragraph">How are you feeling today?</p>
+          <p className="moodJournal-paragraph">Your space for release: How are you feeling today?</p>
 
         </div>
 
@@ -130,7 +130,7 @@ const MoodJournal = () => {
         <div className="mood-journal-textarea">
 
           <form className="mood-journal-form">
-            <textarea value={journalSpace} name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to use this space to journal your thoughts." />
+            <textarea value={journalSpace} name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to further express yourself here." />
           </form>
 
         </div>

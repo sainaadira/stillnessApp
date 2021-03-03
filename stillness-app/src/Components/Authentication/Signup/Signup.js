@@ -138,7 +138,7 @@ const Signup = () => {
                 <FormControlLabel
                   control={<Checkbox value="allowTexts" color="primary" />}
                   label="By signing up, I agree to receive uplifting SMS messages.  
-                  * Message and data rates may apply depending on your mobile service provider."
+                  * Message and data rates may apply depending on your mobile carrier."
                 />
               </Grid>
 

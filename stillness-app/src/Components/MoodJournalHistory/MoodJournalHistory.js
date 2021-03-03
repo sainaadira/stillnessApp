@@ -38,7 +38,6 @@ const MoodJournalHistory = () => {
 
       <div className="entry-container">
 
-
         <h1 className='reflection-title'>Your Reflections</h1>
 
         <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
@@ -50,8 +49,6 @@ const MoodJournalHistory = () => {
             justify="space-between"
             alignItems="center"
           >
-
-
             {journals.map(entry => {
               // styling my journal entries here 
               return (
@@ -63,16 +60,12 @@ const MoodJournalHistory = () => {
                   // passing everything over from the entry variable
                   {...entry}
                 />
-
-
               )
             })}
+
           </Grid>
         </Container>
       </div>
-
-
-
     </div >
   )
 }

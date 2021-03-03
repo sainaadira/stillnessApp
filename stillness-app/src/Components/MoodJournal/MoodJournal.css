@@ -48,8 +48,10 @@ justify-content: space-between;
 }
 
 .moodJournal-paragraph{
-      margin: 40px;
+    margin: 37px;
     padding-bottom: 19px;
+    font-size: 22px;
+    font-weight: 200;
 }
 
 /* container for all mood buttons */
