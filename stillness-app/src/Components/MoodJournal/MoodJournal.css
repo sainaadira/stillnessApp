@@ -14,9 +14,25 @@ body{
 }
 
 /* nav button container */
-.mood-journal-nav{
+/* .mood-journal-nav{
   display: flex;
 justify-content: space-between;  
+} */
+
+.mood-journal-ul{
+  display:flex;
+  margin: 25px;
+}
+
+li.mood-journal-li{
+  list-style: none;
+    padding: 6px 26px 0px 3px;
+    border-bottom: 3px solid #581845; 
+}
+
+.mood-journal-link{
+  font-size: 18px;
+    margin: 20px;
 }
 
 

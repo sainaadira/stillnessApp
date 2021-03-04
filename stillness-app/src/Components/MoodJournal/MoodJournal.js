@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './MoodJournal.css'
 import MoodButton from './Components/MoodButton/MoodButton'
 import Button from '@material-ui/core/Button';
-// import Grid from '@material-ui/core/Grid'
+import Grid from '@material-ui/core/Grid'
 // import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container'
 
@@ -93,15 +93,36 @@ const MoodJournal = () => {
 
   return (
     <div className="mood-journal-container">
+      {/* 
+      <div className="mood-journal-nav">
+        <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/Login"}>Logout</Button>
+
+        <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/MoodJournalHistory"}>View Reflections</Button>
+
+      </div> */}
+
+      <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
+
+        <nav>
+          <ul className="mood-journal-ul">
+            <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/Breather"}>Begin Breathing </a></li>
+            <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/MoodJournalHistory"}>View Reflections </a></li>
+            <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/Login"}>Logout </a></li>
+          </ul>
+        </nav>
+      </Grid>
+
+
+
+
       <Container component="main" maxWidth="lg">
 
 
-        <div className="mood-journal-nav">
-          <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/Login"}>Logout</Button>
-
-          <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/MoodJournalHistory"}>View Reflections</Button>
-
-        </div>
 
         {/* ________________________________________________
                           MOOD BUTTONS
