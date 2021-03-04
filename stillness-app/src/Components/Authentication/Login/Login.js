@@ -3,6 +3,8 @@ import "./Login.css"
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import Checkbox from '@material-ui/core/Checkbox';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Link from '@material-ui/core/Link';
@@ -110,6 +112,13 @@ const Login = () => {
                   autoComplete="current-password"
                 />
               </Grid>
+
+              <FormControlLabel
+                control={<Checkbox value="remember" color="primary" />}
+                label="Remember me"
+              />
+
+
               {/* login button */}
               <Button fullWidth className={classes.loginButton} variant="contained" color="default" onClick={handleSubmit} type="submit">
                 Login

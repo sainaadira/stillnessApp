@@ -49,7 +49,7 @@ const MoodJournalHistory = () => {
             justify="space-between"
             alignItems="center"
           >
-            {journals.map(entry => {
+            {journals.reverse().map(entry => {
               // styling my journal entries here 
               return (
                 <JournalEntry

@@ -63,6 +63,8 @@ const Breather = () => {
       clearInterval(animationTime)
     }
     // passing an empty array so that the useEffect is only run once. a way to define componentDidMount() so it runs only once
+    // lets me have an empty array without warning.
+    // eslint-disable-next-line 
   }, [])
 
 

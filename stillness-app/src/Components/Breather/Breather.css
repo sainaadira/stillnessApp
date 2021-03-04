@@ -1,15 +1,20 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Lexend+Tera&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400&display=swap');
+
 
 * {
     box-sizing: border-box ;
 }
+
+html{
+      font-family: 'Roboto Slab', sans-serif;
+}
+
 
 .background-image {
 background-image: url('../../assets/images/bg.gif') ;
 background-repeat: no-repeat;
 background-size: cover;
 color: white;
-font-family: 'Arimo', sans-serif;
 min-height: 100vh;
 overflow: hidden;
 display: flex;
@@ -19,9 +24,10 @@ margin: 0;
 }
 
 .breather-h1{
-  font-size: 59px;
+  font-size: 70px;
     padding: 6px;
     margin: 0px 0px 5px 0px;
+    font-weight:200
 }
 
 .navigation-links{

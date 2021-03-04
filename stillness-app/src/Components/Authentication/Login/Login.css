@@ -6,3 +6,6 @@
   display:flex;
 } */
 
+span.MuiCheckbox-colorPrimary.Mui-checked {
+    color: #581845;
+}

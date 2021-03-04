@@ -1,11 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400&display=swap');
+
+
+
+
 .sound-btn{
-  justify-items:left;
-  width: 75%;
-  background-color: #B781AB ;
-  color:white;
-  font-size: 1em;
-  font-weight: bold;
-  outline:none;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    background-color: #B781AB;
+    color: white;
+    outline: none;
+    margin: 2px;
 }
 
 
