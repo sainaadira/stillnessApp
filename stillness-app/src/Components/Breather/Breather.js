@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import './Breather.css'
 import SoundButton from './Components/SoundButton/SoundButton'
+// import Container from '@material-ui/core/Container';
 
 
 const Breather = () => {
@@ -84,7 +85,9 @@ const Breather = () => {
   const breatherClass = getBreatherClass()
 
   return (
-    <div className="background-image">
+
+    <div className="breather-background-image">
+
       {/* navigation links: add behavior */}
       <nav>
         <ul className="navigation-links">
@@ -136,7 +139,6 @@ const Breather = () => {
         />
 
       </div>
-
     </div>
   )
 }

@@ -42,7 +42,7 @@ const MoodJournalHistory = () => {
 
         <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
 
-        <Container component="main" maxWidth="xl">
+        <Container component="main" maxWidth="lg">
           <Grid
             container
             direction="row"

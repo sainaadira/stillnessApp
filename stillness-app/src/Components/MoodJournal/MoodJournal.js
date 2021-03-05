@@ -118,11 +118,7 @@ const MoodJournal = () => {
       </Grid>
 
 
-
-
       <Container component="main" maxWidth="lg">
-
-
 
         {/* ________________________________________________
                           MOOD BUTTONS
@@ -164,7 +160,6 @@ const MoodJournal = () => {
           {/* submits journal entry */}
           <Button variant="contained" color="default" className="submit-btn" onClick={handleSubmit}>Submit</Button>
         </div>
-
 
       </Container>
     </div>

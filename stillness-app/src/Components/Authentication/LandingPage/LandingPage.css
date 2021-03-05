@@ -7,7 +7,6 @@
 
 html{
 font-family: 'Roboto Slab', sans-serif; 
- background-color: #F6F4EF;
  font-weight:300;
 }
 
@@ -16,7 +15,6 @@ font-family: 'Roboto Slab', sans-serif;
 .landing-container{
   display:flex;
   justify-content: center;
-  background-color: #F6F4EF;
    width: 100%;
    margin:24px;
    padding: 3px;

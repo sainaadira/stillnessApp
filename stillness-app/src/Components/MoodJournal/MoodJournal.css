@@ -13,12 +13,6 @@ body{
   margin:14px;
 }
 
-/* nav button container */
-/* .mood-journal-nav{
-  display: flex;
-justify-content: space-between;  
-} */
-
 .mood-journal-ul{
   display:flex;
   margin: 25px;
@@ -32,9 +26,7 @@ li.mood-journal-li{
 
 .mood-journal-link{
   font-size: 20px;
-    margin: 20px;
 }
-
 
 /* nav buttons */
 #mood-journal-nav-btn, .MuiButton-contained {
