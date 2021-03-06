@@ -58,8 +58,8 @@ const JournalEntry = (props) => {
   if (editMode === true) {
     return (
       <div className="journal-entry-edit">
-        <h3> {props.mood}</h3>
-        <textarea value={editJournalEntry} onChange={handleEditJournalEntry}>{editJournalEntry}</textarea>
+        <p> Today I feel: {props.mood} </p>
+        <textarea className="edit-textarea" value={editJournalEntry} onChange={handleEditJournalEntry}>{editJournalEntry}</textarea>
 
         {/* cancel edit entry button */}
         <Icon onClick={() => setEditMode(false)} className="edit-btn"><ClearIcon /></Icon>

@@ -147,7 +147,7 @@ const MoodJournal = () => {
         <div className="mood-journal-textarea">
 
           <form className="mood-journal-form">
-            <textarea value={journalSpace} name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="15" placeholder="Feel free to further express yourself here." />
+            <textarea value={journalSpace} name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="12" placeholder="Feel free to further express yourself here." />
           </form>
 
         </div>

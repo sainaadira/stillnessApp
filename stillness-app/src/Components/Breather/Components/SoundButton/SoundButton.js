@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './SoundButton.css'
+import Button from '@material-ui/core/Button';
 
 // sound list: it supports four different audio sounds
 const sounds = {
@@ -28,7 +29,8 @@ const SoundButton = (props) => {
     }
   }
   return (
-    <button className={"sound-btn sound-btn-" + props.type} onClick={handleClick} type='button'>{props.type}</button>
+
+    <Button variant="outlined" className={"sound-btn sound-btn-" + props.type} onClick={handleClick} type='button'>{props.type}</Button>
   )
 }
 

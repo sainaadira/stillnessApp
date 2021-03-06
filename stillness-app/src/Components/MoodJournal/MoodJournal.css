@@ -93,7 +93,9 @@ li.mood-journal-li{
     width: 58%;
     padding: 14px 0px 15px 1px;
     margin: 13px 3px 0 8px;
-    font-size: 17px;
+    font-size: 19px;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight:300;
 }
 
 /* submit and clear button and container */
