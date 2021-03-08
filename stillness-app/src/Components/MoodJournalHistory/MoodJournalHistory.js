@@ -3,6 +3,7 @@ import JournalEntry from '../JournalEntry/JournalEntry'
 import './MoodJournalHistory.css'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import Container from '@material-ui/core/Container';
 
 
 const MoodJournalHistory = () => {
@@ -43,29 +44,37 @@ const MoodJournalHistory = () => {
         <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
 
 
+        <Container maxWidth="lg">
+          <Grid
+            container
+            direction="row"
+            justify="center"
+            alignItems="center"
+            spacing={3}
 
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-        >
+          >
 
-          {journals.map(entry => {
-            // styling my journal entries here 
-            return (
-              <JournalEntry
-                key={entry._id}
-                id={entry._id}
-                // manually moving data from database
-                journals={setJournals}
-                // passing everything over from the entry variable
-                {...entry}
-              />
-            )
-          })}
 
-        </Grid>
+            {journals.map(entry => {
+              // styling my journal entries here 
+              return (
+
+                <Grid item sm={12} md={6}>
+                  <JournalEntry
+                    key={entry._id}
+                    id={entry._id}
+                    // manually moving data from database
+                    journals={setJournals}
+                    // passing everything over from the entry variable
+                    {...entry}
+                  />
+                </Grid>
+
+              )
+            })}
+
+          </Grid>
+        </Container>
       </div>
     </div >
   )

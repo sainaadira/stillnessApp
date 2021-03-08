@@ -3,7 +3,6 @@ import './MoodJournal.css'
 import MoodButton from './Components/MoodButton/MoodButton'
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid'
-// import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container'
 
 
@@ -93,13 +92,6 @@ const MoodJournal = () => {
 
   return (
     <div className="mood-journal-container">
-      {/* 
-      <div className="mood-journal-nav">
-        <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/Login"}>Logout</Button>
-
-        <Button id="mood-journal-nav-btn" variant="contained" color="default" onClick={() => window.location.href = "/MoodJournalHistory"}>View Reflections</Button>
-
-      </div> */}
 
       <Grid
         container
@@ -132,7 +124,11 @@ const MoodJournal = () => {
             Thank you for being here on: {today} .
         </Typography> */}
 
+
+
           <h1 className="moodJournal-h1">Thank you for being here on: {today} .</h1>
+
+
           <p className="moodJournal-paragraph">Your space for release: How are you feeling today?</p>
 
         </div>
@@ -162,7 +158,7 @@ const MoodJournal = () => {
         </div>
 
       </Container>
-    </div>
+    </div >
   )
 }
 
