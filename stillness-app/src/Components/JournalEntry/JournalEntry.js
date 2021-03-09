@@ -6,6 +6,7 @@ import SaveIcon from '@material-ui/icons/Save';
 import EditIcon from '@material-ui/icons/Edit';
 import ClearIcon from '@material-ui/icons/Clear';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Grid from '@material-ui/core/Grid';
 
 
 const JournalEntry = (props) => {
@@ -78,36 +79,47 @@ const JournalEntry = (props) => {
     let journalTime = new Date(props.createdAt).toLocaleTimeString('us-en', timeOptions)
     return (
       <div className="journal-entry">
-        <p className="journal-entry-date">{journalDate} at {journalTime}</p>
-        <h4 className='feeling-title'> Today I feel: {props.mood}</h4>
-        <p className="journal-entry-paragraph">{entry}</p>
+
+        <Grid
+          container
+          direction="row"
+          justify="center"
+          alignItems="center"
+        >
+
+          <Grid item sm={12}>
+            <p className="journal-entry-date">{journalDate} at {journalTime}</p>
+            <h4 className='feeling-title'> Today I feel: {props.mood}</h4>
+            <p className="journal-entry-paragraph">{entry}</p>
+          </Grid>
+
+          {/* edit button */}
+          <Grid item sm={12}>
+            <Button
+              onClick={() => setEditMode(true)}
+              id="edit-btn"
+              variant="contained"
+              color="default"
+              startIcon={<EditIcon />}
+            > Edit
+            </Button>
+
+            {/* delete button */}
+            <Button
+              onClick={handleDeleteJournalEntry}
+              id="delete-btn"
+              variant="contained"
+              color="default"
+              startIcon={<DeleteIcon />}
+            > Delete
+          </Button>
+          </Grid>
 
 
-        {/* edit button */}
-        <Button
-          onClick={() => setEditMode(true)}
-          id="edit-btn"
-          variant="contained"
-          color="default"
-          startIcon={<EditIcon />}
-        > Edit
-      </Button>
-
-
-        {/* delete button */}
-        <Button
-          onClick={handleDeleteJournalEntry}
-          id="delete-btn"
-          variant="contained"
-          color="default"
-          startIcon={<DeleteIcon />}
-        > Delete
-      </Button>
-
-
-
+        </Grid>
       </div>
     )
+
   }
 }
 

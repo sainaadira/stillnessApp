@@ -48,9 +48,9 @@ li.mood-journal-li{
 .moodJournal-h1 {
     font-size: 34px;
     padding: 10px;
-    border-bottom: solid black;
+    border-bottom: solid  #581845;
     text-align: center;
-    width: 44%;
+    width: 100%;
     margin: 24px;
     font-weight:300
 }
