@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import './JournalEntry.css'
 import Button from '@material-ui/core/Button';
 import Icon from '@material-ui/core/Icon'
+import Grid from '@material-ui/core/Grid';
 import SaveIcon from '@material-ui/icons/Save';
 import EditIcon from '@material-ui/icons/Edit';
 import ClearIcon from '@material-ui/icons/Clear';
 import DeleteIcon from '@material-ui/icons/Delete';
-import Grid from '@material-ui/core/Grid';
+
 
 
 const JournalEntry = (props) => {
@@ -52,7 +53,6 @@ const JournalEntry = (props) => {
     // .then()
     //   .catch(err => console.log(err))
   }
-
   // conditionally rendering the edit mode: toggle view
   // * if edit mode is true then display the textarea with the text to be edited
   // * and display the save updated entry button
@@ -65,10 +65,8 @@ const JournalEntry = (props) => {
         {/* cancel edit entry button */}
         <Icon onClick={() => setEditMode(false)} className="edit-btn"><ClearIcon /></Icon>
         {/* <button > Cancel Edit</button> */}
-
         {/* save edit entry */}
         <Icon onClick={handleSaveEntry}> <SaveIcon /></Icon>
-
       </div>
     )
     // else return the orginal entry
@@ -86,15 +84,13 @@ const JournalEntry = (props) => {
           justify="center"
           alignItems="center"
         >
-
-          <Grid item sm={12}>
+          <Grid item xs={12} sm={12} >
             <p className="journal-entry-date">{journalDate} at {journalTime}</p>
             <h4 className='feeling-title'> Today I feel: {props.mood}</h4>
             <p className="journal-entry-paragraph">{entry}</p>
           </Grid>
-
           {/* edit button */}
-          <Grid item sm={12}>
+          <Grid item xs={12} sm={12} >
             <Button
               onClick={() => setEditMode(true)}
               id="edit-btn"
@@ -103,7 +99,6 @@ const JournalEntry = (props) => {
               startIcon={<EditIcon />}
             > Edit
             </Button>
-
             {/* delete button */}
             <Button
               onClick={handleDeleteJournalEntry}
@@ -114,8 +109,6 @@ const JournalEntry = (props) => {
             > Delete
           </Button>
           </Grid>
-
-
         </Grid>
       </div>
     )

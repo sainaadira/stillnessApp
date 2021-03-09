@@ -14,7 +14,6 @@ body{
     margin:0;
 }
 
-
 .breather-background-image {
 background-image: url('../../assets/images/bg.gif') ;
 background-repeat: no-repeat;
@@ -58,9 +57,8 @@ li{
 
 .soundButton-container{
      display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-right: 61%;  
+    flex-direction: row;
+    justify-content: center; 
     padding-bottom:61px;
 }
 
@@ -72,7 +70,7 @@ li{
     justify-content: center;
     height: 300px;
     width: 300px;
-    margin: 61px;
+    margin: 0;
     /* margin: auto; */
     /* to position absolute within the container */
     position: relative;

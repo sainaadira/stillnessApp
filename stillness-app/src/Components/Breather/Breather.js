@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import './Breather.css'
 import SoundButton from './Components/SoundButton/SoundButton'
 // import Container from '@material-ui/core/Container';
+import Grid from '@material-ui/core/Grid';
 
 
 const Breather = () => {
@@ -88,6 +89,8 @@ const Breather = () => {
 
     <div className="breather-background-image">
 
+
+
       {/* navigation links: add behavior */}
       <nav>
         <ul className="navigation-links">
@@ -97,48 +100,53 @@ const Breather = () => {
         </ul>
       </nav>
 
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+      >
 
-      <h1 className="breather-h1">Breather</h1>
+        <h1 className="breather-h1">Breather</h1>
+        <Grid item xs={12} sm={12} >
+          {/* music plays on click event */}
+          <div className="soundButton-container">
 
+            <p className="soundButton-p">Choose some music to relax to</p>
 
+            <SoundButton
+              type='Ambient'
+            />
+            <SoundButton
+              type='Nature'
+            />
+            <SoundButton
+              type='Ocean'
+            />
+            <SoundButton
+              type='Dreamy'
+            />
+          </div>
+        </Grid>
 
-      {/* div that contains breather-container class the logic from breatherClass function that dynamically changes the className depending on state of breatheText variable*/}
-      <div className={`breather-container ${breatherClass}`}>
-        {/* <!-- this div represents the solid color circle and the conditional logic: if breatheText variable is equal to 'Get Ready!' then display the initial-circle class, otherwise display the circle class--> */}
-        <div className={`${breatheText === initialBreatheText ? "initial-circle" : "circle"}`}></div>
+        {/* div that contains breather-container class the logic from breatherClass function that dynamically changes the className depending on state of breatheText variable*/}
+        <div className={`breather-container ${breatherClass}`}>
+          {/* <!-- this div represents the solid color circle and the conditional logic: if breatheText variable is equal to 'Get Ready!' then display the initial-circle class, otherwise display the circle class--> */}
+          <div className={`${breatheText === initialBreatheText ? "initial-circle" : "circle"}`}></div>
 
-        {/* breatheText is changed dynamically here */}
-        <p id="text">{breatheText}</p>
+          {/* breatheText is changed dynamically here */}
+          <p id="text">{breatheText}</p>
 
-        {/* <!-- container to hold white pointer circle --> */}
-        <div className="pointer-container">
-          <div className="pointer"></div>
+          {/* <!-- container to hold white pointer circle --> */}
+          <div className="pointer-container">
+            <div className="pointer"></div>
+          </div>
+
+          {/* <!-- gradient circle that helps indicate when to breathe/hold breath (gives the border effect) --> */}
+          <div className="gradient-circle"></div>
+
         </div>
-
-        {/* <!-- gradient circle that helps indicate when to breathe/hold breath (gives the border effect) --> */}
-        <div className="gradient-circle"></div>
-
-      </div>
-
-
-      {/* music plays on click event */}
-      <div className="soundButton-container">
-
-        <p className="soundButton-p">Choose some music to relax to</p>
-        <SoundButton
-          type='Ambient'
-        />
-        <SoundButton
-          type='Nature'
-        />
-        <SoundButton
-          type='Ocean'
-        />
-        <SoundButton
-          type='Dreamy'
-        />
-
-      </div>
+      </Grid>
     </div>
   )
 }
