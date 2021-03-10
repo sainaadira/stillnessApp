@@ -90,7 +90,7 @@ const JournalEntry = (props) => {
             <p className="journal-entry-paragraph">{entry}</p>
           </Grid>
           {/* edit button */}
-          <Grid item xs={12} sm={12} >
+          <Grid item xs={12} sm={12}>
             <Button
               onClick={() => setEditMode(true)}
               id="edit-btn"

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import JournalEntry from '../JournalEntry/JournalEntry'
 import './MoodJournalHistory.css'
-import Button from '@material-ui/core/Button';
+// import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 
@@ -19,16 +19,21 @@ const MoodJournalHistory = () => {
 
     <div className="mood-history-container">
 
-      <div className="breather-btn-container">
+      <Grid
+        container
+        direction="row"
+        justify="center"
+        alignItems="center"
+      >
 
-        {/* button will take user to MoodJournal component */}
-        <Button id="breather-btn" variant="contained" color="default" onClick={() => window.location.href = "/MoodJournal"}>Back to Journal</Button>
+        <nav className="moodHistory-nav-container">
+          <ul className="moodHistory-ul">
+            <li className="moodHistory-li"><a className="moodHistory-link" href onClick={() => window.location.href = "/MoodJournal"}>Back to Journal</a></li>
+            <li className="moodHistory-li"><a className="moodHistory-link" href onClick={() => window.location.href = "/Breather"}>Begin Breathing</a></li>
+          </ul>
+        </nav>
 
-        {/* button will take user to Breather Component */}
-        <Button id="breather-btn" variant="contained" color="default" onClick={() => window.location.href = "/Breather"}>Begin Breathing</Button>
-
-      </div>
-
+      </Grid>
 
       {/* ___________________________________________________________________
  
@@ -38,11 +43,8 @@ const MoodJournalHistory = () => {
 
       <div className="entry-container">
 
-
         <h1 className='reflection-title'>Your Reflections</h1>
-
         <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
-
 
         <Container maxWidth="lg">
           <Grid
@@ -51,15 +53,11 @@ const MoodJournalHistory = () => {
             justify="center"
             alignItems="center"
             spacing={3}
-
           >
-
-
             {journals.map(entry => {
               // styling my journal entries here 
               return (
-
-                <Grid item sm={12} md={6}>
+                <Grid item xs={12} md={6}>
                   <JournalEntry
                     key={entry._id}
                     id={entry._id}
@@ -69,7 +67,6 @@ const MoodJournalHistory = () => {
                     {...entry}
                   />
                 </Grid>
-
               )
             })}
 

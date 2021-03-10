@@ -95,11 +95,10 @@ const MoodJournal = () => {
 
       <Grid
         container
-        direction="row"
+        direction="column"
         justify="center"
         alignItems="center"
       >
-
         <nav>
           <ul className="mood-journal-ul">
             <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/Breather"}>Begin Breathing </a></li>
@@ -109,29 +108,18 @@ const MoodJournal = () => {
         </nav>
       </Grid>
 
-
-      <Container component="main" maxWidth="lg">
-
-        {/* ________________________________________________
+      {/* ________________________________________________
                           MOOD BUTTONS
         maps though moods array of and returns MoodButton component *
           ________________________________________________ */}
-        <div className="mood-title-paragraph">
+      <div className="mood-title-paragraph">
 
-          <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
+        <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
+        <h1 className="moodJournal-h1">Thank you for being here on: {today} .</h1>
+        <p className="moodJournal-paragraph">Your space for release: How are you feeling today?</p>
+      </div>
 
-          {/* <Typography className="moodJournal-h1" component="h1" variant="h5">
-            Thank you for being here on: {today} .
-        </Typography> */}
-
-
-
-          <h1 className="moodJournal-h1">Thank you for being here on: {today} .</h1>
-
-
-          <p className="moodJournal-paragraph">Your space for release: How are you feeling today?</p>
-
-        </div>
+      <Container className="moodJournal-container" component="main" maxWidth="lg">
 
         <div className="mood-btn-container">
           {moods.map(mood => <MoodButton value={mood.value} setMood={handleMood} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}
@@ -141,11 +129,9 @@ const MoodJournal = () => {
                         JOURNAL SPACE TEXT AREA
         _________________________________________________________ */}
         <div className="mood-journal-textarea">
-
           <form className="mood-journal-form">
             <textarea value={journalSpace} name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="12" placeholder="Feel free to further express yourself here." />
           </form>
-
         </div>
 
 

@@ -6,16 +6,11 @@
    margin: 15px;
 }
 
-.breather-btn-container{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-}
-
 .entry-container{
  display: flex;
  flex-direction: column;
  align-items:center;
+ margin: 26px;
 }
 
 .reflection-title{
@@ -44,13 +39,20 @@
   font-weight: 300;
 }
 
-  .MuiButton-contained, #breather-btn {
-    color: white;
-    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
-    background-color: #581845;
-    width: 11%;
-    padding: 7px;
-    margin: 4px;
+.moodHistory-ul{
+  display:flex;
+  width: 100%;
+}
+
+.moodHistory-li{
+    list-style: none;
+    padding: 6px 26px 0px 3px;
+    border-bottom: 3px solid #581845;
+}
+
+.moodHistory-link{
+  font-size: 1.2em;
+  font-weight:200;
 }
 
 
