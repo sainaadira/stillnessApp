@@ -111,7 +111,6 @@ const Breather = () => {
         <Grid item xs={12} sm={12} >
           {/* music plays on click event */}
           <div className="soundButton-container">
-
             <p className="soundButton-p">Choose some music to relax to</p>
 
             <SoundButton

@@ -2,7 +2,6 @@
 
 
 
-
 .sound-btn{
     font-family: 'Roboto Slab', sans-serif;
     font-weight: 100;
@@ -11,6 +10,10 @@
     color: white;
     outline: none;
     width:100%;
+}
+
+.audio{
+    margin:3px;
 }
 
 .sound-btn.MuiButton-outlined {

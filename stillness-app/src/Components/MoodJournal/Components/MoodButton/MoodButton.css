@@ -3,7 +3,7 @@
 }
 
 
-button.MuiButton-containedSizeLarge {
+.mood-btn.MuiButton-containedSizeLarge {
     padding: 18px;
     margin: 4px;
 }

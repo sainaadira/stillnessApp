@@ -32,7 +32,7 @@ const SoundButton = (props) => {
   return (
 
     <Box>
-      <Button variant="outlined" className={"sound-btn sound-btn-" + props.type} onClick={handleClick} type='button'>{props.type}</Button>
+      <Button variant="outlined" className={"sound-btn audio  sound-btn-" + props.type} onClick={handleClick} type='button'>{props.type}</Button>
     </Box>
   )
 }
