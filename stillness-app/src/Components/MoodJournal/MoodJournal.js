@@ -112,14 +112,15 @@ const MoodJournal = () => {
                           MOOD BUTTONS
         maps though moods array of and returns MoodButton component *
           ________________________________________________ */}
-      <div className="mood-title-paragraph">
+      <Container className="moodJournal-container" component="main" maxWidth="lg">
 
         <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
-        <h1 className="moodJournal-h1">Thank you for being here on: {today} .</h1>
-        <p className="moodJournal-paragraph">Your space for release: How are you feeling today?</p>
-      </div>
 
-      <Container className="moodJournal-container" component="main" maxWidth="lg">
+
+        <div className="mood-title-paragraph">
+          <h1 className="moodJournal-h1">Thank you for being here on: {today} .</h1>
+          <p className="moodJournal-paragraph">Your space for release: How are you feeling today?</p>
+        </div>
 
         <div className="mood-btn-container">
           {moods.map(mood => <MoodButton value={mood.value} setMood={handleMood} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}
@@ -130,7 +131,7 @@ const MoodJournal = () => {
         _________________________________________________________ */}
         <div className="mood-journal-textarea">
           <form className="mood-journal-form">
-            <textarea value={journalSpace} name="journalEntry" onChange={handleJournalSpace} className="journal-space" rows="12" placeholder="Feel free to further express yourself here." />
+            <textarea className="journal-space" value={journalSpace} name="journalEntry" onChange={handleJournalSpace} rows="12" placeholder="Feel free to further express yourself here." />
           </form>
         </div>
 

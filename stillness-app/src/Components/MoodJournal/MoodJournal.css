@@ -66,15 +66,6 @@ li.mood-journal-li{
     padding-bottom: 13px;
 }
 
-/* mood buttons */
-.mood-btn{
-  font-size: 1.5em;
-  border-radius: 14%;
-  width: 11%;
-  margin: 4px;
-  padding: 22px;
-  outline: none;
-}
 
 /* textarea container */
 .mood-journal-form{

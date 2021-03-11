@@ -2,10 +2,6 @@
   box-sizing:border-box;
 }
 
-/* html{
-  background-color: #F6F4EF;
-} */
-
 .auth-container{
     display: flex;
     flex-direction: column;
@@ -47,14 +43,12 @@
   align-items: center;
 }
 
-/* login  button */
-
+/* all buttons with the contained variant */
  button.MuiButton-contained  {
     color:white;
-    box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
     background-color: #581845 ;
 }
-
+/* all buttons with the outlined variant */
 button.MuiButton-outlined {
     border: 1px solid rgba(0, 0, 0, 0.23);
     padding: 5px 15px;
