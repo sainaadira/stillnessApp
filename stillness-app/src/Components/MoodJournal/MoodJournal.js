@@ -92,49 +92,48 @@ const MoodJournal = () => {
 
   return (
     <div className="mood-journal-container">
-
-      <Grid
-        container
-        direction="column"
-        justify="center"
-        alignItems="center"
-      >
-        <nav>
-          <ul className="mood-journal-ul">
-            <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/Breather"}>Begin Breathing </a></li>
-            <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/MoodJournalHistory"}>View Reflections </a></li>
-            <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/Login"}>Logout </a></li>
-          </ul>
-        </nav>
-      </Grid>
-
-      {/* ________________________________________________
-                          MOOD BUTTONS
-        maps though moods array of and returns MoodButton component *
-          ________________________________________________ */}
       <Container className="moodJournal-container" component="main" maxWidth="lg">
+        <Grid
+          container
+          direction="column"
+          justify="center"
+          alignItems="center"
+        >
+          <nav>
+            <ul className="mood-journal-ul">
+              <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/Breather"}>Begin Breathing </a></li>
+              <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/MoodJournalHistory"}>View Reflections </a></li>
+              <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/Login"}>Logout </a></li>
+            </ul>
+          </nav>
+        </Grid>
 
-        <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
+        {/*                MOOD BUTTONS 
+        maps though moods array of and returns MoodButton component */}
 
+        <Grid
+          direction="column"
+          justify="center"
+          alignItems="center"
+        >
+          <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
 
-        <div className="mood-title-paragraph">
-          <h1 className="moodJournal-h1">Thank you for being here on: {today} .</h1>
-          <p className="moodJournal-paragraph">Your space for release: How are you feeling today?</p>
-        </div>
+          <div className="mood-title-paragraph">
+            <h1 className="moodJournal-h1">Thank you for being here on: {today} .</h1>
+            <p className="moodJournal-paragraph">Your space for release: How are you feeling today?</p>
+          </div>
 
-        <div className="mood-btn-container">
-          {moods.map(mood => <MoodButton value={mood.value} setMood={handleMood} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}
-        </div>
+          <div className="mood-btn-container">
+            {moods.map(mood => <MoodButton value={mood.value} setMood={handleMood} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}
+          </div>
 
-        {/* _______________________________________________________
-                        JOURNAL SPACE TEXT AREA
-        _________________________________________________________ */}
-        <div className="mood-journal-textarea">
-          <form className="mood-journal-form">
-            <textarea className="journal-space" value={journalSpace} name="journalEntry" onChange={handleJournalSpace} rows="12" placeholder="Feel free to further express yourself here." />
-          </form>
-        </div>
-
+          {/* JOURNAL SPACE TEXT AREA */}
+          <div className="mood-journal-textarea">
+            <form className="mood-journal-form">
+              <textarea className="journal-space" value={journalSpace} name="journalEntry" onChange={handleJournalSpace} cols="60" rows="12" placeholder="Feel free to further express yourself here." />
+            </form>
+          </div>
+        </Grid>
 
         <div className="moodJournal-btns-container">
           {/* clears texarea */}
