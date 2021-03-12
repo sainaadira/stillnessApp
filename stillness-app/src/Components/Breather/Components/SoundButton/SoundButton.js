@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './SoundButton.css'
 import Button from '@material-ui/core/Button';
-import Box from '@material-ui/core/Box';
+import Container from '@material-ui/core/Container';
 
 // sound list: it supports four different audio sounds
 const sounds = {
@@ -31,9 +31,9 @@ const SoundButton = (props) => {
   }
   return (
 
-    <Box>
+    <Container maxWidth="sm">
       <Button variant="outlined" className={"sound-btn audio  sound-btn-" + props.type} onClick={handleClick} type='button'>{props.type}</Button>
-    </Box>
+    </Container>
   )
 }
 

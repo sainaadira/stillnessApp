@@ -26,17 +26,20 @@ overflow: hidden;
 color:white;
 }
 
-.breather-h1{
-  font-size: 70px;
-    padding: 6px;
-    margin: 0px 0px 5px 0px;
-    font-weight:200
-}
-
 .navigation-links{
     display:flex;
     justify-items: center; 
-    padding: 21px 0px 33px 4px;
+}
+
+.breather-nav{
+  padding: 7px;
+}
+
+.breather-h1{
+  font-size: 70px;
+    margin: 7px;
+    font-weight:200;
+    padding-bottom: 3px;
 }
 
 li{
@@ -58,10 +61,14 @@ li{
 .soundButton-container{
      display: flex;
     flex-direction: row;
-    justify-content: center; 
-    padding-bottom:61px;
+    justify-content: center;
+    padding-bottom:70px;
 }
 
+.soundButton-p{
+    text-align: center;
+    font-weight:300;
+}
 
 /* the container that wraps around everything */
 .breather-container{

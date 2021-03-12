@@ -5,8 +5,9 @@ import Icon from '@material-ui/core/Icon'
 import Grid from '@material-ui/core/Grid';
 import SaveIcon from '@material-ui/icons/Save';
 import EditIcon from '@material-ui/icons/Edit';
-import ClearIcon from '@material-ui/icons/Clear';
+import CancelOutlinedIcon from '@material-ui/icons/CancelOutlined';
 import DeleteIcon from '@material-ui/icons/Delete';
+import Container from '@material-ui/core/Container';
 
 
 
@@ -60,13 +61,25 @@ const JournalEntry = (props) => {
     return (
       <div className="journal-entry-edit">
         <p> Today I feel: {props.mood} </p>
-        <textarea className="edit-textarea" value={editJournalEntry} onChange={handleEditJournalEntry}>{editJournalEntry}</textarea>
+        <textarea
+          className="edit-textarea"
+          value={editJournalEntry}
+          onChange={handleEditJournalEntry} >{editJournalEntry}</textarea>
 
-        {/* cancel edit entry button */}
-        <Icon onClick={() => setEditMode(false)} className="edit-btn"><ClearIcon /></Icon>
-        {/* <button > Cancel Edit</button> */}
-        {/* save edit entry */}
-        <Icon onClick={handleSaveEntry}> <SaveIcon /></Icon>
+        <Container maxWidth="md">
+          {/* save edit entry */}
+          <Icon
+            onClick={handleSaveEntry}>
+            <SaveIcon style={{ fill: '#581845' }} fontSize="large" />
+          </Icon>
+
+          {/* cancel edit entry button */}
+          <Icon
+            onClick={() => setEditMode(false)}
+            className="edit-btn">
+            <CancelOutlinedIcon style={{ fill: '#581845' }} fontSize="large" />
+          </Icon>
+        </Container>
       </div>
     )
     // else return the orginal entry
@@ -84,13 +97,14 @@ const JournalEntry = (props) => {
           justify="center"
           alignItems="center"
         >
-          <Grid item xs={12} sm={12} >
+          <Grid item xs={12} >
             <p className="journal-entry-date">{journalDate} at {journalTime}</p>
             <h4 className='feeling-title'> Today I feel: {props.mood}</h4>
             <p className="journal-entry-paragraph">{entry}</p>
           </Grid>
+
           {/* edit button */}
-          <Grid item xs={12} sm={12}>
+          <Grid item xs={12}>
             <Button
               onClick={() => setEditMode(true)}
               id="edit-btn"

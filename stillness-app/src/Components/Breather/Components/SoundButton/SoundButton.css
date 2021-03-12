@@ -8,7 +8,6 @@
     font-size: 18px;
     background-color: #B781AB;
     color: white;
-    outline: none;
     width:100%;
 }
 
@@ -19,7 +18,7 @@
 .sound-btn.MuiButton-outlined {
     border: 4px solid #9C6390;
     /* padding: 5px 15px; */
-    margin: 3px;
+    /* margin: 3px; */
     color: white;
 }
 

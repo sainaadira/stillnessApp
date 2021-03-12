@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;300;400&display=swap');
+
 *{
   box-sizing: border-box;
 }
@@ -6,22 +8,20 @@
     border: 1px solid black;
     border-radius: 4%;
     padding: 42px 0px 24px 6px;
-   
 }
 
 .journal-entry-edit{
    border: 8px solid #581845;
    font-size: 1em;
-   padding: 1px 0px 3px 7px;
-   margin: 10px 4px 3px 33px;
-   border-radius: 1%;  
-   /* width: 45%; */
-   height: 158px;  
+  padding: 10px 0px 30px 15px;
+   border-radius: 2%;  
 }
 
 .edit-textarea{
-    width: 50%;
-    padding: 3%;
+    padding: 10px 23px 30px 13px;
+    font-family: 'Roboto Slab', sans-serif;
+    margin: 12px;
+    font-size: 1em;
 }
 
  #edit-btn, #delete-btn{

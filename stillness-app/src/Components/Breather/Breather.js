@@ -40,7 +40,6 @@ const Breather = () => {
   //   }
   // })
 
-
   let counterInterval;
   // function that handles the countdown before breathing begins
   const initialBreatheCounter = () => {
@@ -53,7 +52,6 @@ const Breather = () => {
     }, 3500)
 
   }
-
   // triggers function every time something happens (like an update)
   useEffect(() => {
     // componentDidMount() 
@@ -68,7 +66,6 @@ const Breather = () => {
     // lets me have an empty array without warning.
     // eslint-disable-next-line 
   }, [])
-
 
   // function that gets the class according the state of the breatheText variable
   const getBreatherClass = () => {
@@ -86,13 +83,10 @@ const Breather = () => {
   const breatherClass = getBreatherClass()
 
   return (
-
     <div className="breather-background-image">
 
-
-
-      {/* navigation links: add behavior */}
-      <nav>
+      {/* navigation */}
+      <nav className="breather-nav">
         <ul className="navigation-links">
           <li> <a href className="breather-nav-link" onClick={() => window.location.href = "/MoodJournal"}> My Journal</a></li>
           <li>   <a href className="breather-nav-link" onClick={() => window.location.href = "/MoodJournalHistory"}>My Reflections</a> </li>
@@ -106,12 +100,13 @@ const Breather = () => {
         justify="center"
         alignItems="center"
       >
-
         <h1 className="breather-h1">Breather</h1>
-        <Grid item xs={12} sm={12} >
+        <Grid item xs={12} xs={6} >
+
           {/* music plays on click event */}
+
+          <p className="soundButton-p">Choose some music to relax to: </p>
           <div className="soundButton-container">
-            <p className="soundButton-p">Choose some music to relax to</p>
 
             <SoundButton
               type='Ambient'
@@ -127,6 +122,7 @@ const Breather = () => {
             />
           </div>
         </Grid>
+        {/* </Grid> */}
 
         {/* div that contains breather-container class the logic from breatherClass function that dynamically changes the className depending on state of breatheText variable*/}
         <div className={`breather-container ${breatherClass}`}>
@@ -146,7 +142,7 @@ const Breather = () => {
 
         </div>
       </Grid>
-    </div>
+    </div >
   )
 }
 

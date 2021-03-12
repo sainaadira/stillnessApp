@@ -41,12 +41,9 @@
 
 .moodHistory-ul{
   display:flex;
-  width: 100%;
 }
 
 .moodHistory-li{
-    list-style: none;
-    padding: 6px 26px 0px 3px;
     border-bottom: 3px solid #581845;
 }
 
