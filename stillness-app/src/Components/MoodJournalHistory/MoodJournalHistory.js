@@ -51,7 +51,7 @@ const MoodJournalHistory = () => {
             {journals.map(entry => {
               // styling my journal entries here 
               return (
-                <Grid item xs={12} md={6}>
+                <Grid item xs={12} sm={9} md={6}>
                   <JournalEntry
                     key={entry._id}
                     id={entry._id}

@@ -101,10 +101,9 @@ const Breather = () => {
         alignItems="center"
       >
         <h1 className="breather-h1">Breather</h1>
-        <Grid item xs={12} xs={6} >
 
+        <Grid item xs={12} sm={6} >
           {/* music plays on click event */}
-
           <p className="soundButton-p">Choose some music to relax to: </p>
           <div className="soundButton-container">
 

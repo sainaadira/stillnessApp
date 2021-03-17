@@ -10,32 +10,17 @@ font-family: 'Roboto Slab', sans-serif;
  font-weight:300;
 }
 
-/* .landing-container{
-  display:flex;
-  justify-content: center;
-   width: 100%;
-   padding: 3px;
-}
-   */
-   
-.landing-link{
+  
+    .landing-link{
   font-weight:bold;
-  font-size: 20px;
+  font-size: 1.1em;
   text-align: center;
   margin: 20px 0 35px 0;
-}
+} 
 
 .landing-img{
     width: 100%;
     height: 248px;
-}
-
-.description-container{
-     width: 60%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap;
 }
 
 .description-title{
@@ -47,10 +32,10 @@ font-family: 'Roboto Slab', sans-serif;
   margin:0;
 }
 
-.description-paragraph{
+ .description-paragraph{
     text-align: center;
     font-size: 1.22em;
     line-height: 1.3;
     font-weight:300;
     padding: 15px;
-}
+}  

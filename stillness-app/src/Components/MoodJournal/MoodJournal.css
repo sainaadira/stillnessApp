@@ -15,8 +15,8 @@ body{
 /* nav section */
 .mood-journal-ul{
   display:flex;
-  /* margin: 25px; */
   width: 100%;
+  padding-left: 0;
 }
 
 li.mood-journal-li{
@@ -86,7 +86,7 @@ li.mood-journal-li{
 /* submit and clear button and container */
 .moodJournal-btns-container{
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
    padding: 17px 0 33px 0;
 }
 
