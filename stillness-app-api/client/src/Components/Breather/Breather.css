@@ -29,33 +29,31 @@ color:white;
 .navigation-links{
     display:flex;
     justify-items: center; 
+    padding: 3px;
+   list-style: none;
+}
+
+.breather-nav-li{
+     border-bottom: 4px solid white;
 }
 
 .breather-nav{
-  padding: 7px;
+   padding: 11px 17px 6px 0px;
+}
+.breather-nav-link{
+   padding:8px;
+    font-size: 1.2em;
 }
 
 .breather-h1{
-  font-size: 70px;
-    margin: 7px;
+    font-size: 70px;
+    margin: 23px;
     font-weight:200;
     padding-bottom: 3px;
 }
 
-li{
-    list-style: none;
-    padding: 6px 26px 0px 3px;
-    border-bottom: 3px solid white;
-}
-
-.breather-nav-link{
-    list-style: none;
-    padding: 6px 26px 0px 3px;
-    font-size: 19px;
-}
-
-.logout-btn{
-    border-radius: 14%;
+.soundButton-container .MuiContainer-root{
+    padding: 3px;
 }
 
 .soundButton-container{
@@ -148,7 +146,6 @@ li{
 
 #text{
     font-size: 1.5em;
- 
 }
 
 .expand{
@@ -177,7 +174,6 @@ li{
          transform: scale(1.2)
      }
 }
-
 
 @keyframes shrink{
      from{

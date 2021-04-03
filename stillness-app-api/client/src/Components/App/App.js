@@ -12,8 +12,6 @@ import Breather from '../Breather/Breather'
 import MoodJournalHistory from '../MoodJournalHistory/MoodJournalHistory'
 import './App.css';
 
-
-
 function App() {
   return (
     <div className="App">
@@ -35,7 +33,6 @@ function App() {
             <MoodJournal />
           </Route>
         </Switch>
-
 
         <Switch>
           <Route exact path="/MoodJournalHistory">

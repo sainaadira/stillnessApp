@@ -65,7 +65,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     console.log(form)
     e.preventDefault()
-    fetch('/login', {
+    fetch('/api/login', {
       method: "Post",
       headers: {
         'Content-Type': 'application/json'
@@ -118,7 +118,6 @@ const Login = () => {
                 label="Remember me"
               />
 
-
               {/* login button */}
               <Button fullWidth className={classes.loginButton} variant="contained" color="default" onClick={handleSubmit} type="submit">
                 Login
@@ -133,9 +132,7 @@ const Login = () => {
 
             </Grid>
           </form>
-
         </div>
-
       </Container>
     </div>
   )

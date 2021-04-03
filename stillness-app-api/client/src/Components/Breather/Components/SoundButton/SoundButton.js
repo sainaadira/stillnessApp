@@ -31,7 +31,7 @@ const SoundButton = (props) => {
   }
   return (
 
-    <Container maxWidth="sm">
+    <Container className="sound-btn-container" maxWidth="sm">
       <Button variant="outlined" className={"sound-btn audio  sound-btn-" + props.type} onClick={handleClick} type='button'>{props.type}</Button>
     </Container>
   )

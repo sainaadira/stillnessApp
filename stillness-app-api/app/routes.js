@@ -1,17 +1,16 @@
-const getMoodPhrase = require('./Utils/mood.js')
+const getMoodPhrase = require('./utils/mood.js')
 
 module.exports = function (app, passport, db, twilioClient, ObjectId) {
 
   app.get('/userJournals', isLoggedIn, (req, res) => {
     let uId = ObjectId(req.session.passport.user)
-
-
     db.collection('journal').find({ user: uId }).toArray((err, result) => {
       if (err) return console.log(err)
       console.log(result)
       res.send({ result: result })
     })
   })
+
   // processes the login form
   app.post('/login', passport.authenticate('local-login', {
     successRedirect: '/moodJournal', // redirect to the secure profile section
@@ -30,12 +29,10 @@ module.exports = function (app, passport, db, twilioClient, ObjectId) {
   app.post('/saveJournalEntry', isLoggedIn, (req, res, next) => {
     let uId = ObjectId(req.session.passport.user)
     console.log(uId);
-    // to do: validating the request content 
     db.collection('journal').save({ journal: req.body.journalEntry, mood: req.body.mood, user: uId, createdAt: new Date() }, (err, result) => {
       if (err) return console.log(err, result)
       // variable that holds the body of the text based on the mood the user has chosen.
       const smsMessage = 'Hey, ' + req.user.local.firstName + ' ' + 'we see that you are feeling ' + req.body.mood + '. We just want you to know that ' + getMoodPhrase(req.body.mood)
-      console.log(req.body.mood)
       // creates the message body to send to user's phone
       twilioClient.messages
         .create({
@@ -66,7 +63,7 @@ module.exports = function (app, passport, db, twilioClient, ObjectId) {
       })
   })
   // delete method to delete journal entries
-  app.delete('/journal', (req, res) => {
+  app.delete('journal', (req, res) => {
     console.log(ObjectId(req.body._id))
     db.collection('journal')
       .findOneAndDelete({ '_id': ObjectId(req.body._id) })

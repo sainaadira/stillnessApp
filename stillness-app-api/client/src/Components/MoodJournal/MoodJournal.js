@@ -101,17 +101,16 @@ const MoodJournal = () => {
         >
           <nav>
             <ul className="mood-journal-ul">
-              <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/Breather"}>Begin Breathing </a></li>
+              <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/Breather"}>Breathe </a></li>
               <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/MoodJournalHistory"}>View Reflections </a></li>
               <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/Login"}>Logout </a></li>
             </ul>
           </nav>
         </Grid>
 
-        {/*                MOOD BUTTONS 
-        maps though moods array of and returns MoodButton component */}
 
         <Grid
+          container
           direction="column"
           justify="center"
           alignItems="center"
@@ -120,8 +119,11 @@ const MoodJournal = () => {
 
           <div className="mood-title-paragraph">
             <h1 className="moodJournal-h1">Thank you for being here on: {today} .</h1>
-            <p className="moodJournal-paragraph">Your space for release: How are you feeling today?</p>
+            <p className="moodJournal-paragraph">A space for release: How are you feeling today?</p>
           </div>
+
+          {/*                MOOD BUTTONS 
+        maps though moods array of and returns MoodButton component */}
 
           <div className="mood-btn-container">
             {moods.map(mood => <MoodButton value={mood.value} setMood={handleMood} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}

@@ -88,9 +88,9 @@ const Breather = () => {
       {/* navigation */}
       <nav className="breather-nav">
         <ul className="navigation-links">
-          <li> <a href className="breather-nav-link" onClick={() => window.location.href = "/MoodJournal"}> My Journal</a></li>
-          <li>   <a href className="breather-nav-link" onClick={() => window.location.href = "/MoodJournalHistory"}>My Reflections</a> </li>
-          <li> <a href className="breather-nav-link" onClick={() => window.location.href = "/Login"}> Logout</a></li>
+          <li className="breather-nav-li"> <a href className="breather-nav-link" onClick={() => window.location.href = "/MoodJournal"}> My Journal</a></li>
+          <li className="breather-nav-li">  <a href className="breather-nav-link" onClick={() => window.location.href = "/MoodJournalHistory"}>My Reflections</a> </li>
+          <li className="breather-nav-li"> <a href className="breather-nav-link" onClick={() => window.location.href = "/Login"}> Logout</a></li>
         </ul>
       </nav>
 
@@ -102,7 +102,7 @@ const Breather = () => {
       >
         <h1 className="breather-h1">Breather</h1>
 
-        <Grid item xs={12} sm={6} >
+        <Grid item xs={12} sm={9} md={6}>
           {/* music plays on click event */}
           <p className="soundButton-p">Choose some music to relax to: </p>
           <div className="soundButton-container">

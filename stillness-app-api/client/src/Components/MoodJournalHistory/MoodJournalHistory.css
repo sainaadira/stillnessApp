@@ -41,6 +41,8 @@
 
 .moodHistory-ul{
   display:flex;
+  list-style:none;
+  padding:0;
 }
 
 .moodHistory-li{
@@ -50,6 +52,7 @@
 .moodHistory-link{
   font-size: 1.2em;
   font-weight:200;
+  margin:3px;
+  padding:8px;
 }
-
 

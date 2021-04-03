@@ -41,7 +41,7 @@ const JournalEntry = (props) => {
 
   // function to delete journal entry 
   const handleDeleteJournalEntry = () => {
-    fetch('/journal', {
+    fetch('/api/journal', {
       method: 'DELETE',
       mode: 'cors',
       headers: {
@@ -126,7 +126,6 @@ const JournalEntry = (props) => {
         </Grid>
       </div>
     )
-
   }
 }
 

@@ -19,6 +19,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const cors = require('cors')
 const twilio = require('twilio');
+const path = require('path')
 
 const configDB = require('./config/database.js');
 
@@ -55,5 +56,15 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
+// Serve static files from the React app
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+// handles all the requests that aren't defined in the backend routes from index.html -- index.html contains all of 'build' of the front end 
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 app.listen(PORT, console.log(`server is running on ${PORT}`));
+
+
 
