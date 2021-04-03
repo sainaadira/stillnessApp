@@ -25,7 +25,7 @@ const JournalEntry = (props) => {
     // setting edit mode to false to change view back to orginal entry
     setEditMode(false)
     // using fetch call with a put method to save updated entry to database
-    fetch('/journal', {
+    fetch('/api/journal', {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ _id: props.id, journal: editJournalEntry })

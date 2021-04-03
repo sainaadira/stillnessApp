@@ -56,13 +56,19 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
+// setting get request and redirect before 'client/build' because build looks for index.html 
+app.get('/', (req, res) => {
+  res.redirect(301, '/app/')
+});
+
 // Serve static files from the React app
 app.use(express.static(path.join(__dirname, 'client/build')));
 
 // handles all the requests that aren't defined in the backend routes from index.html -- index.html contains all of 'build' of the front end 
-app.get('/*', function (req, res) {
+app.get('/app/*', function (req, res) {
   res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
 });
+
 
 app.listen(PORT, console.log(`server is running on ${PORT}`));
 

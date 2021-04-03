@@ -57,7 +57,7 @@ const Signup = () => {
       <Container component="main" maxWidth="sm">
         <div className={classes.paper}>
 
-          <form className={classes.form} method="POST" action='/signup'>
+          <form className={classes.form} method="POST" action='/api/signup'>
             {/* in order for react to read my inputs they must be in self closing tags */}
 
             <Grid container spacing={2}>

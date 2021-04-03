@@ -33,7 +33,7 @@ const LandingPage = () => {
             {/* window is the api and location.href will link to to another page (url) */}
 
           </Grid>
-          <a href className="landing-link" onClick={() => window.location.href = "/Login"}> Login or Signup here</a>
+          <a href className="landing-link" onClick={() => window.location.href = "/app/Login"}> Login or Signup here</a>
 
         </Grid>
       </Container>

@@ -9,7 +9,7 @@ const MoodJournalHistory = () => {
 
   const [journals, setJournals] = useState([])
   useEffect(() => {
-    fetch('/userJournals')
+    fetch('/api/userJournals')
       .then(res => res.json()).then(data => { setJournals(data.result) })
     // dependency array that checks for changes between the hook that is placed in the dependency array
   }, [])
@@ -24,8 +24,8 @@ const MoodJournalHistory = () => {
       >
         <nav className="moodHistory-nav-container">
           <ul className="moodHistory-ul">
-            <li className="moodHistory-li"><a className="moodHistory-link" href onClick={() => window.location.href = "/MoodJournal"}>Back to Journal</a></li>
-            <li className="moodHistory-li"><a className="moodHistory-link" href onClick={() => window.location.href = "/Breather"}>Begin Breathing</a></li>
+            <li className="moodHistory-li"><a className="moodHistory-link" href onClick={() => window.location.href = "/app/MoodJournal"}>Back to Journal</a></li>
+            <li className="moodHistory-li"><a className="moodHistory-link" href onClick={() => window.location.href = "/app/Breather"}>Begin Breathing</a></li>
           </ul>
         </nav>
       </Grid>

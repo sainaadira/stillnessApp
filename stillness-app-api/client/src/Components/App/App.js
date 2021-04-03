@@ -17,31 +17,31 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/app">
             <LandingPage />
           </Route>
         </Switch>
 
         <Switch>
-          <Route exact path="/Login">
+          <Route exact path="/app/Login">
             <AuthFlow />
           </Route>
         </Switch>
 
         <Switch>
-          <Route exact path="/MoodJournal">
+          <Route exact path="/app/MoodJournal">
             <MoodJournal />
           </Route>
         </Switch>
 
         <Switch>
-          <Route exact path="/MoodJournalHistory">
+          <Route exact path="/app/MoodJournalHistory">
             <MoodJournalHistory />
           </Route>
         </Switch>
 
         <Switch>
-          <Route exact path="/Breather">
+          <Route exact path="/app/Breather">
             <Breather />
           </Route>
         </Switch>

@@ -81,13 +81,13 @@ const MoodJournal = () => {
     e.preventDefault()
     const currentMood = moodOption
     const form = { journalEntry: journalSpace, mood: currentMood }
-    fetch('/saveJournalEntry', {
+    fetch('/api/saveJournalEntry', {
       method: "Post",
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(form)
-    }).then(res => res.json()).then(data => { if (data.success) { window.location.href = '/moodJournalHistory' } })
+    }).then(res => res.json()).then(data => { if (data.success) { window.location.href = '/app/moodJournalHistory' } })
   }
 
   return (
@@ -101,9 +101,9 @@ const MoodJournal = () => {
         >
           <nav>
             <ul className="mood-journal-ul">
-              <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/Breather"}>Breathe </a></li>
-              <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/MoodJournalHistory"}>View Reflections </a></li>
-              <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/Login"}>Logout </a></li>
+              <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/app/Breather"}>Breathe </a></li>
+              <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/app/MoodJournalHistory"}>View Reflections </a></li>
+              <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/app/Login"}>Logout </a></li>
             </ul>
           </nav>
         </Grid>

@@ -88,9 +88,9 @@ const Breather = () => {
       {/* navigation */}
       <nav className="breather-nav">
         <ul className="navigation-links">
-          <li className="breather-nav-li"> <a href className="breather-nav-link" onClick={() => window.location.href = "/MoodJournal"}> My Journal</a></li>
-          <li className="breather-nav-li">  <a href className="breather-nav-link" onClick={() => window.location.href = "/MoodJournalHistory"}>My Reflections</a> </li>
-          <li className="breather-nav-li"> <a href className="breather-nav-link" onClick={() => window.location.href = "/Login"}> Logout</a></li>
+          <li className="breather-nav-li"> <a href className="breather-nav-link" onClick={() => window.location.href = "/app/MoodJournal"}> My Journal</a></li>
+          <li className="breather-nav-li">  <a href className="breather-nav-link" onClick={() => window.location.href = "/app/MoodJournalHistory"}>My Reflections</a> </li>
+          <li className="breather-nav-li"> <a href className="breather-nav-link" onClick={() => window.location.href = "/app/Login"}> Logout</a></li>
         </ul>
       </nav>
 

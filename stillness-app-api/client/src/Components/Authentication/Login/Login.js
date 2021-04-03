@@ -71,7 +71,7 @@ const Login = () => {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(form)
-    }).then(res => window.location.href = '/moodJournal')
+    }).then(res => window.location.href = '/app/moodJournal')
   }
   return (
 
@@ -80,7 +80,7 @@ const Login = () => {
       <Container component="main" maxWidth="sm">
         <div className={classes.paper}>
 
-          <form className={classes.form} action='/login' method="POST" >
+          <form className={classes.form} action='/api/login' method="POST" >
 
             {/* textfields for login component */}
             <Grid container spacing={2}>
