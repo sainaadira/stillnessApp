@@ -16,7 +16,8 @@ body{
 .mood-journal-ul{
   display:flex;
   width: 100%;
-  padding: 2px;
+  /* padding: 2px; */
+  padding-left:0;
 }
 
 .mood-journal-li{
@@ -24,6 +25,12 @@ body{
     padding: 1px 4px 0px 2px;
     border-bottom: 4px solid #581845; 
 }
+
+/* li.mood-journal-li{
+  list-style: none;
+    padding: 6px 26px 0px 3px;
+    border-bottom: 4px solid #581845; 
+} */
 
 .mood-journal-link{
     font-size: 1.2em;
@@ -62,19 +69,19 @@ body{
 
 /* container for all mood buttons */
 .mood-btn-container{
-    display: flex;
-    justify-content: center;
+    display:flex;
     padding-bottom: 13px;
 }
 
 /* textarea container */
-.mood-journal-form{
+/* .mood-journal-form{
     display: flex;
     justify-content: center;
-}
+} */
 
 /* textarea */
 .journal-space{
+    /* display:flex; */
     outline: none;
     background-color: #F6F4EF;
     border: 3px solid #581845;

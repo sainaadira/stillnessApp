@@ -6,6 +6,7 @@ import Grid from '@material-ui/core/Grid'
 import Container from '@material-ui/core/Container'
 
 
+
 const MoodJournal = () => {
   // gets the date
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
@@ -124,15 +125,17 @@ const MoodJournal = () => {
 
           {/*                MOOD BUTTONS 
         maps though moods array of and returns MoodButton component */}
+          <Grid item xs={12} sm={9} md={6}>
+            <div className="mood-btn-container">
+              {moods.map(mood => <MoodButton value={mood.value} setMood={handleMood} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}
+            </div>
+          </Grid>
 
-          <div className="mood-btn-container">
-            {moods.map(mood => <MoodButton value={mood.value} setMood={handleMood} type={mood.type} active={activeMoodColor === mood.value} color={moodColor[mood.value]} key={mood.type} />)}
-          </div>
 
           {/* JOURNAL SPACE TEXT AREA */}
           <div className="mood-journal-textarea">
             <form className="mood-journal-form">
-              <textarea className="journal-space" value={journalSpace} name="journalEntry" onChange={handleJournalSpace} cols="60" rows="12" placeholder="Feel free to further express yourself here." />
+              <textarea className="journal-space" value={journalSpace} rows='12' cols='50' name="journalEntry" onChange={handleJournalSpace} placeholder="Feel free to further express yourself here." />
             </form>
           </div>
         </Grid>
