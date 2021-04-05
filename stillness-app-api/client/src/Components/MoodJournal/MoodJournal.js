@@ -107,15 +107,7 @@ const MoodJournal = () => {
               <li className="mood-journal-li"> <a className="mood-journal-link" href onClick={() => window.location.href = "/app/Login"}>Logout </a></li>
             </ul>
           </nav>
-        </Grid>
 
-
-        <Grid
-          container
-          direction="column"
-          justify="center"
-          alignItems="center"
-        >
           <img alt="stillness logo" className="landing-img" src="../../../assets/images/stillness-img.svg"></img>
 
           <div className="mood-title-paragraph">
@@ -135,19 +127,20 @@ const MoodJournal = () => {
           {/* JOURNAL SPACE TEXT AREA */}
           <div className="mood-journal-textarea">
             <form className="mood-journal-form">
-              <textarea className="journal-space" value={journalSpace} rows='12' cols='50' name="journalEntry" onChange={handleJournalSpace} placeholder="Feel free to further express yourself here." />
+              <textarea className="journal-space" value={journalSpace} rows='12' cols='46' name="journalEntry" onChange={handleJournalSpace} placeholder="Feel free to further express yourself here." />
             </form>
           </div>
+
+
+          <div className="moodJournal-btns-container">
+            {/* clears texarea */}
+            <Button variant="contained" color="default" className="clear-btn" onClick={clearJournalEntry}>Clear</Button>
+
+            {/* submits journal entry */}
+            <Button variant="contained" color="default" className="submit-btn" onClick={handleSubmit}>Submit</Button>
+          </div>
+
         </Grid>
-
-        <div className="moodJournal-btns-container">
-          {/* clears texarea */}
-          <Button variant="contained" color="default" className="clear-btn" onClick={clearJournalEntry}>Clear</Button>
-
-          {/* submits journal entry */}
-          <Button variant="contained" color="default" className="submit-btn" onClick={handleSubmit}>Submit</Button>
-        </div>
-
       </Container>
     </div >
   )

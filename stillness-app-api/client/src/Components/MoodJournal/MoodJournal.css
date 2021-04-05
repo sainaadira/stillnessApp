@@ -95,7 +95,7 @@ body{
 /* submit and clear button and container */
 .moodJournal-btns-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
    padding: 17px 0 33px 0;
 }
 
