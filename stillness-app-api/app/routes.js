@@ -83,7 +83,3 @@ module.exports = function (app, passport, db, twilioClient, ObjectId) {
     res.redirect('/');
   }
 }
-
-
-
-
