@@ -123,13 +123,13 @@ const MoodJournal = () => {
             </div>
           </Grid>
 
-
           {/* JOURNAL SPACE TEXT AREA */}
           <div className="mood-journal-textarea">
             <form className="mood-journal-form">
-              <textarea className="journal-space" value={journalSpace} rows='12' cols='46' name="journalEntry" onChange={handleJournalSpace} placeholder="Feel free to further express yourself here." />
+              <textarea className="journal-space" value={journalSpace} rows="12" cols="50" name="journalEntry" onChange={handleJournalSpace} placeholder="Feel free to further express yourself here." />
             </form>
           </div>
+
 
 
           <div className="moodJournal-btns-container">

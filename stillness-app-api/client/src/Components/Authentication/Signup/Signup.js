@@ -142,7 +142,7 @@ const Signup = () => {
                 />
               </Grid>
 
-              <Button variant="contained" fullWidth color="default" onClick={() => window.location.href = "/MoodJournal"}>
+              <Button variant="contained" fullWidth color="default" onClick={() => window.location.href = "/app/MoodJournal"}>
                 Sign me up
         </Button>
 

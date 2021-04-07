@@ -11,12 +11,16 @@ font-family: 'Roboto Slab', sans-serif;
 }
 
   
-    .landing-link{
+.landing-link{
   font-weight:bold;
   font-size: 1.1em;
   text-align: center;
   margin: 20px 0 35px 0;
 } 
+
+.landing-link:hover{
+  color:#900C3F;
+}
 
 .landing-img{
     width: 100%;
