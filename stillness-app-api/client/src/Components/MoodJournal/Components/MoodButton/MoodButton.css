@@ -1,0 +1,19 @@
+*{
+  box-sizing: border-box;
+}
+
+/* mood buttons*/
+.mood-btn{
+  /* font-size: 1.5em; */
+  border-radius: 14%;
+  /* width: 11%; */
+  margin: 4px;
+  padding: 22px;
+  outline: none;
+} 
+
+
+.mood-btn.MuiButton-containedSizeLarge {
+   padding: 14px 26px;
+    font-size: .75em;
+}
