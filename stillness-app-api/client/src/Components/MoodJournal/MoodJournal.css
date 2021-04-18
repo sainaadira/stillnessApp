@@ -1,0 +1,108 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+ background-color: #F6F4EF;
+}
+
+/* wrapping parent container*/
+.mood-journal-container{
+  display: flex;
+  flex-direction: column;
+  margin:9px;
+}
+/* nav section */
+.mood-journal-ul{
+  display:flex;
+  width: 100%;
+  /* padding: 2px; */
+  padding-left:0;
+}
+
+.mood-journal-li{
+  list-style: none;
+    padding: 1px 4px 0px 2px;
+    border-bottom: 4px solid #581845; 
+}
+
+/* li.mood-journal-li{
+  list-style: none;
+    padding: 6px 26px 0px 3px;
+    border-bottom: 4px solid #581845; 
+} */
+
+.mood-journal-link{
+    font-size: 1.2em;
+    font-weight: 200;
+    padding:8px;
+}
+/* end of nav section */
+
+.moodJournal-container.MuiContainer-root{
+  padding-left: 0;
+}
+
+.mood-title-paragraph{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* h1 title */
+.moodJournal-h1 {
+    font-size: 34px;
+    padding: 10px;
+    border-bottom: solid  #581845;
+    text-align: center;
+    /* margin: 24px; */
+    font-weight:300
+}
+
+.moodJournal-paragraph{
+    /* margin: 37px; */
+    padding-bottom: 19px;
+    font-size: 1.3em;
+    font-weight: 200;
+    text-align: center;
+}
+
+/* container for all mood buttons */
+.mood-btn-container{
+    display:flex;
+    padding-bottom: 13px;
+}
+
+/* textarea container */
+/* .mood-journal-form{
+    display: flex;
+    justify-content: center;
+} */
+
+/* textarea */
+.journal-space{
+    /* display:flex; */
+    outline: none;
+    background-color: #F6F4EF;
+    border: 3px solid #581845;
+    padding: 14px 0px 15px 10px;
+    /* margin: 13px 3px 0 8px; */
+    font-size: 19px;
+    font-family: 'Roboto Slab', sans-serif;
+    font-weight:300;
+}
+
+/* submit and clear button and container */
+.moodJournal-btns-container{
+    display: flex;
+    justify-content: space-evenly;
+   padding: 17px 0 33px 0;
+}
+
+.moodJournal-container.MuiContainer-root {
+    padding:0;
+}
+
+.submit, .clear, .MuiButton-contained{
+  font-size:1.5em;
+}
