@@ -63,7 +63,6 @@ const Login = () => {
   }
 
   const handleSubmit = (e) => {
-    console.log(form)
     e.preventDefault()
     fetch('/api/login', {
       method: "Post",
@@ -138,4 +137,4 @@ const Login = () => {
   )
 }
 
-export default Login; 
+export default Login;
