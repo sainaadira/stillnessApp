@@ -10,6 +10,7 @@ import LandingPage from '../Authentication/LandingPage/LandingPage'
 import MoodJournal from '../MoodJournal/MoodJournal';
 import Breather from '../Breather/Breather'
 import MoodJournalHistory from '../MoodJournalHistory/MoodJournalHistory'
+import MoodChart from '../MoodChart/MoodChart;'
 import './App.css';
 
 function App() {
@@ -37,6 +38,13 @@ function App() {
         <Switch>
           <Route exact path="/app/MoodJournalHistory">
             <MoodJournalHistory />
+          </Route>
+        </Switch>
+
+        {/* added MoodChart Component to work on later*/}
+        <Switch>
+          <Route exact path="/app/MoodChart">
+            <MoodChart />
           </Route>
         </Switch>
 
